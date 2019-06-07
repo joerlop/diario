@@ -13,6 +13,7 @@ class App extends Component {
   }
 
   componentWillMount() {
+    console.log("hello");
     const session = this.userSession
     if(!session.isUserSignedIn() && session.isSignInPending()) {
       session.handlePendingSignIn()
