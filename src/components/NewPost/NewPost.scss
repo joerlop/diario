@@ -44,7 +44,7 @@
       border: none;
       padding: 10px;
       border-radius: 5px;
-      font-size: 12px;
+      font-size: 13px;
     }
   }
 
@@ -71,7 +71,7 @@
     border-radius: 10px;
 
     p {
-      font-size: 12px;
+      font-size: 13px;
     }
   }
 
@@ -81,7 +81,7 @@
     justify-self: start;
     margin-left: 10px;
     margin-bottom: 5px; 
-    font-size: 12px;
+    font-size: 13px;
     color: white;
     writing-mode: vertical-rl;
   }
@@ -124,7 +124,7 @@
   --ck-border-radius: 5px;
 
   /* Overrides the default font size in the theme. */
-  --ck-font-size-base: 12px;
+  --ck-font-size-base: 13px;
 
   /* Helper variables to avoid duplication in the colors. */
   --ck-custom-background: hsl(270, 1%, 29%);
