@@ -109,11 +109,14 @@
 }
 
 .Editor {
+  button {
+    font-family: 'Poppins', sans-serif; 
+  }
   /* Overrides the border radius setting in the theme. */
   --ck-border-radius: 5px;
 
   /* Overrides the default font size in the theme. */
-  --ck-font-size-base: 10px;
+  --ck-font-size-base: 12px;
 
   /* Helper variables to avoid duplication in the colors. */
   --ck-custom-background: hsl(270, 1%, 29%);
