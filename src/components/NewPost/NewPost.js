@@ -6,6 +6,7 @@ import { UserSession } from "blockstack";
 import { savePost, getPosts, saveYear, getYears } from "../../actions/index";
 import Loader from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
+import "./CustomStyles.css";
 
 const months = [
   "January",
