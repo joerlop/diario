@@ -144,7 +144,9 @@ class NewPost extends React.Component {
           <button>How are you feeling today?</button>
           <span class="ec ec-slightly-smiling-face" />
         </div>
-        <NewEditor />
+        <div className="Editor">
+          <NewEditor />
+        </div>
         <div className="Date">
           <p>{this.state.post.date}</p>
         </div>
