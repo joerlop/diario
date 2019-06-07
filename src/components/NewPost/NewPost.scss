@@ -1,3 +1,5 @@
+$base-font-size: 13px;
+
 .NewPost-container {
   width: 100%;
   display: grid;
@@ -44,7 +46,7 @@
       border: none;
       padding: 10px;
       border-radius: 5px;
-      font-size: 13px;
+      font-size: $base-font-size;
     }
   }
 
@@ -70,8 +72,9 @@
     box-shadow: 0px 0px 50px #b0a8a6;
     border-radius: 10px;
 
+    //font-size del texto dentro del editor
     p {
-      font-size: 13px;
+      font-size: $base-font-size;
     }
   }
 
@@ -81,7 +84,7 @@
     justify-self: start;
     margin-left: 10px;
     margin-bottom: 5px; 
-    font-size: 13px;
+    font-size: calc($base-font-size - 1px);
     color: white;
     writing-mode: vertical-rl;
   }
@@ -99,7 +102,7 @@
       width: 75px;
       border-radius: 5px;
       color: #CCCCCC;
-      font-size: 12px;
+      font-size: $base-font-size;
    
       &:hover {
         color: black;
@@ -124,7 +127,7 @@
   --ck-border-radius: 5px;
 
   /* Overrides the default font size in the theme. */
-  --ck-font-size-base: 13px;
+  --ck-font-size-base: $base-font-size;
 
   /* Helper variables to avoid duplication in the colors. */
   --ck-custom-background: hsl(270, 1%, 29%);
