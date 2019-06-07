@@ -39,12 +39,14 @@
     align-items: center;
 
     button{
+      font-family: 'Poppins', sans-serif;
       background: white;
       border: none;
       padding: 10px;
       border-radius: 5px;
       margin-right: 10px;
       margin-left: 25px;
+      font-size: 12px;
     }
   }
 
@@ -112,6 +114,9 @@
   button {
     font-family: 'Poppins', sans-serif; 
   }
+
+  --ck-font-face: 'Poppins', sans-serif;
+
   /* Overrides the border radius setting in the theme. */
   --ck-border-radius: 5px;
 
