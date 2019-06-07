@@ -1,0 +1,111 @@
+.NewPost-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 700px 1fr;
+  grid-template-rows: 50px 70px 100px 1fr 50px;
+  grid-template-areas: 
+    ".      .             ."
+    ".      navigation    ."
+    ".      feeling       ."
+    "back   text-editor   date"
+    ".      save          .";
+
+  .Navigation {
+    grid-area: navigation;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      margin: 0 30px;
+    }
+
+    .navlink {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .Feeling {
+    grid-area: feeling;
+    justify-self: start;
+    align-self: center;
+
+    display: flex;
+    align-items: center;
+
+    button{
+      background: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-right: 10px;
+      margin-left: 25px;
+    }
+  }
+
+  .Back {
+    grid-area: back;
+    align-self: center;
+    justify-self: end;
+
+    img {
+      height: 50px;
+      margin-right: 50px;
+    }
+  }
+
+  .Editor {
+    grid-area: text-editor;
+    justify-self: center;
+    align-self: center;
+    width: calc(100% - 100px);
+    max-width: 700px;
+    height: auto;
+    padding: 50px;
+    background: white;
+    box-shadow: 0px 0px 50px #b0a8a6;
+    border-radius: 10px;
+  }
+
+  .Date {
+    grid-area: date;
+    align-self: end;
+    justify-self: start;
+    margin-left: 10px;
+    margin-bottom: 5px; 
+    font-size: 13px;
+    color: white;
+    writing-mode: vertical-rl;
+  }
+
+  .Save {
+    grid-area: save;
+    justify-self: end;
+    align-self: center;
+    margin-top: 10px;
+
+    button {
+      background: white;
+      border: none;
+      padding: 5px;
+      width: 75px;
+      border-radius: 5px;
+      color: #CCCCCC;
+   
+      &:hover {
+        color: black;
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
