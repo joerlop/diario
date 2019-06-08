@@ -97,32 +97,39 @@ class NewPost extends React.Component {
         const postYears = this.props.postYears;
         let yearExists = false;
         let monthExists = false;
-        postYears.map(postYear => {
-          if (postYear.year === this.state.post.year) {
-            yearExists = true;
-            postYear.months.map(month => {
-              if (month === this.state.post.month) {
-                monthExists = true;
-              }
-            })
-          }
-        })
-
-        if (yearExists) {
-          if (!monthExists) {
-            postYears.map(postYear => {
-              if (postYear.year === this.state.post.year) {
-                postYear.months.push(this.state.post.month)
-              }
-            })    
-          }
-        } else {
-          postYears.push({
+        if (postYears.length === 0) {
+          const firstYear = {
             year: this.state.post.year,
             months: [this.state.post.month]
-          })
-        }
+          };
+          postYears.push(firstYear);
+        } else {
+          postYears.map(postYear => {
+            if (postYear.year === this.state.post.year) {
+              yearExists = true;
+              postYear.months.map(month => {
+                if (month === this.state.post.month) {
+                  monthExists = true;
+                }
+              });
+            }
+          });
 
+          if (yearExists) {
+            if (!monthExists) {
+              postYears.map(postYear => {
+                if (postYear.year === this.state.post.year) {
+                  postYear.months.push(this.state.post.month);
+                }
+              });
+            }
+          } else {
+            postYears.push({
+              year: this.state.post.year,
+              months: [this.state.post.month]
+            });
+          }
+        }
         this.props.saveYear(this.userSession, postYears);
       }
     );

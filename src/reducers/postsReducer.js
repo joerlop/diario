@@ -20,12 +20,7 @@ const initialState = {
   gettingPosts: false,
   savingYear: false,
   gettingYears: false,
-  postYears: [
-    {
-      year: "",
-      months: []
-    }
-  ],
+  postYears: [],
   yearError: ""
 };
 
