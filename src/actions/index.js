@@ -19,7 +19,7 @@ export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
 export const GET_POSTS_FAILURE = 'GET_POSTS_FAILURE';
 export const getPosts = (user) => dispatch => {
   dispatch({ type: GET_POSTS_START });
-  user.getFile(POSTS_FILENAME, { decrypt: true })
+  return user.getFile(POSTS_FILENAME, { decrypt: true })
     .then(res => {
       dispatch({ type: GET_POSTS_SUCCESS, payload: JSON.parse(res) });
     })

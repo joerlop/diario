@@ -1,0 +1,15 @@
+.Home-container {
+  text-align: center;
+  margin-top: 50px;
+
+  .YearComponent {
+
+    .MonthList-true {
+      display: block;
+    }
+
+    .MonthList-false {
+      display: none;
+    }
+  }
+}
