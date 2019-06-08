@@ -19,7 +19,7 @@ $base-font-size: 13px;
     align-items: center;
 
     h2 {
-      font-size: 20px;
+      font-size: 30px;
       margin: 0 30px;
       color: #1f1919;
     }
@@ -175,10 +175,10 @@ $base-font-size: 13px;
   /* -- Overrides the default .ck-input class colors. ----------------------------------------- */
 
   --ck-color-input-background: var(--ck-custom-foreground);
-  --ck-color-input-border: hsl(257, 3%, 43%);
+  --ck-color-input-border: var(--ck-custom-white);
   --ck-color-input-text: hsl(0, 0%, 98%);
   --ck-color-input-disabled-background: hsl(255, 4%, 21%);
-  --ck-color-input-disabled-border: hsl(250, 3%, 38%);
+  --ck-color-input-disabled-border: var(--ck-custom-white);
   --ck-color-input-disabled-text: hsl(0, 0%, 46%);
 
   /* -- Overrides the default .ck-list class colors. ------------------------------------------ */
