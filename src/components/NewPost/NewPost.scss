@@ -3,7 +3,7 @@ $base-font-size: 13px;
 .NewPost-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 700px 1fr;
+  grid-template-columns: 1fr 650px 1fr;
   grid-template-rows: 50px 70px 100px 1fr 50px;
   grid-template-areas: 
     ".      .             ."
@@ -68,7 +68,6 @@ $base-font-size: 13px;
     justify-self: center;
     align-self: center;
     width: 100%;
-    max-width: 650px;
     background: none;
     box-shadow: 0px 0px 50px #b0a8a6;
     border-radius: 10px;
