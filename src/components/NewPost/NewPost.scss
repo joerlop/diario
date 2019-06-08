@@ -72,7 +72,7 @@ $base-font-size: 13px;
     background: white;
     box-shadow: 0px 0px 50px #b0a8a6;
     border-radius: 10px;
-    height: 200px;
+    height: 100px;
 
     //font-size del texto dentro del editor
     p {
@@ -140,7 +140,7 @@ $base-font-size: 13px;
   /* -- Overrides generic colors. ------------------------------------------------------------- */
 
   --ck-color-base-foreground: var(--ck-custom-background);
-  --ck-color-focus-border: hsl(208, 90%, 62%);
+  --ck-color-focus-border: none;
   --ck-color-text: hsl(0, 0%, 98%);
   --ck-color-shadow-drop: hsla(0, 0%, 0%, 0.2);
   --ck-color-shadow-inner: hsla(0, 0%, 0%, 0.1);
@@ -194,12 +194,12 @@ $base-font-size: 13px;
   /* -- Overrides the default .ck-balloon-panel class colors. --------------------------------- */
 
   --ck-color-panel-background: var(--ck-custom-background);
-  --ck-color-panel-border: var(--ck-custom-border);
+  --ck-color-panel-border: none;
 
   /* -- Overrides the default .ck-toolbar class colors. --------------------------------------- */
 
   --ck-color-toolbar-background: var(--ck-custom-background);
-  --ck-color-toolbar-border: var(--ck-custom-border);
+  --ck-color-toolbar-border: none;
 
   /* -- Overrides the default .ck-tooltip class colors. --------------------------------------- */
 
