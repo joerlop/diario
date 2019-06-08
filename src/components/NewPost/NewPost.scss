@@ -134,7 +134,7 @@ $base-font-size: 13px;
   /* Helper variables to avoid duplication in the colors. */
   --ck-custom-background: #544343;
   --ck-custom-foreground: hsl(255, 3%, 18%);
-  --ck-custom-border: hsl(300, 1%, 22%);
+  --ck-custom-border: none;
   --ck-custom-white: hsl(0, 0%, 100%);
 
   /* -- Overrides generic colors. ------------------------------------------------------------- */
