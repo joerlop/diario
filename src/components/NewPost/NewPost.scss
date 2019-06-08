@@ -19,6 +19,7 @@ $base-font-size: 13px;
     align-items: center;
 
     h2 {
+      font-size: 20px;
       margin: 0 30px;
       color: #1f1919;
     }
@@ -67,12 +68,10 @@ $base-font-size: 13px;
     justify-self: center;
     align-self: center;
     width: 100%;
-    max-width: 700px;
-    height: auto;
-    background: white;
+    max-width: 650px;
+    background: none;
     box-shadow: 0px 0px 50px #b0a8a6;
     border-radius: 10px;
-    height: 100px;
 
     //font-size del texto dentro del editor
     p {
@@ -134,7 +133,7 @@ $base-font-size: 13px;
   /* Helper variables to avoid duplication in the colors. */
   --ck-custom-background: #544343;
   --ck-custom-foreground: hsl(255, 3%, 18%);
-  --ck-custom-border: none;
+  --ck-custom-border: #725a5a;
   --ck-custom-white: hsl(0, 0%, 100%);
 
   /* -- Overrides generic colors. ------------------------------------------------------------- */
@@ -148,9 +147,9 @@ $base-font-size: 13px;
   /* -- Overrides the default .ck-button class colors. ---------------------------------------- */
 
   --ck-color-button-default-background: var(--ck-custom-background);
-  --ck-color-button-default-hover-background: hsl(270, 1%, 22%);
-  --ck-color-button-default-active-background: hsl(270, 2%, 20%);
-  --ck-color-button-default-active-shadow: hsl(270, 2%, 23%);
+  --ck-color-button-default-hover-background: #382d2d;
+  --ck-color-button-default-active-background: darken(#382d2d, 10%);
+  --ck-color-button-default-active-shadow: darken(#382d2d, 10%);
   --ck-color-button-default-disabled-background: var(--ck-custom-background);
 
   --ck-color-button-on-background: var(--ck-custom-foreground);
