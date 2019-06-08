@@ -137,6 +137,7 @@ $base-font-size: 13px;
 
   /* -- Overrides generic colors. ------------------------------------------------------------- */
 
+  --ck-color-base-border: var(--ck-custom-white);
   --ck-color-base-foreground: var(--ck-custom-background);
   --ck-color-focus-border: none;
   --ck-color-text: hsl(0, 0%, 98%);
