@@ -192,7 +192,7 @@ $base-font-size: 13px;
   /* -- Overrides the default .ck-balloon-panel class colors. --------------------------------- */
 
   --ck-color-panel-background: var(--ck-custom-background);
-  --ck-color-panel-border: none;
+  --ck-color-panel-border: var(--ck-custom-white);
 
   /* -- Overrides the default .ck-toolbar class colors. --------------------------------------- */
 
