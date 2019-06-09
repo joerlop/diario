@@ -4,6 +4,7 @@ import { UserSession } from "blockstack";
 import { getYears, getPosts } from "../../actions/index";
 import Year from "./Year";
 import { connect } from "react-redux";
+import $ from 'jquery';
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,13 +15,19 @@ class Home extends React.Component {
   componentDidMount() {
     this.props.getYears(this.userSession);
     this.props.getPosts(this.userSession);
+    this.$el = $(this.el);
+    this.$el.somePlugin();
+  }
+
+  componentWillUnmount() {
+    this.$el.somePlugin('destroy');
   }
 
   render() {
     return (
-      <div className="Home-container">
+      <div className="Home-container"  ref={el => this.el = el}>
         {this.props.postYears.map(year => (
-          <Year year={year} posts={this.props.posts}/>
+          <Year el={this.$el} year={year} posts={this.props.posts}/>
         ))}
       </div>
     );
