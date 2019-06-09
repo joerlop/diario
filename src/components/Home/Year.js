@@ -1,5 +1,6 @@
 import React from "react";
 import Month from "./Month";
+import $ from 'jquery';
 
 class Year extends React.Component {
   constructor(props) {
