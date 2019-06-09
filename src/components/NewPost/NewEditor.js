@@ -16,6 +16,7 @@ class NewEditor extends Component {
             const data = editor.getData();
             localStorage.setItem("data", editor.getData())
             console.log({ event, editor, data });
+            console.log("getData", editor.getData())
           }}
           onBlur={editor => {
             console.log("Blur.", editor);
