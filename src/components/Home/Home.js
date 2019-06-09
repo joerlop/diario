@@ -15,14 +15,13 @@ class Home extends React.Component {
   componentDidMount() {
     this.props.getYears(this.userSession);
     this.props.getPosts(this.userSession);
-    this.$el = $(this.el);
   }
 
   render() {
     return (
-      <div className="Home-container"  ref={el => this.el = el}>
+      <div className="Home-container">
         {this.props.postYears.map(year => (
-          <Year el={this.$el} year={year} posts={this.props.posts}/>
+          <Year year={year} posts={this.props.posts}/>
         ))}
       </div>
     );
