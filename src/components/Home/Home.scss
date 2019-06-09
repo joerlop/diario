@@ -6,6 +6,14 @@
 
     .MonthList-true {
       display: block;
+
+      .PostList-true {
+        display: block;
+      }
+
+      .PostList-false {
+        display: none;
+      }
     }
 
     .MonthList-false {
