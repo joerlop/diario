@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.scss";
 import { UserSession } from "blockstack";
-import { getYears } from "../../actions/index";
+import { getYears, getPosts } from "../../actions/index";
 import Year from "./Year";
 import { connect } from "react-redux";
 
@@ -13,6 +13,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.props.getYears(this.userSession);
+    this.props.getPosts(this.userSession);
   }
 
   render() {
@@ -34,6 +35,6 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    getYears
+    getYears, getPosts
   }
 )(Home);
