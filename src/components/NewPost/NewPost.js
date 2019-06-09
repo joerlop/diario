@@ -69,7 +69,6 @@ class NewPost extends React.Component {
         post: {
           ...this.state.post,
           date: `${day} ${months[month]} ${year}`,
-          content: content,
           data: data
         }
       },
