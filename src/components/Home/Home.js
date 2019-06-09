@@ -19,7 +19,7 @@ class Home extends React.Component {
     return (
       <div className="Home-container">
         {this.props.postYears.map(year => (
-          <Year year={year} />
+          <Year year={year} posts={this.props.posts}/>
         ))}
       </div>
     );
@@ -27,6 +27,7 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  posts: state.postsReducer.posts,
   postYears: state.postsReducer.postYears
 });
 

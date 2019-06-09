@@ -21,9 +21,11 @@ class Month extends React.Component {
       <div className={`Month`}>
         <h3 onClick={() => this.toggleMonthOpen()}>{this.props.month}</h3>
         <div className={`PostList-${this.state.open}`}>
-          {/*filter posts that belong to year and month
-            This component should be connected to get posts from Store
-          */}
+          {this.props.posts.map(post => {
+            if (post.year === this.props.year && post.month === this.props.month) {
+              <Post post={post}/>
+            }
+          })}
         </div>
       </div>
     );

@@ -22,7 +22,7 @@ class Year extends React.Component {
         <h2 onClick={() => this.toggleYearOpen()}>{this.props.year.year}</h2>
         <div className={`MonthList-${this.state.open}`}>
           {this.props.year.months.map(month => (
-            <Month year={this.props.year.year} month={month} />
+            <Month year={this.props.year.year} month={month} posts={this.props.posts}/>
           ))}
         </div>
       </div>

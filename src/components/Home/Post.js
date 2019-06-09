@@ -11,8 +11,8 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div className={`Month`}>
-        <p>Post data</p>
+      <div className={`Post`}>
+        {this.props.post.data}
       </div>
     );
   }

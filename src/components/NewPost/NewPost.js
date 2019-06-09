@@ -34,8 +34,7 @@ class NewPost extends React.Component {
       post: {
         id: null,
         date: null,
-        content: null,
-        value: null,
+        data: null,
         month: null,
         year: null
       }
@@ -50,8 +49,7 @@ class NewPost extends React.Component {
       post: {
         id: timestamp,
         date: `${day} ${months[month]} ${year}`,
-        content: null,
-        value: null,
+        data: null,
         month: `${months[month]}`,
         year: `${year}`
       }
@@ -64,8 +62,7 @@ class NewPost extends React.Component {
 
   savePost = event => {
     event.preventDefault();
-    const content = localStorage.getItem("data");
-    const value = localStorage.getItem("data");
+    const data = localStorage.getItem("data");
     const posts = this.props.posts;
     this.setState(
       {
@@ -73,7 +70,7 @@ class NewPost extends React.Component {
           ...this.state.post,
           date: `${day} ${months[month]} ${year}`,
           content: content,
-          value: value
+          data: data
         }
       },
       () => {
