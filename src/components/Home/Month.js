@@ -23,7 +23,7 @@ class Month extends React.Component {
         <div className={`PostList-${this.state.open}`}>
           {this.props.posts.map(post => {
             if (post.year === this.props.year && post.month === this.props.month) {
-              <Post post={post}/>
+              return <Post post={post}/>
             }
           })}
         </div>
