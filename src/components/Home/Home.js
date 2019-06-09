@@ -16,11 +16,6 @@ class Home extends React.Component {
     this.props.getYears(this.userSession);
     this.props.getPosts(this.userSession);
     this.$el = $(this.el);
-    this.$el.somePlugin();
-  }
-
-  componentWillUnmount() {
-    this.$el.somePlugin('destroy');
   }
 
   render() {

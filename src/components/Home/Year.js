@@ -13,14 +13,9 @@ class Year extends React.Component {
 
   componentDidMount() {
     this.$el = $(this.el);
-    this.$el.somePlugin();
     this.props.el.on("click", this.$el, function() {
       $(this).toggleClass("active").next().slideToggle();
     });
-  }
-
-  componentWillUnmount() {
-    this.$el.somePlugin('destroy');
   }
 
   toggleYearOpen = () => {
