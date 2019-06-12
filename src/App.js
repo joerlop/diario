@@ -58,19 +58,7 @@ class App extends Component {
                 >
                   <Switch location={location}>
                     {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
-                    {
-                      <Route
-                        exact
-                        path="/"
-                        render={() =>
-                          this.state.signedIn ? (
-                            this.props.history.push("/newpost")
-                          ) : (
-                            <Marketing />
-                          )
-                        }
-                      />
-                    }
+                    <Route exact path="/" component={Marketing} />
                     <Route
                       exact
                       path="/newpost"
