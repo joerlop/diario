@@ -24,7 +24,7 @@ class App extends Component {
         if (!userData.username) {
           throw new Error("This app requires a username.");
         }
-        window.location("/newpost");
+        this.props.history.push("/newpost");
       });
     }
   }
