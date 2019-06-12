@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom'
 import "./App.scss";
 import { UserSession } from "blockstack";
 import NewPost from "./components/NewPost/NewPost";
@@ -46,6 +47,7 @@ class App extends Component {
                   onExit={(node, appears) => exit(node, appears)}
                   timeout={{ enter: 750, exit: 150 }}
                 >
+                  <Switch location={location}>
                     {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
                     <Route
                       exact
@@ -77,13 +79,14 @@ class App extends Component {
                         path="/"
                         render={() =>
                           this.userSession.isUserSignedIn() ? (
-                            <NewPost />
+                            this.props.history.push('/newpost')
                           ) : (
-                            <Marketing />
+                            this.props.history.push('/')
                           )
                         }
                       />
                     }
+                  </Switch>
                 </Transition>
               </TransitionGroup>
             );
@@ -94,4 +97,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
