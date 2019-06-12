@@ -77,7 +77,7 @@ class App extends Component {
                         path="/"
                         render={() =>
                           this.userSession.isUserSignedIn() ? (
-                            <NewPost />
+                            <Redirect to="/newpost" />
                           ) : (
                             <Redirect to="/login" />
                           )
