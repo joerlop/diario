@@ -1,7 +1,8 @@
-import TweenMax from 'gsap';
+import {Power1} from 'gsap/src/uncompressed/TweenMax';
+import TimelineMax from 'gsap/src/uncompressed/TimelineMax';
 
 const getDefaultTimeline = (node, delay) => {
-  const timeline = new Timeline({ paused: true });
+  const timeline = new TimelineMax({ paused: true });
   const content = node.querySelector('.NewPost-container');
   const contentInner = node.querySelector('.Editor');
 
