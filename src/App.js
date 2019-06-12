@@ -40,9 +40,7 @@ class App extends Component {
                   key={key}
                   appear={true}
                   onEnter={(node, appears) => {
-                    if (pathname != "/") {
-                      play(pathname, node, appears);
-                    }
+                    play(pathname, node, appears);
                   }}
                   onExit={(node, appears) => exit(node, appears)}
                   timeout={{ enter: 750, exit: 150 }}
