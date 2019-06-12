@@ -39,7 +39,11 @@ class App extends Component {
                 <Transition
                   key={key}
                   appear={true}
-                  onEnter={(node, appears) => play(pathname, node, appears)}
+                  onEnter={(node, appears) => {
+                    console.log(node)
+                    play(pathname, node, appears)
+                  }
+                }
                   onExit={(node, appears) => exit(node, appears)}
                   timeout={{ enter: 750, exit: 150 }}
                 >
