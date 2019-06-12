@@ -49,6 +49,19 @@ class App extends Component {
                 >
                   <Switch location={location}>
                     {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
+                    {
+                      <Route
+                        exact
+                        path="/"
+                        render={() =>
+                          this.userSession.isUserSignedIn() ? (
+                            this.props.history.push('/newpost')
+                          ) : (
+                            this.props.history.push('/')
+                          )
+                        }
+                      />
+                    }
                     <Route
                       exact
                       path="/"
@@ -83,19 +96,6 @@ class App extends Component {
                         <Login {...routeProps} userSession={this.userSession} />
                       )}
                     />
-                    {
-                      <Route
-                        exact
-                        path="/"
-                        render={() =>
-                          this.userSession.isUserSignedIn() ? (
-                            this.props.history.push('/newpost')
-                          ) : (
-                            this.props.history.push('/')
-                          )
-                        }
-                      />
-                    }
                   </Switch>
                 </Transition>
               </TransitionGroup>
