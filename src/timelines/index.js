@@ -3,8 +3,8 @@ import TimelineMax from 'gsap/src/uncompressed/TimelineMax';
 
 const getDefaultTimeline = (node, delay) => {
   const timeline = new TimelineMax({ paused: true });
-  const content;
-  const contentInner;
+  const content
+  const contentInner
 
   if (node) {
     content = node.querySelector('.Editor');
