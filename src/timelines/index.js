@@ -1,4 +1,4 @@
-import { TimelineMax as Timeline, Power1 } from 'gsap';
+import { TimelineMax as Timeline, Power1 } from 'gsap/TimelineMax';
 
 const getDefaultTimeline = (node, delay) => {
   const timeline = new Timeline({ paused: true });

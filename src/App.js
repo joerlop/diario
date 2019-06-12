@@ -6,7 +6,7 @@ import Login from "./components/Login/Login";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
 import { TransitionGroup, Transition } from "react-transition-group";
-import { play, exit } from './timelines'
+import { play, exit } from './timelines';
 
 class App extends Component {
   constructor() {
