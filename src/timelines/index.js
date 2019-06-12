@@ -33,7 +33,9 @@ export const play = (pathname, node, appears) => {
     timeline = getHomeTimeline(node, delay);
   else*/
 
-  timeline.play()
+  window.onload = function() {
+    timeline.play()
+  }
 }
 
 export const exit = (node) => {
