@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom'
+import { withRouter } from "react-router-dom";
 import "./App.scss";
 import { UserSession } from "blockstack";
 import NewPost from "./components/NewPost/NewPost";
@@ -14,6 +14,9 @@ class App extends Component {
   constructor() {
     super();
     this.userSession = new UserSession();
+    this.state = {
+      signedIn: this.userSession.isUserSignedIn()
+    };
   }
 
   componentWillMount() {
@@ -26,6 +29,12 @@ class App extends Component {
         }
         this.props.history.push("/newpost");
       });
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.state.signedIn) {
+      this.props.history.push("/newpost");
     }
   }
 
@@ -54,8 +63,8 @@ class App extends Component {
                         exact
                         path="/"
                         render={() =>
-                          this.userSession.isUserSignedIn() ? (
-                            this.props.history.push('/newpost')
+                          this.state.signedIn ? (
+                            this.props.history.push("/newpost")
                           ) : (
                             <Marketing />
                           )

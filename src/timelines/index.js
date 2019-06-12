@@ -25,23 +25,18 @@ const getDefaultTimeline = (node, delay) => {
 
 const getMarketingTimeline = (node, delay) => {
   const timeline = new TimelineMax({ paused: true });
+  const texts = node.querySelectorAll("h1");
 
-  if (!node) {
-    return timeline;
-  } else {
-    const texts = node.querySelectorAll("h1");
+  timeline
+    .from(node, 0, { display: "none", autoAlpha: 0, delay })
+    .staggerFrom(
+      texts,
+      0.375,
+      { autoAlpha: 0, x: -25, ease: Power1.easeOut },
+      0.125
+    );
 
-    timeline
-      .from(node, 0, { display: "none", autoAlpha: 0, delay })
-      .staggerFrom(
-        texts,
-        0.375,
-        { autoAlpha: 0, x: -25, ease: Power1.easeOut },
-        0.125
-      );
-
-    return timeline;
-  }
+  return timeline;
 };
 
 export const play = (pathname, node, appears) => {
