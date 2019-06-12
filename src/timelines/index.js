@@ -24,7 +24,7 @@ const getDefaultTimeline = (node, delay) => {
 };
 
 const getMarketingTimeline = (node, delay) => {
-  const timeline = new Timeline({ paused: true });
+  const timeline = new TimelineMax({ paused: true });
   const texts = node.querySelectorAll("h1");
 
   timeline
