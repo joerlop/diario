@@ -75,13 +75,11 @@ class App extends Component {
                       <Route
                         exact
                         path="/"
-                        render={() =>
-                          this.userSession.isUserSignedIn() ? (
+                        render={() => {
+                          if (this.userSession.isUserSignedIn()) {
                             <Redirect to="/newpost" />
-                          ) : (
-                            <Redirect to="/" />
-                          )
-                        }
+                          }
+                        }}
                       />
                     }
                   </Switch>
