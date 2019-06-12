@@ -46,7 +46,6 @@ class App extends Component {
                   onExit={(node, appears) => exit(node, appears)}
                   timeout={{ enter: 750, exit: 150 }}
                 >
-                  <Switch location={location}>
                     {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
                     <Route
                       exact
@@ -85,7 +84,6 @@ class App extends Component {
                         }
                       />
                     }
-                  </Switch>
                 </Transition>
               </TransitionGroup>
             );
