@@ -28,8 +28,10 @@ const getDefaultTimeline = (node, delay) => {
 export const play = (pathname, node, appears) => {
   const delay = appears ? 0 : 0.5;
 
+  let timeline;
+
   if (pathname === '/newpost') {
-    let timeline = getDefaultTimeline(node, delay);
+    timeline = getDefaultTimeline(node, delay);
   }
 
  /* if (pathname === '/')
