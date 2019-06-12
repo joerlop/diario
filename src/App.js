@@ -57,21 +57,11 @@ class App extends Component {
                           this.userSession.isUserSignedIn() ? (
                             this.props.history.push('/newpost')
                           ) : (
-                            this.props.history.push('/')
+                            <Marketing />
                           )
                         }
                       />
                     }
-                    <Route
-                      exact
-                      path="/"
-                      render={routeProps => (
-                        <Marketing
-                          {...routeProps}
-                          userSession={this.userSession}
-                        />
-                      )}
-                    />
                     <Route
                       exact
                       path="/newpost"
