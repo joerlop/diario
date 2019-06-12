@@ -27,16 +27,13 @@ const getDefaultTimeline = (node, delay) => {
 
 export const play = (pathname, node, appears) => {
   const delay = appears ? 0 : 0.5;
-  let timeline
+  let timeline = getDefaultTimeline(node, delay);
 
  /* if (pathname === '/')
     timeline = getHomeTimeline(node, delay);
   else*/
-    timeline = getDefaultTimeline(node, delay);
 
-  window
-    .loadPromise
-    .then(() => requestAnimationFrame(() => timeline.play()))
+  timeline.play()
 }
 
 export const exit = (node) => {
