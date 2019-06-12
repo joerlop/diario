@@ -6,7 +6,7 @@ import Login from "./components/Login/Login";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
 import { TransitionGroup, Transition } from "react-transition-group";
-import { play, exit } from './timelines';
+import { play, exit } from "./timelines";
 
 class App extends Component {
   constructor() {
@@ -30,6 +30,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
+        {
+          <Route
+            exact
+            path="/"
+            render={() =>
+              this.userSession.isUserSignedIn() ? (
+                <Redirect to="/newpost" />
+              ) : (
+                <Redirect to="/login" />
+              )
+            }
+          />
+        }
         <Route
           render={({ location }) => {
             const { pathname, key } = location;
@@ -40,28 +54,13 @@ class App extends Component {
                   key={key}
                   appear={true}
                   onEnter={(node, appears) => {
-                    console.log(node)
-                    play(pathname, node, appears)
-                  }
-                }
+                    console.log(node);
+                    play(pathname, node, appears);
+                  }}
                   onExit={(node, appears) => exit(node, appears)}
                   timeout={{ enter: 750, exit: 150 }}
                 >
                   <Switch location={location}>
-                    {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
-                    {
-                      <Route
-                        exact
-                        path="/"
-                        render={() =>
-                          this.userSession.isUserSignedIn() ? (
-                            <Redirect to="/newpost" />
-                          ) : (
-                            <Redirect to="/login" />
-                          )
-                        }
-                      />
-                    }
                     <Route
                       exact
                       path="/newpost"
