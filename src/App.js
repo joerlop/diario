@@ -3,6 +3,7 @@ import "./App.scss";
 import { UserSession } from "blockstack";
 import NewPost from "./components/NewPost/NewPost";
 import Login from "./components/Login/Login";
+import Marketing from "./components/Marketing/Marketing";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
 import { TransitionGroup, Transition } from "react-transition-group";
@@ -45,6 +46,7 @@ class App extends Component {
                 >
                   <Switch location={location}>
                     {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
+                    <Route exact path="/newpost" component={Marketing} />
                     <Route
                       exact
                       path="/newpost"
@@ -77,7 +79,7 @@ class App extends Component {
                           this.userSession.isUserSignedIn() ? (
                             <Redirect to="/newpost" />
                           ) : (
-                            <Redirect to="/login" />
+                            <Redirect to="/" />
                           )
                         }
                       />
