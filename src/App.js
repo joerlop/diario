@@ -16,12 +16,14 @@ class App extends Component {
   }
 
   componentWillMount() {
+    console.log(this.props);
     const session = this.userSession;
     if (!session.isUserSignedIn() && session.isSignInPending()) {
       session.handlePendingSignIn().then(userData => {
         if (!userData.username) {
           throw new Error("This app requires a username.");
         }
+        window.location("/newpost");
       });
     }
   }
