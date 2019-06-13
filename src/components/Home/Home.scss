@@ -58,7 +58,7 @@ $brown-bg-color: #544343;
       h2 {
         color: white;
         font-weight: bold;
-        background: -webkit-linear-gradient(#eee, #333);
+        background: webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
