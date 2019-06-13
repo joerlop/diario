@@ -36,15 +36,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="Navigation">
-          <NavLink strict exact className="navlink" to={`/home`} key={"home"}>
-            <p>home</p>
-          </NavLink>
-          <h2>diario</h2>
-          <NavLink strict exact className="navlink" to={`/newpost`} key={"newpost"}>
-            <p>new post</p>
-          </NavLink>
-        </div>
         <Route
           render={({ location }) => {
             const { pathname, key } = location;
@@ -62,7 +53,35 @@ class App extends Component {
                 >
                   <Switch location={location}>
                     {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
-                    <Route exact path="/" component={Marketing} />
+                    <Route
+                      exact
+                      path="/"
+                      render={() => {
+                        this.userSession.isUserSignedIn() ? (
+                          <Route
+                            exact
+                            path="/newpost"
+                            render={routeProps => (
+                              <NewPost
+                                {...routeProps}
+                                userSession={this.userSession}
+                              />
+                            )}
+                          />
+                        ) : (
+                          <Route
+                            exact
+                            path="/newpost"
+                            render={routeProps => (
+                              <NewPost
+                                {...routeProps}
+                                userSession={this.userSession}
+                              />
+                            )}
+                          />
+                        );
+                      }}
+                    />
                     <Route
                       exact
                       path="/newpost"
