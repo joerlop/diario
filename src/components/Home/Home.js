@@ -29,6 +29,13 @@ class Home extends React.Component {
             <p>new post</p>
           </NavLink>
         </div>
+        <div className="YourPosts">
+          {this.props.postYears.length === 0 ? 
+          <h2>You have no posts yet!</h2>
+          :
+          <h2>Your posts:</h2>  
+        }
+        </div>
         {this.props.postYears.map(year => (
           <Year year={year} posts={this.props.posts} />
         ))}

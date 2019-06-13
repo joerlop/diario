@@ -6,7 +6,7 @@
   grid-template-areas:
     ".      .             ."
     ".      navigation    ."
-    ".      .             ."
+    ".      posts         ."
     ".      years         ."
     ".      .             .";
 
@@ -32,8 +32,16 @@
     }
   }
 
+  .YourPosts {
+    grid-area: posts;
+    justify-self: center;
+    align-self: center;
+  }
+
   .YearComponent {
     grid-area: years;
+    justify-self: center;
+    align-self: center;
 
     .MonthList-true {
       display: block;
