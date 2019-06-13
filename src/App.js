@@ -36,6 +36,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavLink strict exact className="navlink" to={`/home`} key={"/home"}>
+          <p>home</p>
+        </NavLink>
+        <h2>diario</h2>
+        <NavLink className="navlink" to={`/newpost`} key={"/newpost"}>
+          <p>new post</p>
+        </NavLink>
         <Route
           render={({ location }) => {
             const { pathname, key } = location;
@@ -80,9 +87,11 @@ class App extends Component {
                     <Route
                       exact
                       path="/"
-                      render={() => 
+                      render={() =>
                         this.userSession.isUserSignedIn()
-                          ? window.location.assign("https://www.wearediario.com/newpost")
+                          ? window.location.assign(
+                              "https://www.wearediario.com/newpost"
+                            )
                           : this.props.history.push("/login")
                       }
                     />
