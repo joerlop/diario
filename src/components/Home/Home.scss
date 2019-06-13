@@ -53,10 +53,14 @@ $brown-bg-color: #544343;
       background: $brown-bg-color;
       margin-bottom: 2px;
       text-align: center;
+      cursor: pointer;
 
       h2 {
         color: white;
         font-weight: bold;
+        background: -webkit-linear-gradient(#eee, #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
