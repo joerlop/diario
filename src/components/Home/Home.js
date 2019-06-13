@@ -33,11 +33,10 @@ class Home extends React.Component {
           {this.props.postYears.length == 0 ? (
             <h2>You have no posts yet!</h2>
           ) : (
-            <h2>Your posts:</h2>
+            this.props.postYears.map(year => (
+              <Year year={year} posts={this.props.posts} />
+            ))
           )}
-          {this.props.postYears.map(year => (
-            <Year year={year} posts={this.props.posts} />
-          ))}
         </div>
       </div>
     );
