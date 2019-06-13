@@ -6,6 +6,7 @@ import { savePost, getPosts, saveYear, getYears } from "../../actions/index";
 import Loader from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
 import "./NewPost.scss";
+import TweenLite from "gsap/src/uncompressed/TweenLite";
 
 const months = [
   "January",
