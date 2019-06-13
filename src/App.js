@@ -55,35 +55,6 @@ class App extends Component {
                     {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
                     <Route
                       exact
-                      path="/"
-                      render={() => {
-                        return this.userSession.isUserSignedIn() ? (
-                          <Route
-                            exact
-                            path="/newpost"
-                            render={routeProps => (
-                              <NewPost
-                                {...routeProps}
-                                userSession={this.userSession}
-                              />
-                            )}
-                          />
-                        ) : (
-                          <Route
-                            exact
-                            path="/login"
-                            render={routeProps => (
-                              <Login
-                                {...routeProps}
-                                userSession={this.userSession}
-                              />
-                            )}
-                          />
-                        );
-                      }}
-                    />
-                    <Route
-                      exact
                       path="/newpost"
                       render={routeProps => (
                         <NewPost
@@ -105,6 +76,15 @@ class App extends Component {
                       render={routeProps => (
                         <Login {...routeProps} userSession={this.userSession} />
                       )}
+                    />
+                    <Route
+                      exact
+                      path="/"
+                      render={() => 
+                        this.userSession.isUserSignedIn()
+                          ? this.props.history.push("/newpost")
+                          : this.props.history.push("/login")
+                      }
                     />
                   </Switch>
                 </Transition>
