@@ -36,6 +36,13 @@
     grid-area: years;
     justify-self: center;
     align-self: center;
+    width: 100%;
+
+    .Year {
+      border: 1px solid black;
+      border-radius: 5px;
+      width: 80%;
+    }
 
     .MonthList-true {
       display: block;
