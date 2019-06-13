@@ -57,6 +57,7 @@ export const play = (pathname, node, appears) => {
 };
 
 export const exit = node => {
+  console.log("exit", node)
   const timeline = new TimelineMax({ paused: true });
 
   timeline.to(node, 0.15, { autoAlpha: 0, ease: Power1.easeOut });
