@@ -6,7 +6,7 @@
   grid-template-areas:
     ".      .             ."
     ".      navigation    ."
-    ".      posts         ."
+    ".      .             ."
     ".      years         ."
     ".      .             .";
 
@@ -30,12 +30,6 @@
         color: white;
       }
     }
-  }
-
-  .YourPosts {
-    grid-area: posts;
-    justify-self: center;
-    align-self: center;
   }
 
   .YearComponent {
