@@ -71,7 +71,7 @@ export const play = (pathname, node, appears) => {
   }
 
   window.loadPromise = new Promise(resolve => {
-    window.addEventListener(DOMContentLoaded, resolve)
+    window.addEventListener("DOMContentLoaded", resolve)
   })
 
   window.loadPromise.then(() => timeline.play())
