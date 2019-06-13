@@ -32,15 +32,18 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate() {
-    if (this.state.signedIn) {
-      this.props.history.push("/newpost");
-    }
-  }
-
   render() {
     return (
       <div className="App">
+        <div className="Navigation">
+          <NavLink strict exact className="navlink" to={`/home`} key={"home"}>
+            <p>home</p>
+          </NavLink>
+          <h2>diario</h2>
+          <NavLink strict exact className="navlink" to={`/home`} key={"home"}>
+            <p>new post</p>
+          </NavLink>
+        </div>
         <Route
           render={({ location }) => {
             const { pathname, key } = location;
