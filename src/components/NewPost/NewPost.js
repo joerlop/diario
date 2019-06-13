@@ -40,6 +40,8 @@ class NewPost extends React.Component {
       }
     };
     this.userSession = new UserSession();
+    this.myElement = null;
+    this.myTween = null;
   }
 
   componentDidMount() {
@@ -59,6 +61,7 @@ class NewPost extends React.Component {
     this.props.getPosts(this.userSession);
     this.props.getYears(this.userSession);
     localStorage.removeItem("signingIn");
+    this.myTween = TweenLite.to(this.myElement, 1, {x: 100, y: 100});
   }
 
   savePost = event => {
@@ -144,7 +147,7 @@ class NewPost extends React.Component {
             <p>new post</p>
           </NavLink>
         </div>
-        <div className="Feeling">
+        <div ref={div => this.myElement = div} className="Feeling">
           <button>How are you feeling today?</button>
           <span class="ec ec-slightly-smiling-face" />
         </div>
