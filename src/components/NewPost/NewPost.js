@@ -6,7 +6,8 @@ import { savePost, getPosts, saveYear, getYears } from "../../actions/index";
 import Loader from "react-loader-spinner";
 import { NavLink } from "react-router-dom";
 import "./NewPost.scss";
-import TweenLite from "gsap/src/uncompressed/TweenLite";
+import { Power1 } from "gsap/src/uncompressed/TweenMax";
+import TimelineMax from "gsap/src/uncompressed/TimelineMax";
 
 const months = [
   "January",
@@ -41,8 +42,11 @@ class NewPost extends React.Component {
       }
     };
     this.userSession = new UserSession();
-    this.myElement = null;
     this.myTween = null;
+    this.feeling = null;
+    this.editor = null;
+    this.date = null;
+    this.save = null;
   }
 
   componentDidMount() {
@@ -62,7 +66,26 @@ class NewPost extends React.Component {
     this.props.getPosts(this.userSession);
     this.props.getYears(this.userSession);
     localStorage.removeItem("signingIn");
-    this.myTween = TweenLite.to(this.myElement, 1, {x: 100, y: 100});
+
+    const timeline = new TimelineMax({ paused: true });
+    this.myTween = timeline
+      .from(this.feeling, 0.5, {
+        display: "none",
+        autoAlpha: 0,
+        delay,
+        ease: Power1.easeIn
+      })
+      .from(this.editor, 0.5, { autoAlpha: 0, y: 25, ease: Power1.easeInOut })
+      .from(this.date, 0.5, {
+        autoAlpha: 0,
+        delay: 0.15,
+        ease: Power1.easeIn
+      })
+      .from(this.save, 0.5, {
+        autoAlpha: 0,
+        delay: 0.15,
+        ease: Power1.easeIn
+      });
   }
 
   savePost = event => {
@@ -148,17 +171,17 @@ class NewPost extends React.Component {
             <p>new post</p>
           </NavLink>
         </div>
-        <div ref={div => this.myElement = div} className="Feeling">
+        <div ref={div => (this.feeling = div)} className="Feeling">
           <button>How are you feeling today?</button>
           <span class="ec ec-slightly-smiling-face" />
         </div>
-        <div className="Editor">
+        <div ref={div => (this.editor = div)} className="Editor">
           <NewEditor />
         </div>
-        <div className="Date">
+        <div ref={div => (this.date = div)} className="Date">
           <p>{this.state.post.date}</p>
         </div>
-        <div className="Save">
+        <div ref={div => (this.save = div)} className="Save">
           <button onClick={e => this.savePost(e)}>
             {this.props.savingPost ? (
               <Loader type="ThreeDots" color="#000000" height="10" width="20" />
