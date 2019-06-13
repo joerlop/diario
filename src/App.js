@@ -43,7 +43,7 @@ class App extends Component {
             return (
               <TransitionGroup component={null}>
                 <Transition
-                  key={key}
+                  key={this.props.history.location.key}
                   appear={true}
                   onEnter={(node, appears) => {
                     play(pathname, node, appears);
