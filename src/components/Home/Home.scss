@@ -1,3 +1,5 @@
+$base-font-size: 13px;
+
 .Home-container {
   width: 100%;
   display: grid;
@@ -18,6 +20,7 @@
 
     h2 {
       font-size: 30px;
+      font-weight: bold;
       margin: 0 30px;
       color: #1f1919;
     }
@@ -38,12 +41,15 @@
     align-self: center;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     .Year {
       border: 1px solid black;
       border-radius: 5px;
       width: 80%;
+      padding: 5px;
     }
 
     .MonthList-true {
