@@ -71,9 +71,9 @@ class App extends Component {
                         ) : (
                           <Route
                             exact
-                            path="/newpost"
+                            path="/login"
                             render={routeProps => (
-                              <NewPost
+                              <Login
                                 {...routeProps}
                                 userSession={this.userSession}
                               />

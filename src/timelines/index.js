@@ -44,7 +44,7 @@ export const play = (pathname, node, appears) => {
   let timeline;
 
   if (pathname === "/") {
-    timeline = getMarketingTimeline(node, delay);
+    timeline = new TimelineMax({ paused: true });
   } else {
     timeline = getDefaultTimeline(node, delay);
   }
