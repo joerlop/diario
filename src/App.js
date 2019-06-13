@@ -41,7 +41,7 @@ class App extends Component {
             <p>home</p>
           </NavLink>
           <h2>diario</h2>
-          <NavLink strict exact className="navlink" to={`/home`} key={"home"}>
+          <NavLink strict exact className="navlink" to={`/newpost`} key={"newpost"}>
             <p>new post</p>
           </NavLink>
         </div>
