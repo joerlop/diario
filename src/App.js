@@ -43,7 +43,7 @@ class App extends Component {
             return (
               <TransitionGroup component={null}>
                 <Transition
-                  key={this.props.history.location.key}
+                  key={key}
                   appear={true}
                   onEnter={(node, appears) => {
                     play(pathname, node, appears);
@@ -82,7 +82,7 @@ class App extends Component {
                       path="/"
                       render={() => 
                         this.userSession.isUserSignedIn()
-                          ? this.props.history.push("/newpost")
+                          ? window.location("/newpost")
                           : this.props.history.push("/login")
                       }
                     />
