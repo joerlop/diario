@@ -51,7 +51,7 @@ export const play = (pathname, node, appears) => {
   }
 
   window.onload = function() {
-    timeline.play();
+    setTimeout(() => {timeline.play()}, 5000)
   };
 };
 
