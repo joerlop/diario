@@ -82,7 +82,7 @@ class App extends Component {
                       path="/"
                       render={() => 
                         this.userSession.isUserSignedIn()
-                          ? window.location.href = "/newpost"
+                          ? window.location.assign("https://www.wearediario.com/newpost")
                           : this.props.history.push("/login")
                       }
                     />
