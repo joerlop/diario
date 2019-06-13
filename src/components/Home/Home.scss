@@ -12,6 +12,24 @@
 
   .Navigation {
     grid-area: navigation;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 30px;
+      margin: 0 30px;
+      color: #1f1919;
+    }
+
+    .navlink {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: white;
+      }
+    }
   }
 
   .YearComponent {
