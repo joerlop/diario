@@ -52,7 +52,7 @@ export const play = (pathname, node, appears) => {
   }
 
   window.onload = function() {
-    setTimeout(() => {timeline.play()}, 5000)
+    timeline.play()
   };
 };
 
