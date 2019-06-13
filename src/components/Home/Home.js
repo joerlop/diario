@@ -4,7 +4,6 @@ import { UserSession } from "blockstack";
 import { getYears, getPosts } from "../../actions/index";
 import Year from "./Year";
 import { connect } from "react-redux";
-import $ from 'jquery';
 
 class Home extends React.Component {
   constructor(props) {

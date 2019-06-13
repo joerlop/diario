@@ -70,9 +70,12 @@ export const play = (pathname, node, appears) => {
     timeline = getHomeTimeline(node, delay);
   }
 
-  window.onload = function() {
-    timeline.play()
-  };
+  window.loadPromise = new Promise(resolve => {
+    window.addEventListener(DOMContentLoaded, resolve)
+  })
+
+  window.loadPromise.then(() => timeline.play())
+
 };
 
 export const exit = node => {
