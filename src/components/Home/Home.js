@@ -30,7 +30,7 @@ class Home extends React.Component {
           </NavLink>
         </div>
         <div className="YourPosts">
-          {this.props.postYears.length === 0 ? 
+          {this.props.postYears.length == 0 ? 
           <h2>You have no posts yet!</h2>
           :
           <h2>Your posts:</h2>  
