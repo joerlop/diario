@@ -136,9 +136,7 @@ class NewPost extends React.Component {
     return (
       <div className="NewPost-container">
         <div className="Navigation">
-          <NavLink strict exact className="navlink" to={`/home`}>
-            <p>home</p>
-          </NavLink>
+          <a href="https://www.wearediario.com/home">Home</a>
           <h2>diario</h2>
           <NavLink className="navlink" to={`/newpost`}>
             <p>new post</p>

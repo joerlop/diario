@@ -27,7 +27,7 @@ const getDefaultTimeline = (node, delay) => {
 const getHomeTimeline = (node, delay) => {
   console.log(node);
   const timeline = new TimelineMax({ paused: true });
-  const content = node.querySelector(".Home-container");
+  const content = node.querySelector(".YearComponent");
 
   timeline
     .from(node, 0.5, {
