@@ -50,6 +50,7 @@ class App extends Component {
             return (
               <TransitionGroup component={null}>
                 <Transition
+                  enter={false}
                   key={key}
                   appear={true}
                   onEnter={(node, appears) => {
