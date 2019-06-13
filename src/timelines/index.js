@@ -41,6 +41,7 @@ const getMarketingTimeline = (node, delay) => {
 };
 
 export const play = (pathname, node, appears) => {
+  console.log("play", node)
   const delay = appears ? 0 : 0.5;
   let timeline;
 
