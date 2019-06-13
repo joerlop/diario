@@ -57,7 +57,7 @@ class App extends Component {
                       exact
                       path="/"
                       render={() => {
-                        this.userSession.isUserSignedIn() ? (
+                        return this.userSession.isUserSignedIn() ? (
                           <Route
                             exact
                             path="/newpost"
