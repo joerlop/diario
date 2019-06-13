@@ -72,7 +72,7 @@ class NewPost extends React.Component {
       .from(this.feeling, 0.5, {
         display: "none",
         autoAlpha: 0,
-        0.5,
+        delay: 0.5,
         ease: Power1.easeIn
       })
       .from(this.editor, 0.5, { autoAlpha: 0, y: 25, ease: Power1.easeInOut })
