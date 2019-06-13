@@ -66,7 +66,6 @@ class App extends Component {
               : <Redirect to={"/login"} />
           }
         />
-        ); }} />
       </div>
     );
   }
