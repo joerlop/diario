@@ -43,7 +43,7 @@ class NewPost extends React.Component {
   }
 
   componentDidMount() {
-    console.log("Hello")
+    console.log("Hello");
     const date = new Date();
     const timestamp = date.getTime();
     this.setState({
@@ -136,7 +136,9 @@ class NewPost extends React.Component {
     return (
       <div className="NewPost-container">
         <div className="Navigation">
-          <a href="https://www.wearediario.com/home">Home</a>
+          <NavLink className="navlink" to={`/home`}>
+            <p>home</p>
+          </NavLink>
           <h2>diario</h2>
           <NavLink className="navlink" to={`/newpost`}>
             <p>new post</p>

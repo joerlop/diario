@@ -19,8 +19,17 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home-container">
+        <div className="Navigation">
+          <NavLink className="navlink" to={`/home`}>
+            <p>home</p>
+          </NavLink>
+          <h2>diario</h2>
+          <NavLink className="navlink" to={`/newpost`}>
+            <p>new post</p>
+          </NavLink>
+        </div>
         {this.props.postYears.map(year => (
-          <Year year={year} posts={this.props.posts}/>
+          <Year year={year} posts={this.props.posts} />
         ))}
       </div>
     );
@@ -35,6 +44,7 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    getYears, getPosts
+    getYears,
+    getPosts
   }
 )(Home);

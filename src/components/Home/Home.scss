@@ -1,8 +1,21 @@
 .Home-container {
-  text-align: center;
-  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 650px 1fr;
+  grid-template-rows: 50px 70px 150px 1fr;
+  grid-template-areas:
+    ".      .             ."
+    ".      navigation    ."
+    ".      .             ."
+    ".      years         ."
+    ".      .             .";
+
+  .Navigation {
+    grid-area: navigation;
+  }
 
   .YearComponent {
+    grid-area: years;
 
     .MonthList-true {
       display: block;
