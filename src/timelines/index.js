@@ -24,6 +24,23 @@ const getDefaultTimeline = (node, delay) => {
   return timeline;
 };
 
+const getHomeTimeline = (node, delay) => {
+  console.log(node);
+  const timeline = new TimelineMax({ paused: true });
+  const content = node.querySelector(".YearComponent");
+
+  timeline
+    .from(node, 0.5, {
+      display: "none",
+      autoAlpha: 0,
+      delay,
+      ease: Power1.easeIn
+    })
+    .from(content, 0.5, { autoAlpha: 0, y: 25, ease: Power1.easeInOut });
+
+  return timeline;
+};
+
 const getMarketingTimeline = (node, delay) => {
   const timeline = new TimelineMax({ paused: true });
   const texts = node.querySelectorAll("h1");
@@ -47,8 +64,10 @@ export const play = (pathname, node, appears) => {
 
   if (pathname === "/") {
     timeline = new TimelineMax({ paused: true });
-  } else {
+  } else if (pathname === "/newpost") {
     timeline = getDefaultTimeline(node, delay);
+  } else {
+    timeline = getHomeTimeline(node, delay);
   }
 
   window.onload = function() {
