@@ -36,72 +36,37 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavLink strict exact className="navlink" to={`/home`} key={"/home"}>
-          <p>home</p>
-        </NavLink>
-        <h2>diario</h2>
-        <NavLink strict exact className="navlink" to={`/newpost`} key={"/newpost"}>
-          <p>new post</p>
-        </NavLink>
         <Route
-          render={({ location }) => {
-            const { pathname, key } = location;
-
-            return (
-              <TransitionGroup component={null}>
-                <Transition
-                  enter={false}
-                  key={key}
-                  appear={true}
-                  onEnter={(node, appears) => {
-                    play(pathname, node, appears);
-                  }}
-                  onExit={(node, appears) => exit(node, appears)}
-                  timeout={{ enter: 750, exit: 150 }}
-                >
-                  <Switch location={location}>
-                    {/*this.userSession.isUserSignedIn() ? <NewPost /> : <Login />*/}
-                    <Route
-                      exact
-                      path="/newpost"
-                      render={routeProps => (
-                        <NewPost
-                          {...routeProps}
-                          userSession={this.userSession}
-                        />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/home"
-                      render={routeProps => (
-                        <Home {...routeProps} userSession={this.userSession} />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/login"
-                      render={routeProps => (
-                        <Login {...routeProps} userSession={this.userSession} />
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/"
-                      render={() =>
-                        this.userSession.isUserSignedIn()
-                          ? window.location.assign(
-                              "https://www.wearediario.com/newpost"
-                            )
-                          : this.props.history.push("/login")
-                      }
-                    />
-                  </Switch>
-                </Transition>
-              </TransitionGroup>
-            );
-          }}
+          exact
+          path="/newpost"
+          render={routeProps => (
+            <NewPost {...routeProps} userSession={this.userSession} />
+          )}
         />
+        <Route
+          exact
+          path="/home"
+          render={routeProps => (
+            <Home {...routeProps} userSession={this.userSession} />
+          )}
+        />
+        <Route
+          exact
+          path="/login"
+          render={routeProps => (
+            <Login {...routeProps} userSession={this.userSession} />
+          )}
+        />
+        <Route
+          exact
+          path="/"
+          render={() =>
+            this.userSession.isUserSignedIn()
+              ? <Redirect to={"/newpost"} />
+              : <Redirect to={"/login"} />
+          }
+        />
+        ); }} />
       </div>
     );
   }
