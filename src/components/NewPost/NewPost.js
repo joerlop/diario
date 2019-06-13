@@ -47,6 +47,7 @@ class NewPost extends React.Component {
     this.editor = null;
     this.date = null;
     this.save = null;
+    this.timeline = new TimelineMax({ paused: true });
   }
 
   componentDidMount() {
@@ -67,8 +68,7 @@ class NewPost extends React.Component {
     this.props.getYears(this.userSession);
     localStorage.removeItem("signingIn");
 
-    const timeline = new TimelineMax({ paused: true });
-    this.myTween = timeline
+    this.timeline
       .from(this.feeling, 0.5, {
         display: "none",
         autoAlpha: 0,
@@ -86,6 +86,8 @@ class NewPost extends React.Component {
         delay: 0.15,
         ease: Power1.easeIn
       });
+
+    this.timeline.play();
   }
 
   savePost = event => {
