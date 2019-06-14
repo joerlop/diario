@@ -162,6 +162,7 @@ class NewPost extends React.Component {
   reverseTimeline = event => {
     event.preventDefault();
     this.timeline.reverse();
+    this.props.history.push("/home");
   }
 
   render() {
