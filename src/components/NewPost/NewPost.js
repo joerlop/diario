@@ -172,15 +172,6 @@ class NewPost extends React.Component {
   render() {
     return (
       <div className="NewPost-container">
-        <div className="Navigation">
-          <NavLink onClick={e => this.reverseTimeline(e)} className="navlink" to={`/home`}>
-            <p>home</p>
-          </NavLink>
-          <h2>diario</h2>
-          <NavLink className="navlink" to={`/newpost`}>
-            <p>new post</p>
-          </NavLink>
-        </div>
         <div ref={div => (this.feeling = div)} className="Feeling">
           <button>How are you feeling today?</button>
           <span class="ec ec-slightly-smiling-face" />

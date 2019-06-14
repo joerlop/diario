@@ -36,6 +36,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="Navigation">
+          <NavLink
+            onClick={e => this.reverseTimeline(e)}
+            className="navlink"
+            to={`/home`}
+          >
+            <p>home</p>
+          </NavLink>
+          <h2>diario</h2>
+          <NavLink className="navlink" to={`/newpost`}>
+            <p>new post</p>
+          </NavLink>
+        </div>
         <Route
           exact
           path="/newpost"
@@ -61,9 +74,11 @@ class App extends Component {
           exact
           path="/"
           render={() =>
-            this.userSession.isUserSignedIn()
-              ? <Redirect to={"/newpost"} />
-              : <Redirect to={"/login"} />
+            this.userSession.isUserSignedIn() ? (
+              <Redirect to={"/newpost"} />
+            ) : (
+              <Redirect to={"/login"} />
+            )
           }
         />
       </div>
