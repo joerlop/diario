@@ -69,7 +69,7 @@ class NewPost extends React.Component {
     localStorage.removeItem("signingIn");
 
     this.timeline
-      .from(this.feeling, 0.25, {
+      .from(this.feeling, 0.5, {
         display: "none",
         autoAlpha: 0,
         delay: 0.25,
