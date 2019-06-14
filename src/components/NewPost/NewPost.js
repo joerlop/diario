@@ -161,17 +161,17 @@ class NewPost extends React.Component {
 
   reverseTimeline = event => {
     event.preventDefault();
-    this.timeline.reverse().
-    then(() => {
-      this.props.history.push("/home");
-    });
+    return new Promise((resolve, reject) => {
+      this.timeline.reverse();
+      resolve("Success");
+    }) 
   }
 
   render() {
     return (
       <div className="NewPost-container">
         <div className="Navigation">
-          <NavLink onClick={e => this.reverseTimeline(e)} className="navlink" to={`/home`}>
+          <NavLink onClick={e => this.reverseTimeline(e).then(this.props.history.push("/home"))} className="navlink" to={`/home`}>
             <p>home</p>
           </NavLink>
           <h2>diario</h2>
