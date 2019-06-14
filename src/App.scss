@@ -6,34 +6,6 @@
   background: #DAE2F8;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
-  display: grid;
-  grid-template-columns: 1fr 650px 1fr;
-  grid-template-rows: 50px 70px;
-  grid-template-areas: 
-    ".      .             ."
-    ".      navigation    .";
-
-  .Navigation {
-    grid-area: navigation;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    h2 {
-      font-size: 30px;
-      margin: 0 30px;
-      font-weight: bold;
-      color: #1f1919;
-    }
-
-    .navlink {
-      text-decoration: none;
-      color: black;
-
-      &:hover {
-        color: white;
-      }
-    }
 }
 
 .App-logo {
