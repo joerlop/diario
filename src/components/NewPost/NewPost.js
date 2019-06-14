@@ -162,9 +162,11 @@ class NewPost extends React.Component {
   reverseTimeline = event => {
     event.preventDefault();
     this.timeline.reverse();
+    const timelineDuration = this.timeline.duration()*1000;
+    console.log(timelineDuration);
     setTimeout(() => {
       this.props.history.push("/home");
-    }, this.timeline.duration()*1000);
+    }, timelineDuration);
   }
 
   render() {
