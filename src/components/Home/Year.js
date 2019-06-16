@@ -4,21 +4,27 @@ import Month from "./Month";
 class Year extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       open: false
     };
+
+    this.timeline = new TimelineMax({ paused: true });
+    this.year = null;
   }
 
-  toggleYearOpen = () => {
-    this.setState({
-      open: !this.state.open
-    });
-  };
+  componentDidMount() {
+    this.timeline
+    .from(this.year, 0.5, {
+      display: "none",
+      autoAlpha: 0,
+      delay: 0.25,
+      ease: Power1.easeIn
+    })
+  }
 
   render() {
     return (
-        <div className="Year">
+        <div ref={div => (this.year = div)} className="Year">
           <h2 onClick={() => this.toggleYearOpen()}>{this.props.year.year}</h2>
           <div className={`MonthList-${this.state.open}`}>
             {this.props.year.months.map(month => (

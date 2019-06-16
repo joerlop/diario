@@ -51,7 +51,6 @@ class NewPost extends React.Component {
   }
 
   componentDidMount() {
-    console.log("Hello");
     const date = new Date();
     const timestamp = date.getTime();
     this.setState({
