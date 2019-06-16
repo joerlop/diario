@@ -1,6 +1,9 @@
 import React from "react";
 import Month from "./Month";
 
+import { Power1 } from "gsap/src/uncompressed/TweenMax";
+import TimelineMax from "gsap/src/uncompressed/TimelineMax";
+
 class Year extends React.Component {
   constructor(props) {
     super(props);
