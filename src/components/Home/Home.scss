@@ -58,6 +58,8 @@ $brown-bg-color: #544343;
 
   .Navigation {
     grid-area: navigation;
+    justify-self: center;
+    align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
