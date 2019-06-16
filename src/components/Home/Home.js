@@ -17,18 +17,17 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getYears(this.userSession);
     this.props.getPosts(this.userSession);
+    this.props.getYears(this.userSession).then(() => {
+      this.timeline.from(this.yearList, 0.5, {
+        display: "none",
+        autoAlpha: 0,
+        delay: 0.25,
+        ease: Power1.easeIn
+      });
 
-    this.timeline
-    .from(this.yearList, 0.5, {
-      display: "none",
-      autoAlpha: 0,
-      delay: 0.25,
-      ease: Power1.easeIn
-    })
-
-    this.timeline.play();
+      this.timeline.play();
+    });
   }
 
   render() {

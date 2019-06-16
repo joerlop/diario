@@ -47,7 +47,7 @@ export const GET_YEARS_SUCCESS = 'GET_YEARS_SUCCESS';
 export const GET_YEARS_FAILURE = 'GET_YEARS_FAILURE';
 export const getYears = (user) => dispatch => {
   dispatch({ type: GET_YEARS_START });
-  user.getFile(YEARS_FILENAME, { decrypt: true })
+  return user.getFile(YEARS_FILENAME, { decrypt: true })
     .then(res => {
       dispatch({ type: GET_YEARS_SUCCESS, payload: JSON.parse(res) });
     })
