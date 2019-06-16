@@ -93,7 +93,7 @@ $brown-bg-color: #544343;
       border-radius: 5px;
       width: 80%;
       padding: 15px 5px;
-      background: $brown-bg-color;
+      background: white;
       margin-bottom: 2px;
       text-align: center;
       cursor: pointer;
@@ -103,11 +103,8 @@ $brown-bg-color: #544343;
       }
 
       h2 {
-        color: white;
+        color: black;
         font-weight: bold;
-        background: -webkit-linear-gradient(0deg, #D6A4A4, #DAE2F8);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         font-size: 20px;
       }
     }
