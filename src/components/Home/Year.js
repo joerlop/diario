@@ -11,8 +11,10 @@ class Year extends React.Component {
 
   render() {
     return (
-        <div ref={div => (this.year = div)} className="Year">
-          <h2>{this.props.year.year}</h2>
+        <div ref={div => (this.year = div)} className="Year-Container">
+          <div className="Year">
+            <h2>{this.props.year.year}</h2>
+          </div>
           <div className={`MonthList-${this.state.open}`}>
             {this.props.year.months.map(month => (
               <Month
