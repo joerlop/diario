@@ -13,6 +13,7 @@ class Home extends React.Component {
     super(props);
     this.userSession = new UserSession();
     this.yearList = null;
+    this.timeline = new TimelineMax({ paused: true });
   }
 
   componentDidMount() {
