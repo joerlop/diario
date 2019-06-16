@@ -46,7 +46,7 @@ class Home extends React.Component {
         </div>
         <div ref={div => (this.yearList = div)} className={`YearList`}>
         {this.props.gettingYears ? (
-              <Loader type="ThreeDots" color="#000000" height="10" width="20" />
+              <Loader type="ThreeDots" color="#000000" height="20" width="40" />
             ) : (
               this.props.postYears.length == 0 ? (
                 <h2>You have no posts yet!</h2>
