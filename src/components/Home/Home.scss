@@ -75,10 +75,11 @@ $brown-bg-color: #544343;
 
     .home {
       grid-area: home;
-      justify-self: center;
+      justify-self: end;
       align-self: center;
       text-decoration: none;
       color: black;
+      margin-right: 5px;
 
       &:hover {
         color: white;
@@ -87,10 +88,11 @@ $brown-bg-color: #544343;
 
     .newpost {
       grid-area: newpost;
-      justify-self: center;
+      justify-self: start;
       align-self: center;
       text-decoration: none;
       color: black;
+      margin-left: 5px;
 
       &:hover {
         color: white;
