@@ -70,13 +70,12 @@ $brown-bg-color: #544343;
       align-self: center;
       font-size: 30px;
       font-weight: bold;
-      margin: 0 30px;
       color: #1f1919;
     }
 
     .home {
       grid-area: home;
-      justify-self: end;
+      justify-self: center;
       align-self: center;
       text-decoration: none;
       color: black;
@@ -88,7 +87,7 @@ $brown-bg-color: #544343;
 
     .newpost {
       grid-area: newpost;
-      justify-self: start;
+      justify-self: center;
       align-self: center;
       text-decoration: none;
       color: black;
