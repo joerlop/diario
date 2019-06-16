@@ -43,13 +43,17 @@ class Home extends React.Component {
           </NavLink>
         </div>
         <div ref={div => (this.yearList = div)} className={`YearList`}>
-          {this.props.postYears.length == 0 ? (
-            <h2>You have no posts yet!</h2>
-          ) : (
-            this.props.postYears.map(year => (
-              <Year year={year} posts={this.props.posts} />
-            ))
-          )}
+        {this.props.gettingYears ? (
+              <Loader type="ThreeDots" color="#000000" height="10" width="20" />
+            ) : (
+              this.props.postYears.length == 0 ? (
+                <h2>You have no posts yet!</h2>
+              ) : (
+                this.props.postYears.map(year => (
+                  <Year year={year} posts={this.props.posts} />
+                ))
+              )
+            )}
         </div>
       </div>
     );
@@ -58,7 +62,8 @@ class Home extends React.Component {
 
 const mapStateToProps = state => ({
   posts: state.postsReducer.posts,
-  postYears: state.postsReducer.postYears
+  postYears: state.postsReducer.postYears,
+  gettingYears: state.postsReducer.gettingYears
 });
 
 export default connect(
