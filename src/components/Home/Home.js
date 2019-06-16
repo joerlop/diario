@@ -36,11 +36,11 @@ class Home extends React.Component {
     return (
       <div className="Home-container">
         <div className="Navigation">
-          <NavLink className="navlink" to={`/home`}>
+          <NavLink className="home" to={`/home`}>
             <p>home</p>
           </NavLink>
           <h2>diario</h2>
-          <NavLink className="navlink" to={`/newpost`}>
+          <NavLink className="newpost" to={`/newpost`}>
             <p>new post</p>
           </NavLink>
         </div>
