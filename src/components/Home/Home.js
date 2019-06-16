@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Power1 } from "gsap/src/uncompressed/TweenMax";
 import TimelineMax from "gsap/src/uncompressed/TimelineMax";
+import Loader from "react-loader-spinner";
+
 
 class Home extends React.Component {
   constructor(props) {
