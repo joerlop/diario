@@ -27,6 +27,8 @@ class Home extends React.Component {
       delay: 0.25,
       ease: Power1.easeIn
     })
+
+    this.timeline.play();
   }
 
   render() {
