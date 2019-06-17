@@ -132,8 +132,10 @@ $brown-bg-color: #544343;
         overflow: hidden;
         transition: height 0.3s ease-out;
         
-        .Month {
-          margin: 20px 0;
+        .Month-Container {
+          .Month {
+            margin: 20px 0;
+          }
         }
       }
     }

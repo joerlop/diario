@@ -29,7 +29,7 @@ class Year extends React.Component {
           <h2>{this.props.year.year}</h2>
         </div>
         <div style={{ height: currentHeight + "px" }} className={`MonthList`}>
-          <div ref="inner">
+          <div className="Month-Container" ref="inner">
             {this.props.year.months.map(month => (
               <Month
                 year={this.props.year.year}
