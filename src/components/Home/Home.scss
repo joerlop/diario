@@ -112,9 +112,8 @@ $brown-bg-color: #544343;
     .Year-Container {
       border-radius: 5px;
       width: 80%;
-      padding: 15px 5px;
       background: white;
-      margin-bottom: 2px;
+      margin-bottom: 2.5px;
       text-align: center;
       cursor: pointer;
 
@@ -126,8 +125,7 @@ $brown-bg-color: #544343;
         color: black;
         font-weight: bold;
         font-size: 20px;
-        margin: 5px 0 10px 0;
-        height: 100%;
+        padding: 15px 0;
       }
 
       .MonthList {

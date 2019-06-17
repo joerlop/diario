@@ -24,8 +24,8 @@ class Year extends React.Component {
     const currentHeight = open ? height : 0;
 
     return (
-      <div onClick={e => this.handleToggle(e)} className="Year-Container">
-        <div className="Year">
+      <div className="Year-Container">
+        <div onClick={e => this.handleToggle(e)} className="Year">
           <h2>{this.props.year.year}</h2>
         </div>
         <div style={{ height: currentHeight + "px" }} className={`MonthList`}>
