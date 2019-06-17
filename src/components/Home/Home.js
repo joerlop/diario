@@ -32,6 +32,16 @@ class Home extends React.Component {
     });
   }
 
+  reverseTimeline = event => {
+    event.preventDefault();
+    this.timeline.reverse();
+    const timelineDuration = this.timeline.duration()*1000;
+    console.log(timelineDuration);
+    setTimeout(() => {
+      this.props.history.push("/newpost");
+    }, timelineDuration);
+  }
+
   render() {
     return (
       <div className="Home-container">
@@ -40,7 +50,7 @@ class Home extends React.Component {
             <p>home</p>
           </NavLink>
           <h2>diario</h2>
-          <NavLink className="newpost" to={`/newpost`}>
+          <NavLink onClick={e => this.reverseTimeline(e)} className="newpost" to={`/newpost`}>
             <p>new post</p>
           </NavLink>
         </div>
