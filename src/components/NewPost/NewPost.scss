@@ -12,27 +12,48 @@ $base-font-size: 13px;
     "back   text-editor   date"
     ".      save          .";
 
-  .Navigation {
-    grid-area: navigation;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    h2 {
-      font-size: 30px;
-      margin: 0 30px;
-      font-weight: bold;
-      color: #1f1919;
-    }
-
-    .navlink {
-      text-decoration: none;
-      color: black;
-
-      &:hover {
-        color: white;
+    .Navigation {
+      grid-area: navigation;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+      "home      logo       newpost";
+  
+      h2 {
+        grid-area: logo;
+        justify-self: center;
+        align-self: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #1f1919;
       }
-    }
+  
+      .home {
+        grid-area: home;
+        justify-self: end;
+        align-self: center;
+        text-decoration: none;
+        color: black;
+        margin-right: 3px;
+  
+        &:hover {
+          color: white;
+        }
+      }
+  
+      .newpost {
+        grid-area: newpost;
+        justify-self: start;
+        align-self: center;
+        text-decoration: none;
+        color: black;
+  
+        &:hover {
+          color: white;
+        }
+      }
+  
   }
 
   .Feeling {

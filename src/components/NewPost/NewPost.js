@@ -172,11 +172,11 @@ class NewPost extends React.Component {
     return (
       <div className="NewPost-container">
         <div className="Navigation">
-          <NavLink onClick={e => this.reverseTimeline(e)} className="navlink" to={`/home`}>
+          <NavLink onClick={e => this.reverseTimeline(e)} className="home" to={`/home`}>
             <p>home</p>
           </NavLink>
           <h2>diario</h2>
-          <NavLink className="navlink" to={`/newpost`}>
+          <NavLink className="newpost" to={`/newpost`}>
             <p>new post</p>
           </NavLink>
         </div>
