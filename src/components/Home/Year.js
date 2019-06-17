@@ -20,6 +20,9 @@ class Year extends React.Component {
 }
 
   render() {
+    const {open, height} = this.state;
+    const currentHeight = open ? height : 0;
+
     return (
       <div className="Year-Container">
         <div onClick={e => this.handleToggle(e)} className="Year">
