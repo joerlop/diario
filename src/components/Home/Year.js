@@ -25,9 +25,9 @@ class Year extends React.Component {
   toggleTimeline = event => {
     event.preventDefault();
     if (this.state.open) {
-      this.timeline.play();
-    } else {
       this.timeline.reverse();
+    } else {
+      this.timeline.play();
     }
 
     this.setState({
