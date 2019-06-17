@@ -11,31 +11,33 @@ class Year extends React.Component {
     };
   }
 
-  handleToggle(e){
+  handleToggle(e) {
     e.preventDefault();
     this.setState({
-        open: !this.state.open,
-        height: this.refs.inner.clientHeight
-    })
-}
+      open: !this.state.open,
+      height: this.refs.inner.clientHeight
+    });
+  }
 
   render() {
-    const {open, height} = this.state;
+    const { open, height } = this.state;
     const currentHeight = open ? height : 0;
 
     return (
-      <div className="Year-Container">
-        <div onClick={e => this.handleToggle(e)} className="Year">
+      <div onClick={e => this.handleToggle(e)} className="Year-Container">
+        <div className="Year">
           <h2>{this.props.year.year}</h2>
         </div>
-        <div style={{height: currentHeight+'px'}} ref="inner" className={`MonthList`}>
-          {this.props.year.months.map(month => (
-            <Month
-              year={this.props.year.year}
-              month={month}
-              posts={this.props.posts}
-            />
-          ))}
+        <div style={{ height: currentHeight + "px" }} className={`MonthList`}>
+          <div ref="inner">
+            {this.props.year.months.map(month => (
+              <Month
+                year={this.props.year.year}
+                month={month}
+                posts={this.props.posts}
+              />
+            ))}
+          </div>
         </div>
       </div>
     );
