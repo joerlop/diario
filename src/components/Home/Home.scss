@@ -137,6 +137,9 @@ $brown-bg-color: #544343;
 
           .Month {
             margin: 10px 0;
+            border: 2px solid $brown-bg-color;
+            padding: 5px 0;
+            border-radius: 5px;
           }
         }
       }
