@@ -115,13 +115,13 @@ $brown-bg-color: #544343;
       background: white;
       margin-bottom: 2.5px;
       text-align: center;
-      cursor: pointer;
 
       &:hover {
         @include shadow-drop-2-center
       }
 
       .Year {
+        cursor: pointer;
         color: black;
         font-weight: bold;
         font-size: 20px;
