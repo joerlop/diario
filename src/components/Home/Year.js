@@ -28,8 +28,8 @@ class Year extends React.Component {
         <div onClick={e => this.handleToggle(e)} className="Year">
           <h2>{this.props.year.year}</h2>
         </div>
-        <div className={`MonthList`}>
-          <div className="Month-Container" style={{ height: currentHeight + "px" }} ref="inner">
+        <div className={`MonthList`} style={{ height: currentHeight + "px" }}>
+          <div className="Month-Container" ref="inner">
             {this.props.year.months.map(month => (
               <Month
                 year={this.props.year.year}
