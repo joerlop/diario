@@ -127,6 +127,11 @@ $brown-bg-color: #544343;
         font-weight: bold;
         font-size: 20px;
       }
+
+      .MonthList {
+        overflow: hidden;
+        transition: height 0.3s ease-out;  
+      }
     }
   }
 }

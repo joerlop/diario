@@ -9,39 +9,23 @@ class Year extends React.Component {
     this.state = {
       open: false
     };
-    this.monthList = null;
-    this.timeline = new TimelineMax({ paused: true });
   }
 
-  componentDidMount() {
-    this.timeline.from(this.monthList, 0.5, {
-      display: "none",
-      autoAlpha: 0,
-      delay: 0.25,
-      ease: Power1.easeIn
-    });
-  }
-
-  toggleTimeline = event => {
-    event.preventDefault();
-    if (this.state.open) {
-      this.timeline.reverse();
-    } else {
-      this.timeline.play();
-    }
-
+  handleToggle(e){
+    e.preventDefault();
     this.setState({
-      open: !this.state.open
+        open: !this.state.open,
+        height: this.refs.inner.clientHeight
     })
-  };
+}
 
   render() {
     return (
       <div className="Year-Container">
-        <div onClick={e => this.toggleTimeline(e)} className="Year">
+        <div onClick={e => this.handleToggle(e)} className="Year">
           <h2>{this.props.year.year}</h2>
         </div>
-        <div ref={div => (this.monthList = div)} className={`MonthList`}>
+        <div style={{height: currentHeight+'px'}} ref="inner" className={`MonthList`}>
           {this.props.year.months.map(month => (
             <Month
               year={this.props.year.year}
