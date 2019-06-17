@@ -129,13 +129,14 @@ $brown-bg-color: #544343;
       }
 
       .MonthList {
-        
+        overflow: hidden;
+        transition: height 0.3s ease-out;
+
         .Month-Container {
-          overflow: hidden;
-          transition: height 0.3s ease-out;
+          margin-top: 20px;
 
           .Month {
-            margin: 20px 0;
+            margin: 5px 0;
           }
         }
       }
