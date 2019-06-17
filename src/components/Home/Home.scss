@@ -126,11 +126,16 @@ $brown-bg-color: #544343;
         color: black;
         font-weight: bold;
         font-size: 20px;
+        margin: 5px 0 10px 0;
       }
 
       .MonthList {
         overflow: hidden;
-        transition: height 0.3s ease-out;  
+        transition: height 0.3s ease-out;
+        
+        .Month {
+          margin: 5px 0;
+        }
       }
     }
   }
