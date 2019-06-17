@@ -1,5 +1,7 @@
 import React from "react";
 import Month from "./Month";
+import TimelineMax from "gsap/src/uncompressed/TimelineMax";
+import Loader from "react-loader-spinner";
 
 class Year extends React.Component {
   constructor(props) {
