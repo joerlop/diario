@@ -11,11 +11,14 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div
-        className={`Post`}
-        dangerouslySetInnerHTML={{ __html: this.props.post.data }}
-      >
-        <p className="day">{this.props.post.day}</p>
+      <div className="Post">
+        <div
+          className={`Title`}
+          dangerouslySetInnerHTML={{ __html: this.props.post.data }}
+        />
+        <div className="Characteristics">
+          <p>{this.props.post.day}</p>
+        </div>
       </div>
     );
   }
