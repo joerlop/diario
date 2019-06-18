@@ -31,7 +31,7 @@ class Month extends React.Component {
 
     return (
       <div className={`Month`}>
-        <div className={`Title Title-${this.state.open}`} onClick={e => this.handleToggle(e)}>
+        <div className={`Title`} onClick={e => this.handleToggle(e)}>
           <h3>{this.props.month}</h3>
         </div>
         <div className={`PostList`} style={{ height: currentHeight + "px" }}>
