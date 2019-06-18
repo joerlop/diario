@@ -160,6 +160,12 @@ $brown-bg-color: #544343;
                 flex-direction: column;
                 align-items: center;
                 flex-wrap: wrap;
+
+                .Post {
+                  width: 90%;
+                  padding: 5px 0;
+                  border-bottom: 1px solid lightgray;
+                }
               }
             }
           }
