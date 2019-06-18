@@ -20,7 +20,7 @@ class Month extends React.Component {
       () => {
         console.log(prevHeight);
         this.state.open ?
-        this.props.updateHeightYear(prevHeight) : this.props.updateHeightYear(-prevHeight);
+        this.props.updateHeightYear(this.state.height) : this.props.updateHeightYear(-prevHeight);
       }
     );
   }
