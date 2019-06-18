@@ -30,8 +30,10 @@ class Month extends React.Component {
     const currentHeight = open ? height : 0;
 
     return (
-      <div onClick={e => this.handleToggle(e)} className={`Month`}>
-        <h3>{this.props.month}</h3>
+      <div className={`Month`}>
+        <div className="Title" onClick={e => this.handleToggle(e)}>
+          <h3>{this.props.month}</h3>
+        </div>
         <div className={`PostList`} style={{ height: currentHeight + "px" }}>
           <div className="Post-Container" ref="inner">
             {this.props.posts.map(post => {

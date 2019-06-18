@@ -140,12 +140,15 @@ $brown-bg-color: #544343;
           flex-wrap: wrap;
 
           .Month {
-            cursor: pointer;
             width: 90%;
             margin-bottom: 10px;
             border: 1px solid lightgray;
-            padding: 5px 0;
             border-radius: 5px;
+
+            .Title {
+              cursor: pointer;
+              padding: 5px 0;
+            }
 
             .PostList {
               overflow: hidden;
