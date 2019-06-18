@@ -11,11 +11,15 @@ class Month extends React.Component {
 
   handleToggle(e) {
     e.preventDefault();
-    this.setState({
-      open: !this.state.open,
-      height: this.refs.inner.clientHeight
-    });
-    this.props.updateHeightYear(this.props.yearRef);
+    this.setState(
+      {
+        open: !this.state.open,
+        height: this.refs.inner.clientHeight
+      },
+      () => {
+        this.props.updateHeightYear(this.props.yearRef);
+      }
+    );
   }
 
   render() {
