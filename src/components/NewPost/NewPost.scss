@@ -95,9 +95,10 @@ $base-font-size: 13px;
     border-radius: 10px;
 
     //font-size del texto dentro del editor
-    /*p {
-      font-size: $base-font-size;
-    }*/
+    p {
+      font-size: 14px;
+      line-height: 1.2;
+    }
   }
 
   .Date {
