@@ -29,6 +29,7 @@ class Home extends React.Component {
       });
 
       this.timeline.play();
+      console.log(this.props.postYears)
     });
   }
 
