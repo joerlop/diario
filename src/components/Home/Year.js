@@ -17,10 +17,10 @@ class Year extends React.Component {
     });
   }
 
-  updateHeight() {
+  updateHeight(elem) {
     this.setState({
       ...this.state,
-      height: this.refs.inner.clientHeight
+      height: elem.clientHeight
     });
   }
 
@@ -37,6 +37,7 @@ class Year extends React.Component {
           <div className="Month-Container" ref="inner">
             {this.props.year.months.map(month => (
               <Month
+                yearRef={this.refs.inner}
                 updateHeightYear={this.updateHeight}
                 year={this.props.year.year}
                 month={month}
