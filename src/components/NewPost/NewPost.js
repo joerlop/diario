@@ -91,6 +91,7 @@ class NewPost extends React.Component {
   }
 
   savePost = event => {
+    console.log("save");
     event.preventDefault();
     const data = localStorage.getItem("data");
     const posts = this.props.posts;

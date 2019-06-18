@@ -100,12 +100,7 @@ export const postsReducer = (state = initialState, action) => {
           ...state,
           gettingYears: false,
           yearError: "",
-          postYears: [
-            {
-              year: "",
-              months: []
-            }
-          ]
+          postYears: []
         };
       } else {
         return {
