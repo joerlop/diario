@@ -14,7 +14,9 @@ class Post extends React.Component {
       <div
         className={`Post`}
         dangerouslySetInnerHTML={{ __html: this.props.post.data }}
-      />
+      >
+        <p className="day">{this.props.post.day}</p>
+      </div>
     );
   }
 }
