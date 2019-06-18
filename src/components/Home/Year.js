@@ -17,17 +17,10 @@ class Year extends React.Component {
     });
   }
 
-  updateHeight = (elem) => {
+  updateHeight = (monthHeight) => {
     this.setState({
       ...this.state,
-      height: elem.clientHeight
-    });
-  }
-
-  componentDidUpdate() {
-    this.setState({
-      ...this.state,
-      height: this.refs.inner.clientHeight
+      height: this.state.height + monthHeight 
     });
   }
 
