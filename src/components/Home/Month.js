@@ -15,6 +15,7 @@ class Month extends React.Component {
       open: !this.state.open,
       height: this.refs.inner.clientHeight
     });
+    this.props.updateHeightYear();
   }
 
   render() {

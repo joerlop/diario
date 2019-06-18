@@ -17,6 +17,13 @@ class Year extends React.Component {
     });
   }
 
+  updateHeight() {
+    this.setState({
+      ...this.state,
+      height: this.refs.inner.clientHeight
+    });
+  }
+
   render() {
     const { open, height } = this.state;
     const currentHeight = open ? height : 0;
@@ -30,6 +37,7 @@ class Year extends React.Component {
           <div className="Month-Container" ref="inner">
             {this.props.year.months.map(month => (
               <Month
+                updateHeightYear={this.updateHeight}
                 year={this.props.year.year}
                 month={month}
                 posts={this.props.posts}
