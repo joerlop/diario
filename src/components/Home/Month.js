@@ -30,7 +30,7 @@ class Month extends React.Component {
     const currentHeight = open ? height : 0;
 
     return (
-      <div className={`Month`}>
+      <div className={`Month Month-${this.state.open}`}>
         <div className="Title" onClick={e => this.handleToggle(e)}>
           <h3>{this.props.month}</h3>
         </div>
