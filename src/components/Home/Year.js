@@ -17,7 +17,7 @@ class Year extends React.Component {
     });
   }
 
-  updateHeight(elem) {
+  updateHeight = (elem) => {
     this.setState({
       ...this.state,
       height: elem.clientHeight
