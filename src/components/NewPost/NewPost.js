@@ -25,9 +25,6 @@ const months = [
 ];
 
 const today = new Date();
-const day = today.getDate();
-const month = today.getMonth();
-const year = today.getFullYear();
 
 class NewPost extends React.Component {
   constructor(props) {
@@ -38,7 +35,8 @@ class NewPost extends React.Component {
         date: null,
         data: null,
         month: null,
-        year: null
+        year: null,
+        day: null
       }
     };
     this.userSession = new UserSession();
@@ -52,14 +50,19 @@ class NewPost extends React.Component {
 
   componentDidMount() {
     const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
     const timestamp = date.getTime();
+    
     this.setState({
       post: {
         id: timestamp,
         date: `${day} ${months[month]} ${year}`,
         data: null,
         month: `${months[month]}`,
-        year: `${year}`
+        year: `${year}`,
+        day: `${day}`
       }
     });
 
