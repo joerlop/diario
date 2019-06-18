@@ -150,6 +150,10 @@ $brown-bg-color: #544343;
               padding: 5px 0;
             }
 
+            .Title-true {
+              font-weight: bold;
+            }
+
             .PostList {
               overflow: hidden;
               transition: height 0.3s ease-out;
