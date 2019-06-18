@@ -24,6 +24,13 @@ class Year extends React.Component {
     });
   }
 
+  componentDidUpdate() {
+    this.setState({
+      ...this.state,
+      height: this.refs.inner.clientHeight
+    });
+  }
+
   render() {
     const { open, height } = this.state;
     const currentHeight = open ? height : 0;
