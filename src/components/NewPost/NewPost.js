@@ -54,7 +54,7 @@ class NewPost extends React.Component {
     const month = date.getMonth();
     const year = date.getFullYear();
     const timestamp = date.getTime();
-    
+
     this.setState({
       post: {
         id: timestamp,
@@ -98,7 +98,7 @@ class NewPost extends React.Component {
       {
         post: {
           ...this.state.post,
-          date: `${day} ${months[month]} ${year}`,
+          date: `${this.state.post.day} ${this.state.post.month} ${this.state.post.year}`,
           data: data
         }
       },
