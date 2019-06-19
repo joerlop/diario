@@ -103,14 +103,14 @@ export const postsReducer = (state = initialState, action) => {
         return {
           ...state,
           gettingYears: false,
-          gettingYearsError: "null",
+          gettingYearsError: null,
           postYears: []
         };
       } else {
         return {
           ...state,
           gettingYears: false,
-          gettingYearsError: "null",
+          gettingYearsError: null,
           postYears: [...action.payload]
         };
       }
