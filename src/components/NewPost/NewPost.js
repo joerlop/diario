@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import "./NewPost.scss";
 import { Power1 } from "gsap/src/uncompressed/TweenMax";
 import TimelineMax from "gsap/src/uncompressed/TimelineMax";
+import Loader from "react-loader-spinner";
 
 const months = [
   "January",
@@ -72,33 +73,32 @@ class NewPost extends React.Component {
     this.props.getYears(this.userSession);
 
     if (!this.props.gettingPostsError && !this.props.gettingYearsError) {
-
       this.timeline
-      .from(this.title, 0.4, {
-        autoAlpha: 0,
-        delay: 0.3,
-        ease: Power1.easeIn
-      })
-      .from(this.editor, 0.4, {
-        autoAlpha: 0,
-        y: 25,
-        ease: Power1.easeInOut
-      })
-      .from(this.feeling, 0.3, {
-        autoAlpha: 0,
-        ease: Power1.easeIn
-      })
-      .from(this.save, 0.3, {
-        autoAlpha: 0,
-        ease: Power1.easeIn
-      })
-      .from(this.date, 0.3, {
-        delay: 0.3,
-        autoAlpha: 0,
-        ease: Power1.easeIn
-      })
+        .from(this.title, 0.4, {
+          autoAlpha: 0,
+          delay: 0.3,
+          ease: Power1.easeIn
+        })
+        .from(this.editor, 0.4, {
+          autoAlpha: 0,
+          y: 25,
+          ease: Power1.easeInOut
+        })
+        .from(this.feeling, 0.3, {
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        })
+        .from(this.save, 0.3, {
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        })
+        .from(this.date, 0.3, {
+          delay: 0.3,
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        });
 
-    this.timeline.play();
+      this.timeline.play();
     }
 
     localStorage.removeItem("signingIn");
@@ -189,7 +189,13 @@ class NewPost extends React.Component {
   };
 
   render() {
-    return this.props.gettingPostsError || this.props.gettingYearsError ? (
+    return this.props.gettingYears || this.props.gettingPosts ? (
+      <div className="Loading">
+        <div className="Loader">
+          <Loader type="ThreeDots" color="#000000" height="15" width="30" />
+        </div>
+      </div>
+    ) : this.props.gettingPostsError || this.props.gettingYearsError ? (
       <div className="Error">
         <p>
           Oops! We had a problem retrieving your info. Please try again later.
@@ -249,7 +255,9 @@ const mapStateToProps = state => ({
   savingPost: state.postsReducer.savingPost,
   postYears: state.postsReducer.postYears,
   gettingPostsError: state.postsReducer.gettingPostsError,
-  gettingYearsError: state.postsReducer.gettingYearsError
+  gettingYearsError: state.postsReducer.gettingYearsError,
+  gettingPosts: state.postsReducer.gettingPosts,
+  gettingYears: state.postsReducer.gettingYears
 });
 
 export default connect(
