@@ -67,35 +67,38 @@ class NewPost extends React.Component {
       }
     });
 
-    this.props.getPosts(this.userSession);
-    this.props.getYears(this.userSession);
+    this.props.getPosts(this.userSession).then(() => {
+
+      this.props.getYears(this.userSession).then(() => {
+
+        this.timeline
+        .from(this.title, 0.4, {
+          autoAlpha: 0,
+          delay: 0.3,
+          ease: Power1.easeIn
+        })
+        .from(this.editor, 0.4, {
+          autoAlpha: 0,
+          y: 25,
+          ease: Power1.easeInOut
+        })
+        .from(this.date, 0.3, {
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        })
+        .from(this.feeling, 0.3, {
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        })
+        .from(this.save, 0.3, {
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        });
+        this.timeline.play();
+      })
+    });
+
     localStorage.removeItem("signingIn");
-
-    this.timeline
-      .from(this.title, 0.4, {
-        autoAlpha: 0,
-        delay: 0.3,
-        ease: Power1.easeIn
-      })
-      .from(this.editor, 0.4, {
-        autoAlpha: 0,
-        y: 25,
-        ease: Power1.easeInOut
-      })
-      .from(this.date, 0.3, {
-        autoAlpha: 0,
-        ease: Power1.easeIn
-      })
-      .from(this.feeling, 0.3, {
-        autoAlpha: 0,
-        ease: Power1.easeIn
-      })
-      .from(this.save, 0.3, {
-        autoAlpha: 0,
-        ease: Power1.easeIn
-      });
-
-    this.timeline.play();
   }
 
   savePost = event => {
@@ -184,7 +187,7 @@ class NewPost extends React.Component {
 
   render() {
     return (
-      this.props.gettingPostsError ? 
+      this.props.gettingPostsError || this.props.gettingYearsError ? 
       <div className="Error">
         <p>Oops! We had a problem retrieving your info. Please try again later.</p>
       </div>
@@ -241,7 +244,8 @@ const mapStateToProps = state => ({
   posts: state.postsReducer.posts,
   savingPost: state.postsReducer.savingPost,
   postYears: state.postsReducer.postYears,
-  gettingPostsError: state.postsReducer.gettingPostsError
+  gettingPostsError: state.postsReducer.gettingPostsError,
+  gettingYearsError: state.postsReducer.gettingYearsError
 });
 
 export default connect(

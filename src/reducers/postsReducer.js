@@ -21,8 +21,9 @@ const initialState = {
   gettingPosts: false,
   savingYear: false,
   gettingYears: false,
+  gettingYearsError: false,
   postYears: [],
-  yearError: ""
+  yearError: null
 };
 
 export const postsReducer = (state = initialState, action) => {
@@ -48,6 +49,7 @@ export const postsReducer = (state = initialState, action) => {
     case GET_POSTS_START:
       return {
         ...state,
+        gettingPostsError: null,
         gettingPosts: true
       };
     case GET_POSTS_SUCCESS:
@@ -81,7 +83,7 @@ export const postsReducer = (state = initialState, action) => {
       return {
         ...state,
         savingYear: false,
-        yearError: "",
+        yearError: null,
         posts: [...action.payload]
       };
     case SAVE_YEAR_FAILURE:
@@ -93,6 +95,7 @@ export const postsReducer = (state = initialState, action) => {
     case GET_YEARS_START:
       return {
         ...state,
+        gettingYearsError: null,
         gettingYears: true
       };
     case GET_YEARS_SUCCESS:
@@ -100,21 +103,21 @@ export const postsReducer = (state = initialState, action) => {
         return {
           ...state,
           gettingYears: false,
-          yearError: "",
+          gettingYearsError: null,
           postYears: []
         };
       } else {
         return {
           ...state,
           gettingYears: false,
-          yearError: "",
+          gettingYearsError: null,
           postYears: [...action.payload]
         };
       }
     case GET_YEARS_FAILURE:
       return {
         ...state,
-        yearError: action.payload,
+        gettingYearsError: "Error",
         savingPost: false
       };
     default:
