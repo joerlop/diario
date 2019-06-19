@@ -188,6 +188,9 @@ class NewPost extends React.Component {
           <button>How are you feeling today?</button>
           <span class="ec ec-slightly-smiling-face" />
         </div>
+        <div className="post-title">
+          <input type="text" placeholder="Title"></input>
+        </div>
         <div ref={div => (this.editor = div)} className="Editor">
           <NewEditor />
         </div>

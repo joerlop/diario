@@ -4,11 +4,12 @@ $base-font-size: 13px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 650px 1fr;
-  grid-template-rows: 50px 70px 150px 1fr 50px;
+  grid-template-rows: 50px 40px 40px 150px 1fr 50px;
   grid-template-areas: 
     ".      .             ."
     ".      navigation    ."
     ".      feeling       ."
+    ".      title         ."
     "back   text-editor   date"
     ".      save          .";
 
@@ -74,14 +75,23 @@ $base-font-size: 13px;
     }
   }
 
-  .Back {
-    grid-area: back;
+  .post-title {
+    grid-area: title;
+    justify-self: start;
     align-self: center;
-    justify-self: end;
+    width: 100%;
 
-    img {
-      height: 50px;
-      margin-right: 50px;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: $base-font-size;      
     }
   }
 
