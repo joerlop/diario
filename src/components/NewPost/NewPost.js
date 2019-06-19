@@ -71,6 +71,8 @@ class NewPost extends React.Component {
 
     this.props.getYears(this.userSession);
 
+    console.log(!this.props.gettingPostsError && !this.props.gettingYearsError)
+
     if (!this.props.gettingPostsError && !this.props.gettingYearsError) {
       this.timeline
         .from(this.title, 0.4, {
