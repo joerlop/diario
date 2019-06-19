@@ -45,6 +45,7 @@ class NewPost extends React.Component {
     this.editor = null;
     this.date = null;
     this.save = null;
+    this.title = null;
     this.timeline = new TimelineMax({ paused: true });
   }
 
@@ -75,6 +76,10 @@ class NewPost extends React.Component {
         display: "none",
         autoAlpha: 0,
         delay: 0.25,
+        ease: Power1.easeIn
+      })
+      .from(this.title, 0.25, {
+        autoAlpha: 0,
         ease: Power1.easeIn
       })
       .from(this.editor, 0.25, { autoAlpha: 0, y: 25, ease: Power1.easeInOut })
@@ -164,7 +169,7 @@ class NewPost extends React.Component {
 
   reverseTimeline = event => {
     event.preventDefault();
-    this.timeline.reverse(0.75);
+    this.timeline.reverse(0.85);
     const timelineDuration = this.timeline.duration()*1000;
     console.log(timelineDuration);
     setTimeout(() => {
@@ -188,7 +193,7 @@ class NewPost extends React.Component {
           <button>How are you feeling today?</button>
           <span class="ec ec-slightly-smiling-face" />
         </div>
-        <div className="post-title">
+        <div ref={div => (this.title = div)} className="post-title">
           <input type="text" placeholder="Title"></input>
         </div>
         <div ref={div => (this.editor = div)} className="Editor">
