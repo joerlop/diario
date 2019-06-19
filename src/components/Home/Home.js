@@ -61,7 +61,10 @@ class Home extends React.Component {
               <Loader type="ThreeDots" color="#000000" height="15" width="30" />
             ) : (
               this.props.postYears.length == 0 ? (
-                <h2>You have no posts yet!</h2>
+                <div className="noposts">
+                  <h2>You have no posts yet!</h2>
+                  <button>Go write!</button>
+                </div>
               ) : (
                 this.props.postYears.map(year => (
                   <Year year={year} posts={this.props.posts} />

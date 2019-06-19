@@ -109,6 +109,27 @@ $brown-bg-color: #544343;
     justify-content: center;
     align-items: center;
 
+    .noposts {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      button {
+        background: white;
+        border-radius: 50%;
+        font-weight: bold;
+
+        &:hover {
+          box-shadow: 0 0 5px #b0a8a6;
+        }
+      }
+    }
+
     .Year-Container {
       border-radius: 5px;
       width: 100%;
