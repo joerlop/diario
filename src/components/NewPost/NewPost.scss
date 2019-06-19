@@ -140,6 +140,7 @@ $base-font-size: 13px;
       display: flex;
       justify-self: flex-start;
       align-self: center;
+      align-items: center;
 
       p {
         margin-left: 5px;
@@ -151,9 +152,10 @@ $base-font-size: 13px;
         margin-right: 5px;
         padding: 5px;
         border-radius: 5px;
+        background: white;
 
         &:hover {
-          background: lighten(white, 20%);
+          opacity: 0.8;
         }
       }
     }
