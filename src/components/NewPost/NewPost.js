@@ -67,41 +67,39 @@ class NewPost extends React.Component {
       }
     });
 
-    this.props.getPosts(this.userSession);
-
-    this.props.getYears(this.userSession);
-
-    console.log(!this.props.gettingPostsError && !this.props.gettingYearsError)
+    this.props.getPosts(this.userSession).then(() => {
+      this.props.getYears(this.userSession).then(() => {
+        this.timeline
+        .from(this.title, 0.4, {
+          autoAlpha: 0,
+          delay: 0.3,
+          ease: Power1.easeIn
+        })
+        .from(this.editor, 0.4, {
+          autoAlpha: 0,
+          y: 25,
+          ease: Power1.easeInOut
+        })
+        .from(this.feeling, 0.3, {
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        })
+        .from(this.save, 0.3, {
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        })
+        .from(this.date, 0.3, {
+          delay: 0.3,
+          autoAlpha: 0,
+          ease: Power1.easeIn
+        });
+        this.timeline.play();
+      })
+    });
 
     /*if (!this.props.gettingPostsError && !this.props.gettingYearsError) {
 
     }*/
-
-    this.timeline
-    .from(this.title, 0.4, {
-      autoAlpha: 0,
-      delay: 0.3,
-      ease: Power1.easeIn
-    })
-    .from(this.editor, 0.4, {
-      autoAlpha: 0,
-      y: 25,
-      ease: Power1.easeInOut
-    })
-    .from(this.feeling, 0.3, {
-      autoAlpha: 0,
-      ease: Power1.easeIn
-    })
-    .from(this.save, 0.3, {
-      autoAlpha: 0,
-      ease: Power1.easeIn
-    })
-    .from(this.date, 0.3, {
-      delay: 0.3,
-      autoAlpha: 0,
-      ease: Power1.easeIn
-    });
-    this.timeline.play();
 
     localStorage.removeItem("signingIn");
   }
