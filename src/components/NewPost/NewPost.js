@@ -67,36 +67,35 @@ class NewPost extends React.Component {
       }
     });
 
-    this.props.getPosts(this.userSession).then(() => {
+    this.props.getPosts(this.userSession);
 
-      this.props.getYears(this.userSession).then(() => {
+    this.props.getYears(this.userSession);
 
-        this.timeline
-        .from(this.title, 0.4, {
-          autoAlpha: 0,
-          delay: 0.3,
-          ease: Power1.easeIn
-        })
-        .from(this.editor, 0.4, {
-          autoAlpha: 0,
-          y: 25,
-          ease: Power1.easeInOut
-        })
-        .from(this.date, 0.3, {
-          autoAlpha: 0,
-          ease: Power1.easeIn
-        })
-        .from(this.feeling, 0.3, {
-          autoAlpha: 0,
-          ease: Power1.easeIn
-        })
-        .from(this.save, 0.3, {
-          autoAlpha: 0,
-          ease: Power1.easeIn
-        });
-        this.timeline.play();
+    this.timeline
+      .from(this.title, 0.4, {
+        autoAlpha: 0,
+        delay: 0.3,
+        ease: Power1.easeIn
       })
-    });
+      .from(this.editor, 0.4, {
+        autoAlpha: 0,
+        y: 25,
+        ease: Power1.easeInOut
+      })
+      .from(this.date, 0.3, {
+        autoAlpha: 0,
+        ease: Power1.easeIn
+      })
+      .from(this.feeling, 0.3, {
+        autoAlpha: 0,
+        ease: Power1.easeIn
+      })
+      .from(this.save, 0.3, {
+        autoAlpha: 0,
+        ease: Power1.easeIn
+      });
+      
+    this.timeline.play();
 
     localStorage.removeItem("signingIn");
   }
@@ -186,12 +185,13 @@ class NewPost extends React.Component {
   };
 
   render() {
-    return (
-      this.props.gettingPostsError || this.props.gettingYearsError ? 
+    return this.props.gettingPostsError || this.props.gettingYearsError ? (
       <div className="Error">
-        <p>Oops! We had a problem retrieving your info. Please try again later.</p>
+        <p>
+          Oops! We had a problem retrieving your info. Please try again later.
+        </p>
       </div>
-      :
+    ) : (
       <div className="NewPost-container">
         <div className="Navigation">
           <NavLink
