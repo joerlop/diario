@@ -1,31 +1,5 @@
 $base-font-size: 13px;
 
-.Loading {
-  display: grid;
-  grid-template-columns: 1fr 650px 1fr;
-  grid-template-rows: 50px 70px;
-  grid-template-areas: 
-    ".      .             ."
-    ".      loader    .";
-
-  .Loader {
-    grid-area: loader;
-    justify-self: center;
-    align-self: center;
-  }
-}
-
-.Error {
-  margin-top: 200px;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-
-  p {
-    width: auto;
-  }
-}
-
 .NewPost-container {
   width: 100%;
   display: grid;
@@ -81,6 +55,24 @@ $base-font-size: 13px;
         }
       }
   
+  }
+
+  .Loading {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .Error {
+    grid-area: title;
+    margin-top: 200px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+  
+    p {
+      width: auto;
+    }
   }
 
   .Feeling {

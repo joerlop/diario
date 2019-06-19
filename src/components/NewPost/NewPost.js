@@ -188,7 +188,72 @@ class NewPost extends React.Component {
   };
 
   render() {
-    return this.props.gettingYears || this.props.gettingPosts ? (
+    return (
+      <div className="NewPost-container">
+        <div className="Navigation">
+          <NavLink
+            onClick={e => this.reverseTimeline(e)}
+            className="home"
+            to={`/home`}
+          >
+            <p>home</p>
+          </NavLink>
+          <h2>diario</h2>
+          <NavLink className="newpost" to={`/newpost`}>
+            <p>new post</p>
+          </NavLink>
+        </div>
+
+        {this.props.gettingYears || this.props.gettingPosts ? (
+          <div className="Loading">
+            <div className="Loader">
+              <Loader type="ThreeDots" color="#000000" height="15" width="30" />
+            </div>
+          </div>
+        ) : this.props.gettingPostsError || this.props.gettingYearsError ? (
+          <div className="Error">
+            <p>
+              Oops! We had a problem retrieving your info. Please try again
+              later.
+            </p>
+          </div>
+        ) : (
+          <>
+            <div ref={div => (this.title = div)} className="post-title">
+              <input type="text" placeholder="Title" />
+            </div>
+            <div ref={div => (this.editor = div)} className="Editor">
+              <NewEditor />
+            </div>
+            <div ref={div => (this.date = div)} className="Date">
+              <p>{this.state.post.date}</p>
+            </div>
+            <div className="Below-Editor">
+              <div ref={div => (this.feeling = div)} className="Feeling_2">
+                <p>How are you feeling?</p>
+                <span class="ec ec-slightly-smiling-face" />
+              </div>
+              <div ref={div => (this.save = div)} className="Save">
+                <button onClick={e => this.savePost(e)}>
+                  {this.props.savingPost ? (
+                    <Loader
+                      type="ThreeDots"
+                      color="#000000"
+                      height="10"
+                      width="20"
+                    />
+                  ) : (
+                    "Save"
+                  )}
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    );
+
+    /*this.props.gettingYears || this.props.gettingPosts ? (
       <div className="Loading">
         <div className="Loader">
           <Loader type="ThreeDots" color="#000000" height="15" width="30" />
@@ -215,6 +280,7 @@ class NewPost extends React.Component {
             <p>new post</p>
           </NavLink>
         </div>
+        
         <div ref={div => (this.title = div)} className="post-title">
           <input type="text" placeholder="Title" />
         </div>
@@ -245,7 +311,7 @@ class NewPost extends React.Component {
           </div>
         </div>
       </div>
-    );
+    );*/
   }
 }
 
