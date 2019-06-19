@@ -192,7 +192,8 @@ $brown-bg-color: #544343;
                   display: flex;
                   justify-content: space-between;
                   align-items: flex-start;
-                  height: 20px;
+                  height: 31px;
+                  overflow: hidden;
 
                   .Content {
                     line-height: 1.25;
