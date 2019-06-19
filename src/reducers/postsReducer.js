@@ -57,14 +57,14 @@ export const postsReducer = (state = initialState, action) => {
         return {
           ...state,
           gettingPosts: false,
-          gettingpostsError: null,
+          gettingpostsError: "a",
           posts: []
         };
       } else {
         return {
           ...state,
           gettingPosts: false,
-          gettingpostsError: null,
+          gettingpostsError: "a",
           posts: [...action.payload]
         };
       }
