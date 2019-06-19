@@ -171,7 +171,7 @@ class NewPost extends React.Component {
 
   reverseTimeline = event => {
     event.preventDefault();
-    this.timeline.reverse(0.85);
+    this.timeline.reverse(1.5);
     const timelineDuration = this.timeline.duration() * 1000;
     console.log(timelineDuration);
     setTimeout(() => {
@@ -208,18 +208,25 @@ class NewPost extends React.Component {
         <div ref={div => (this.date = div)} className="Date">
           <p>{this.state.post.date}</p>
         </div>
-        <div ref={div => (this.save = div)} className="Save">
+        <div ref={div => (this.save = div)} className="Below-Editor">
           <div ref={div => (this.feeling_2 = div)} className="Feeling_2">
-            <button>How are you feeling?</button>
+            <p>How are you feeling?</p>
             <span class="ec ec-slightly-smiling-face" />
           </div>
-          <button onClick={e => this.savePost(e)}>
-            {this.props.savingPost ? (
-              <Loader type="ThreeDots" color="#000000" height="10" width="20" />
-            ) : (
-              "Save"
-            )}
-          </button>
+          <div className="Save">
+            <button onClick={e => this.savePost(e)}>
+              {this.props.savingPost ? (
+                <Loader
+                  type="ThreeDots"
+                  color="#000000"
+                  height="10"
+                  width="20"
+                />
+              ) : (
+                "Save"
+              )}
+            </button>
+          </div>
         </div>
       </div>
     );

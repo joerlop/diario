@@ -11,7 +11,7 @@ $base-font-size: 13px;
     ".      feeling       ."
     ".      title         ."
     "back   text-editor   date"
-    ".      save          .";
+    ".      below-editor  .";
 
     .Navigation {
       grid-area: navigation;
@@ -122,41 +122,50 @@ $base-font-size: 13px;
     writing-mode: vertical-rl;
   }
 
-  .Save {
-    grid-area: save;
+  .Below-Editor {
+    grid-area: below-editor;
     justify-self: center;
     align-self: center;
     margin-top: 10px;
-
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "feeling-2    save";
 
     .Feeling_2 {
+      grid-area: feeling-2;
       display: flex;
+      justify-self: flex-start;
 
       p {
         margin-right: 10px;
       }
     }
 
-    button {
-      background: white;
-      border: none;
-      padding: 5px;
-      width: 75px;
-      border-radius: 5px;
-      color: #CCCCCC;
-      font-size: $base-font-size;
-   
-      &:hover {
-        color: black;
-        cursor: pointer;
-      }
+    .Save {
+      grid-area: save;
+      justify-self: flex-end;
 
-      &:focus {
-        outline: 0;
+      button {
+        background: white;
+        border: none;
+        padding: 5px;
+        width: 75px;
+        border-radius: 5px;
+        color: #CCCCCC;
+        font-size: $base-font-size;
+     
+        &:hover {
+          color: black;
+          cursor: pointer;
+        }
+  
+        &:focus {
+          outline: 0;
+        }
       }
     }
   }
