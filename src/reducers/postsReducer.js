@@ -57,21 +57,21 @@ export const postsReducer = (state = initialState, action) => {
         return {
           ...state,
           gettingPosts: false,
-          gettingpostsError: "a",
+          gettingPostsError: "a",
           posts: []
         };
       } else {
         return {
           ...state,
           gettingPosts: false,
-          gettingpostsError: "a",
+          gettingPostsError: "a",
           posts: [...action.payload]
         };
       }
     case GET_POSTS_FAILURE:
       return {
         ...state,
-        gettingpostsError: "Error",
+        gettingPostsError: "Error",
         savingPost: false
       };
     case SAVE_YEAR_START:
