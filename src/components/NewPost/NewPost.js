@@ -82,10 +82,6 @@ class NewPost extends React.Component {
         y: 25,
         ease: Power1.easeInOut
       })
-      .from(this.date, 0.3, {
-        autoAlpha: 0,
-        ease: Power1.easeIn
-      })
       .from(this.feeling, 0.3, {
         autoAlpha: 0,
         ease: Power1.easeIn
@@ -93,8 +89,13 @@ class NewPost extends React.Component {
       .from(this.save, 0.3, {
         autoAlpha: 0,
         ease: Power1.easeIn
-      });
-      
+      })
+      .from(this.date, 0.3, {
+        delay: 0.3,
+        autoAlpha: 0,
+        ease: Power1.easeIn
+      })
+
     this.timeline.play();
 
     localStorage.removeItem("signingIn");
