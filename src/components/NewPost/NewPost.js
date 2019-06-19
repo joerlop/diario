@@ -98,9 +98,9 @@ class NewPost extends React.Component {
           autoAlpha: 0,
           ease: Power1.easeIn
         });
-
-      this.timeline.play();
     }
+
+    this.timeline.play();
 
     localStorage.removeItem("signingIn");
   }
