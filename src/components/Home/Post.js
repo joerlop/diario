@@ -13,7 +13,7 @@ class Post extends React.Component {
     return (
       <div className="Post">
         <div
-          className={`Title`}
+          className={`Content`}
           dangerouslySetInnerHTML={{ __html: this.props.post.data }}
         />
         <div className="Characteristics">

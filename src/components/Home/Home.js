@@ -63,7 +63,6 @@ class Home extends React.Component {
               this.props.postYears.length == 0 ? (
                 <div className="noposts">
                   <h2>You have no posts yet!</h2>
-                  <button><p>Go write!</p></button>
                 </div>
               ) : (
                 this.props.postYears.map(year => (
