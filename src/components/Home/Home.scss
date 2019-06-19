@@ -116,7 +116,7 @@ $brown-bg-color: #544343;
       align-items: center;
 
       h2 {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
       }
 
       button {
@@ -124,9 +124,12 @@ $brown-bg-color: #544343;
         border-radius: 15px;
         border: none;
         font-weight: bold;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
 
         &:hover {
-          box-shadow: 0 0 5px #b0a8a6;
+          box-shadow: 0 0 15px #b0a8a6;
         }
       }
     }
