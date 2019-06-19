@@ -182,7 +182,7 @@ $brown-bg-color: #544343;
                 padding-bottom: 10px;
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 flex-wrap: wrap;
 
                 .Post {
@@ -190,14 +190,6 @@ $brown-bg-color: #544343;
                   padding: 5px 0;
                   border-bottom: 1px solid lightgray;
                   display: flex;
-                  justify-content: space-between;
-                  align-items: flex-start;
-                  height: 20px;
-                  overflow: hidden;
-
-                  .Content {
-                    line-height: 1.25;
-                  }
                 }
               }
             }
