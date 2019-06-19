@@ -72,12 +72,12 @@ class NewPost extends React.Component {
     localStorage.removeItem("signingIn");
 
     this.timeline
-      .from(this.title, 0.3, {
+      .from(this.title, 0.4, {
         autoAlpha: 0,
         delay: 0.3,
         ease: Power1.easeIn
       })
-      .from(this.editor, 0.3, {
+      .from(this.editor, 0.4, {
         autoAlpha: 0,
         y: 25,
         ease: Power1.easeInOut
@@ -174,7 +174,7 @@ class NewPost extends React.Component {
 
   reverseTimeline = event => {
     event.preventDefault();
-    this.timeline.reverse(1.5);
+    this.timeline.reverse(1);
     const timelineDuration = this.timeline.duration() * 1000;
     console.log(timelineDuration);
     setTimeout(() => {
@@ -184,6 +184,11 @@ class NewPost extends React.Component {
 
   render() {
     return (
+      !this.props.gettingPostsError ? 
+      <div className="Error">
+        <p>Oops! We had a problem retrieving your info. Please try again later.</p>
+      </div>
+      :
       <div className="NewPost-container">
         <div className="Navigation">
           <NavLink
@@ -198,10 +203,6 @@ class NewPost extends React.Component {
             <p>new post</p>
           </NavLink>
         </div>
-        {/*<div ref={div => (this.feeling = div)} className="Feeling">
-          <button>How are you feeling today?</button>
-          <span class="ec ec-slightly-smiling-face" />
-        </div>*/}
         <div ref={div => (this.title = div)} className="post-title">
           <input type="text" placeholder="Title" />
         </div>
@@ -239,7 +240,8 @@ class NewPost extends React.Component {
 const mapStateToProps = state => ({
   posts: state.postsReducer.posts,
   savingPost: state.postsReducer.savingPost,
-  postYears: state.postsReducer.postYears
+  postYears: state.postsReducer.postYears,
+  gettingPostsError: state.postsReducer.gettingPostsError
 });
 
 export default connect(

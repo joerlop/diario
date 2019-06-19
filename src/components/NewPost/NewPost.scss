@@ -1,10 +1,16 @@
 $base-font-size: 13px;
 
+.Error {
+  width: 100%;
+  margin-top: 200px;
+  font-family: 'Poppins', sans-serif
+}
+
 .NewPost-container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 650px 1fr;
-  grid-template-rows: 50px 70px 100px 80px 1fr 50px;
+  grid-template-rows: 50px 70px 75px 80px 1fr 50px;
   grid-template-areas: 
     ".      .             ."
     ".      navigation    ."
