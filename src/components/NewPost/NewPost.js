@@ -72,18 +72,20 @@ class NewPost extends React.Component {
     localStorage.removeItem("signingIn");
 
     this.timeline
-      .from(this.feeling, 0.5, {
-        display: "none",
-        autoAlpha: 0,
-        delay: 0.25,
-        ease: Power1.easeIn
-      })
-      .from(this.title, 0.25, {
+      .from(this.title, 0.5, {
         autoAlpha: 0,
         ease: Power1.easeIn
       })
-      .from(this.editor, 0.25, { autoAlpha: 0, y: 25, ease: Power1.easeInOut })
+      .from(this.editor, 0.25, {
+        autoAlpha: 0,
+        y: 25,
+        ease: Power1.easeInOut
+      })
       .from(this.date, 0.25, {
+        autoAlpha: 0,
+        ease: Power1.easeIn
+      })
+      .from(this.feeling, 0.25, {
         autoAlpha: 0,
         ease: Power1.easeIn
       })
@@ -208,12 +210,12 @@ class NewPost extends React.Component {
         <div ref={div => (this.date = div)} className="Date">
           <p>{this.state.post.date}</p>
         </div>
-        <div ref={div => (this.save = div)} className="Below-Editor">
-          <div ref={div => (this.feeling_2 = div)} className="Feeling_2">
+        <div className="Below-Editor">
+          <div ref={div => (this.feeling = div)} className="Feeling_2">
             <p>How are you feeling?</p>
             <span class="ec ec-slightly-smiling-face" />
           </div>
-          <div className="Save">
+          <div ref={div => (this.save = div)} className="Save">
             <button onClick={e => this.savePost(e)}>
               {this.props.savingPost ? (
                 <Loader
