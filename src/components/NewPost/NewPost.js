@@ -8,7 +8,6 @@ import { NavLink } from "react-router-dom";
 import "./NewPost.scss";
 import { Power1 } from "gsap/src/uncompressed/TweenMax";
 import TimelineMax from "gsap/src/uncompressed/TimelineMax";
-import Loader from "react-loader-spinner";
 
 const months = [
   "January",
