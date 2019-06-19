@@ -195,10 +195,10 @@ class NewPost extends React.Component {
             <p>new post</p>
           </NavLink>
         </div>
-        <div ref={div => (this.feeling = div)} className="Feeling">
+        {/*<div ref={div => (this.feeling = div)} className="Feeling">
           <button>How are you feeling today?</button>
           <span class="ec ec-slightly-smiling-face" />
-        </div>
+        </div>*/}
         <div ref={div => (this.title = div)} className="post-title">
           <input type="text" placeholder="Title" />
         </div>
