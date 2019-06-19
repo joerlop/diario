@@ -72,7 +72,7 @@ class NewPost extends React.Component {
     this.props.getYears(this.userSession);
 
     if (!this.props.gettingPostsError && !this.props.gettingYearsError) {
-      
+
       this.timeline
       .from(this.title, 0.4, {
         autoAlpha: 0,
