@@ -184,7 +184,7 @@ class NewPost extends React.Component {
 
   render() {
     return (
-      !this.props.gettingPostsError ? 
+      this.props.gettingPostsError ? 
       <div className="Error">
         <p>Oops! We had a problem retrieving your info. Please try again later.</p>
       </div>
