@@ -65,8 +65,6 @@ $base-font-size: 13px;
     display: flex;
     align-items: center;
 
-    border-bottom: 1px solid lightgray;
-
     button{
       font-family: 'Poppins', sans-serif;
       background: white;
@@ -126,9 +124,22 @@ $base-font-size: 13px;
 
   .Save {
     grid-area: save;
-    justify-self: end;
+    justify-self: center;
     align-self: center;
     margin-top: 10px;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Feeling_2 {
+      display: flex;
+
+      p {
+        margin-right: 10px;
+      }
+    }
 
     button {
       background: white;

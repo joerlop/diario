@@ -104,7 +104,9 @@ class NewPost extends React.Component {
       {
         post: {
           ...this.state.post,
-          date: `${this.state.post.day} ${this.state.post.month} ${this.state.post.year}`,
+          date: `${this.state.post.day} ${this.state.post.month} ${
+            this.state.post.year
+          }`,
           data: data
         }
       },
@@ -170,18 +172,22 @@ class NewPost extends React.Component {
   reverseTimeline = event => {
     event.preventDefault();
     this.timeline.reverse(0.85);
-    const timelineDuration = this.timeline.duration()*1000;
+    const timelineDuration = this.timeline.duration() * 1000;
     console.log(timelineDuration);
     setTimeout(() => {
       this.props.history.push("/home");
     }, timelineDuration);
-  }
+  };
 
   render() {
     return (
       <div className="NewPost-container">
         <div className="Navigation">
-          <NavLink onClick={e => this.reverseTimeline(e)} className="home" to={`/home`}>
+          <NavLink
+            onClick={e => this.reverseTimeline(e)}
+            className="home"
+            to={`/home`}
+          >
             <p>home</p>
           </NavLink>
           <h2>diario</h2>
@@ -194,7 +200,7 @@ class NewPost extends React.Component {
           <span class="ec ec-slightly-smiling-face" />
         </div>
         <div ref={div => (this.title = div)} className="post-title">
-          <input type="text" placeholder="Title"></input>
+          <input type="text" placeholder="Title" />
         </div>
         <div ref={div => (this.editor = div)} className="Editor">
           <NewEditor />
@@ -203,6 +209,10 @@ class NewPost extends React.Component {
           <p>{this.state.post.date}</p>
         </div>
         <div ref={div => (this.save = div)} className="Save">
+          <div ref={div => (this.feeling_2 = div)} className="Feeling_2">
+            <button>How are you feeling?</button>
+            <span class="ec ec-slightly-smiling-face" />
+          </div>
           <button onClick={e => this.savePost(e)}>
             {this.props.savingPost ? (
               <Loader type="ThreeDots" color="#000000" height="10" width="20" />
