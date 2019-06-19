@@ -121,7 +121,8 @@ $brown-bg-color: #544343;
 
       button {
         background: white;
-        border-radius: 50%;
+        border-radius: 15px;
+        border: none;
         font-weight: bold;
 
         &:hover {
