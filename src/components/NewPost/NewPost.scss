@@ -75,24 +75,6 @@ $base-font-size: 13px;
     }
   }
 
-  .Feeling {
-    grid-area: feeling;
-    justify-self: start;
-    align-self: center;
-
-    display: flex;
-    align-items: center;
-
-    button{
-      font-family: 'Poppins', sans-serif;
-      background: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: $base-font-size;
-    }
-  }
-
   .post-title {
     grid-area: title;
     justify-self: start;
@@ -153,7 +135,7 @@ $base-font-size: 13px;
     grid-template-areas: 
     "feeling-2    save";
 
-    .Feeling_2 {
+    .Feeling {
       grid-area: feeling-2;
       display: flex;
       justify-self: flex-start;
@@ -163,6 +145,16 @@ $base-font-size: 13px;
         margin-left: 5px;
         margin-right: 10px;
         font-size: $base-font-size; 
+      }
+
+      .emoji {
+        margin-right: 10px;
+        padding: 10px;
+        border-radius: 5px;
+
+        &:hover {
+          background: lighten(white, 20%);
+        }
       }
     }
 

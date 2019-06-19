@@ -70,31 +70,31 @@ class NewPost extends React.Component {
     this.props.getPosts(this.userSession).then(() => {
       this.props.getYears(this.userSession).then(() => {
         this.timeline
-        .from(this.title, 0.4, {
-          autoAlpha: 0,
-          delay: 0.3,
-          ease: Power1.easeIn
-        })
-        .from(this.editor, 0.4, {
-          autoAlpha: 0,
-          y: 25,
-          ease: Power1.easeInOut
-        })
-        .from(this.feeling, 0.3, {
-          autoAlpha: 0,
-          ease: Power1.easeIn
-        })
-        .from(this.save, 0.3, {
-          autoAlpha: 0,
-          ease: Power1.easeIn
-        })
-        .from(this.date, 0.3, {
-          delay: 0.3,
-          autoAlpha: 0,
-          ease: Power1.easeIn
-        });
+          .from(this.title, 0.4, {
+            autoAlpha: 0,
+            delay: 0.3,
+            ease: Power1.easeIn
+          })
+          .from(this.editor, 0.4, {
+            autoAlpha: 0,
+            y: 25,
+            ease: Power1.easeInOut
+          })
+          .from(this.feeling, 0.3, {
+            autoAlpha: 0,
+            ease: Power1.easeIn
+          })
+          .from(this.save, 0.3, {
+            autoAlpha: 0,
+            ease: Power1.easeIn
+          })
+          .from(this.date, 0.3, {
+            delay: 0.3,
+            autoAlpha: 0,
+            ease: Power1.easeIn
+          });
         this.timeline.play();
-      })
+      });
     });
 
     /*if (!this.props.gettingPostsError && !this.props.gettingYearsError) {
@@ -230,9 +230,20 @@ class NewPost extends React.Component {
               <p>{this.state.post.date}</p>
             </div>
             <div className="Below-Editor">
-              <div ref={div => (this.feeling = div)} className="Feeling_2">
+              <div ref={div => (this.feeling = div)} className="Feeling">
                 <p>How are you feeling?</p>
-                <span class="ec ec-slightly-smiling-face" />
+                <div className="emoji happy">
+                  <span class="ec ec-sunglasses"></span>
+                </div>
+                <div className="emoji normal">
+                  <span class="ec ec-neutral-face"></span>
+                </div>
+                <div className="emoji angry">
+                  <span class="ec ec-rage"></span>
+                </div>
+                <div className="emoji sad">
+                  <span class="ec ec-disappointed"></span>
+                </div>
               </div>
               <div ref={div => (this.save = div)} className="Save">
                 <button onClick={e => this.savePost(e)}>
@@ -253,66 +264,6 @@ class NewPost extends React.Component {
         )}
       </div>
     );
-
-    /*this.props.gettingYears || this.props.gettingPosts ? (
-      <div className="Loading">
-        <div className="Loader">
-          <Loader type="ThreeDots" color="#000000" height="15" width="30" />
-        </div>
-      </div>
-    ) : this.props.gettingPostsError || this.props.gettingYearsError ? (
-      <div className="Error">
-        <p>
-          Oops! We had a problem retrieving your info. Please try again later.
-        </p>
-      </div>
-    ) : (
-      <div className="NewPost-container">
-        <div className="Navigation">
-          <NavLink
-            onClick={e => this.reverseTimeline(e)}
-            className="home"
-            to={`/home`}
-          >
-            <p>home</p>
-          </NavLink>
-          <h2>diario</h2>
-          <NavLink className="newpost" to={`/newpost`}>
-            <p>new post</p>
-          </NavLink>
-        </div>
-        
-        <div ref={div => (this.title = div)} className="post-title">
-          <input type="text" placeholder="Title" />
-        </div>
-        <div ref={div => (this.editor = div)} className="Editor">
-          <NewEditor />
-        </div>
-        <div ref={div => (this.date = div)} className="Date">
-          <p>{this.state.post.date}</p>
-        </div>
-        <div className="Below-Editor">
-          <div ref={div => (this.feeling = div)} className="Feeling_2">
-            <p>How are you feeling?</p>
-            <span class="ec ec-slightly-smiling-face" />
-          </div>
-          <div ref={div => (this.save = div)} className="Save">
-            <button onClick={e => this.savePost(e)}>
-              {this.props.savingPost ? (
-                <Loader
-                  type="ThreeDots"
-                  color="#000000"
-                  height="10"
-                  width="20"
-                />
-              ) : (
-                "Save"
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-    );*/
   }
 }
 
