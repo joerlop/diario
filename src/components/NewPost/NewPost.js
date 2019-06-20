@@ -308,17 +308,15 @@ class NewPost extends React.Component {
                   )}
                 </button>
               </div>
-              <div className="saveError">
-                {this.props.savingYearsError || this.props.savingPostError ? (
-                  <div className="Error">
-                    <p>
-                      Oops! We had a problem saving your post. Please retry.
-                    </p>
-                  </div>
-                ) : (
-                  <div />
-                )}
-              </div>
+            </div>
+            <div className="saveError">
+              {this.props.savingYearsError || this.props.savingPostError ? (
+                <div className="Error">
+                  <p>Oops! We had a problem saving your post. Please retry.</p>
+                </div>
+              ) : (
+                <div />
+              )}
             </div>
           </>
         )}
