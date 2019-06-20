@@ -137,6 +137,7 @@ class NewPost extends React.Component {
         } else {
           posts.splice(postIndex, 1, this.state.post);
         }
+        console.log("posts array before action", posts)
         this.props.savePost(this.userSession, posts);
 
         const postYears = this.props.postYears;
