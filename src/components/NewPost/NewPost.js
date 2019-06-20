@@ -40,7 +40,7 @@ class NewPost extends React.Component {
           normal: false,
           angry: false,
           sad: false
-        } 
+        }
       }
     };
     this.userSession = new UserSession();
@@ -73,7 +73,7 @@ class NewPost extends React.Component {
           normal: false,
           angry: false,
           sad: false
-        } 
+        }
       }
     });
 
@@ -191,7 +191,7 @@ class NewPost extends React.Component {
   reverseTimeline = event => {
     event.preventDefault();
     this.timeline.reverse().timeScale(2);
-    const timelineDuration = this.timeline.duration() * 1000/2;
+    const timelineDuration = (this.timeline.duration() * 1000) / 2;
     console.log(timelineDuration);
     setTimeout(() => {
       this.props.history.push("/home");
@@ -220,11 +220,11 @@ class NewPost extends React.Component {
           [feeling]: !currentFeeling
         }
       }
-    })
-  }
+    });
+  };
 
   render() {
-    const {happy, normal, angry, sad } = this.state.post.feelings;
+    const { happy, normal, angry, sad } = this.state.post.feelings;
 
     return (
       <div className="NewPost-container">
@@ -269,17 +269,29 @@ class NewPost extends React.Component {
             <div className="Below-Editor">
               <div ref={div => (this.feeling = div)} className="Feeling">
                 <p>How are you feeling?</p>
-                <div onClick={e => this.toggleFeeling(e, "happy")} className={`emoji-${happy}`}>
-                  <span class="ec ec-sunglasses"></span>
+                <div
+                  onClick={e => this.toggleFeeling(e, "happy")}
+                  className={`emoji-${happy}`}
+                >
+                  <span class="ec ec-sunglasses" />
                 </div>
-                <div onClick={e => this.toggleFeeling(e, "normal")} className={`emoji-${normal}`}>
-                  <span class="ec ec-neutral-face"></span>
+                <div
+                  onClick={e => this.toggleFeeling(e, "normal")}
+                  className={`emoji-${normal}`}
+                >
+                  <span class="ec ec-neutral-face" />
                 </div>
-                <div onClick={e => this.toggleFeeling(e, "angry")} className={`emoji-${angry}`}>
-                  <span class="ec ec-rage"></span>
+                <div
+                  onClick={e => this.toggleFeeling(e, "angry")}
+                  className={`emoji-${angry}`}
+                >
+                  <span class="ec ec-rage" />
                 </div>
-                <div onClick={e => this.toggleFeeling(e, "sad")} className={`emoji-${sad}`}>
-                  <span class="ec ec-disappointed"></span>
+                <div
+                  onClick={e => this.toggleFeeling(e, "sad")}
+                  className={`emoji-${sad}`}
+                >
+                  <span class="ec ec-disappointed" />
                 </div>
               </div>
               <div ref={div => (this.save = div)} className="Save">
@@ -295,6 +307,15 @@ class NewPost extends React.Component {
                     "Save"
                   )}
                 </button>
+                {this.props.savingYearsError || this.props.savingPostError ? (
+                  <div className="Error">
+                    <p>
+                      Oops! We had a problem saving your post. Please retry.
+                    </p>
+                  </div>
+                ) : (
+                  <div />
+                )}
               </div>
             </div>
           </>
@@ -311,7 +332,9 @@ const mapStateToProps = state => ({
   gettingPostsError: state.postsReducer.gettingPostsError,
   gettingYearsError: state.postsReducer.gettingYearsError,
   gettingPosts: state.postsReducer.gettingPosts,
-  gettingYears: state.postsReducer.gettingYears
+  gettingYears: state.postsReducer.gettingYears,
+  savingPostError: state.postsReducer.savingPostError,
+  savingYearsError: state.postsReducer.savingYearsError
 });
 
 export default connect(

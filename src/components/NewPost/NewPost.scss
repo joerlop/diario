@@ -183,6 +183,7 @@ $base-font-size: 13px;
         border-radius: 5px;
         color: #CCCCCC;
         font-size: $base-font-size;
+        margin-bottom: 10px;
      
         &:hover {
           color: black;
@@ -192,6 +193,11 @@ $base-font-size: 13px;
         &:focus {
           outline: 0;
         }
+      }
+
+      .Error {
+        color: red;
+        font-size: 12px;
       }
     }
   }
