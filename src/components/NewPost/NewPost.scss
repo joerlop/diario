@@ -162,7 +162,11 @@ $base-font-size: 13px;
       }
 
       .emoji-true {
-        opacity: none;
+        margin-right: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        background: white;
+        cursor: pointer;
       }
     }
 
