@@ -109,6 +109,19 @@ $brown-bg-color: #544343;
     justify-content: center;
     align-items: center;
 
+    .Error {
+      justify-self: center;
+      align-self: center;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+    
+      p {
+        width: auto;
+      }
+    }
+
     .noposts {
       display: flex;
       flex-direction: column;
