@@ -67,7 +67,13 @@ class NewPost extends React.Component {
         data: null,
         month: `${months[month]}`,
         year: `${year}`,
-        day: `${day}`
+        day: `${day}`,
+        feelings: {
+          happy: false,
+          normal: false,
+          angry: false,
+          sad: false
+        } 
       }
     });
 
@@ -218,7 +224,7 @@ class NewPost extends React.Component {
   }
 
   render() {
-    const {happy, normal, angry, sad } = this.state.post.feelings
+    const {happy, normal, angry, sad } = this.state.post.feelings;
 
     return (
       <div className="NewPost-container">
