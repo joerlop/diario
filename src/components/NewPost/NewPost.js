@@ -135,8 +135,7 @@ class NewPost extends React.Component {
         if (postIndex === -1) {
           posts.push(this.state.post);
         } else {
-          posts.splice(postIndex, 1);
-          posts.push(this.state.post);
+          posts.splice(postIndex, 1, this.state.post);
         }
         this.props.savePost(this.userSession, posts);
 
