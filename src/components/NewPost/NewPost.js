@@ -27,11 +27,9 @@ const months = [
 class NewPost extends React.Component {
   constructor(props) {
     super(props);
-    const date = new Date();
-    const timestamp = date.getTime();
     this.state = {
       post: {
-        id: timestamp,
+        id: null,
         date: null,
         data: null,
         month: null,
@@ -42,7 +40,8 @@ class NewPost extends React.Component {
           normal: false,
           angry: false,
           sad: false
-        }
+        },
+        title: ""
       }
     };
     this.userSession = new UserSession();
@@ -60,11 +59,13 @@ class NewPost extends React.Component {
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
+    const timestamp = date.getTime();
 
     this.props.getPosts(this.userSession).then(() => {
       this.setState({
         post: {
           ...this.state.post,
+          id: timestamp,
           date: `${day} ${months[month]} ${year}`,
           data: null,
           month: `${months[month]}`,
@@ -75,7 +76,7 @@ class NewPost extends React.Component {
             normal: false,
             angry: false,
             sad: false
-          }
+          },
         }
       });
 
@@ -125,8 +126,6 @@ class NewPost extends React.Component {
       () => {
         //Check if there's a post with the same id -- if user is saving same
         //post for second time, for example
-        console.log("state post id", this.state.post.id);
-        console.log("posts array", posts);
         let postIndex = posts.findIndex(post => post.id == this.state.post.id);
         /*let postIndex = -1;
         posts.map((post, index) => {
@@ -134,24 +133,24 @@ class NewPost extends React.Component {
             postIndex = index;
           }
         });*/
-
-        console.log(postIndex);
         if (postIndex === -1) {
           posts.push(this.state.post);
         } else {
           posts.splice(postIndex, 1, this.state.post);
         }
-        console.log("posts array before action", posts);
+
         this.props.savePost(this.userSession, posts).then(() => {
           const postYears = this.props.postYears;
           let yearExists = false;
           let monthExists = false;
+
           if (postYears.length === 0) {
             const firstYear = {
               year: this.state.post.year,
               months: [this.state.post.month]
             };
             postYears.push(firstYear);
+
           } else {
             postYears.map(postYear => {
               if (postYear.year === this.state.post.year) {
@@ -220,6 +219,16 @@ class NewPost extends React.Component {
     });
   };
 
+  handleTitle = (event) => {
+    event.preventDefault();
+    this.setState({
+      post: {
+        ...this.state.post,
+        title: event.target.value
+      }
+    })
+  }
+
   render() {
     const { happy, normal, angry, sad } = this.state.post.feelings;
 
@@ -255,7 +264,7 @@ class NewPost extends React.Component {
         ) : (
           <>
             <div ref={div => (this.title = div)} className="post-title">
-              <input type="text" placeholder="Title" />
+              <input onChange={(e) => this.handleTitle(e)} value={this.state.post.title} type="text" placeholder="Title" />
             </div>
             <div ref={div => (this.editor = div)} className="Editor">
               <NewEditor />
