@@ -58,26 +58,26 @@ class NewPost extends React.Component {
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
-    const timestamp = date.getTime();
-
-    this.setState({
-      post: {
-        id: timestamp,
-        date: `${day} ${months[month]} ${year}`,
-        data: null,
-        month: `${months[month]}`,
-        year: `${year}`,
-        day: `${day}`,
-        feelings: {
-          happy: false,
-          normal: false,
-          angry: false,
-          sad: false
-        }
-      }
-    });
 
     this.props.getPosts(this.userSession).then(() => {
+      
+      this.setState({
+        post: {
+          id: this.props.posts.length + 1,
+          date: `${day} ${months[month]} ${year}`,
+          data: null,
+          month: `${months[month]}`,
+          year: `${year}`,
+          day: `${day}`,
+          feelings: {
+            happy: false,
+            normal: false,
+            angry: false,
+            sad: false
+          }
+        }
+      });
+
       this.props.getYears(this.userSession).then(() => {
         this.timeline
           .from(this.title, 0.4, {
@@ -105,6 +105,7 @@ class NewPost extends React.Component {
           });
         this.timeline.play();
       });
+      
     });
 
     localStorage.removeItem("signingIn");
