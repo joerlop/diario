@@ -131,7 +131,7 @@ class NewPost extends React.Component {
             postIndex = index;
           }
         });*/
-
+        console.log(postIndex);
         if (postIndex === -1) {
           posts.push(this.state.post);
         } else {
