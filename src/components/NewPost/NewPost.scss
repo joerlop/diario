@@ -134,10 +134,10 @@ $base-font-size: 13px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
-    "feeling-2    save";
+    "feeling      save";
 
     .Feeling {
-      grid-area: feeling-2;
+      grid-area: feeling;
       display: flex;
       justify-self: flex-start;
       align-self: center;
@@ -184,7 +184,6 @@ $base-font-size: 13px;
         border-radius: 5px;
         color: #CCCCCC;
         font-size: $base-font-size;
-        margin-bottom: 10px;
      
         &:hover {
           color: black;
@@ -196,16 +195,16 @@ $base-font-size: 13px;
         }
       }
     }
+  } //below-editor
 
-    .saveError {
-      grid-area: saveError;
-      justify-self: flex-end;
-      align-self: center;
+  .saveError {
+    grid-area: saveError;
+    justify-self: flex-end;
+    align-self: center;
 
-      .Error {
-        color: red;
-        font-size: 12px;
-      }
+    .Error {
+      color: red;
+      font-size: 12px;
     }
   }
 }
