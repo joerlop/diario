@@ -24,8 +24,6 @@ const months = [
   "December"
 ];
 
-const today = new Date();
-
 class NewPost extends React.Component {
   constructor(props) {
     super(props);
@@ -36,7 +34,13 @@ class NewPost extends React.Component {
         data: null,
         month: null,
         year: null,
-        day: null
+        day: null,
+        feelings: {
+          happy: false,
+          normal: false,
+          angry: false,
+          sad: false
+        } 
       }
     };
     this.userSession = new UserSession();
@@ -188,6 +192,31 @@ class NewPost extends React.Component {
     }, timelineDuration);
   };
 
+  toggleFeeling = (event, feeling) => {
+    event.preventDefault();
+
+    const currentFeeling;
+    if (feeling == "happy") {
+      currentFeeling = this.state.post.feelings.happy;
+    } else if (feeling == "normal") {
+      currentFeeling = this.state.post.feelings.normal;
+    } else if (feeling == "angry") {
+      currentFeeling = this.state.post.feelings.angry;
+    } else {
+      currentFeeling = this.state.post.feelings.sad;
+    }
+
+    this.setState({
+      post: {
+        ...this.state.post,
+        feelings: {
+          ...this.state.post.feelings,
+          [feeling]: !currentFeeling
+        }
+      }
+    })
+  }
+
   render() {
     return (
       <div className="NewPost-container">
@@ -232,16 +261,16 @@ class NewPost extends React.Component {
             <div className="Below-Editor">
               <div ref={div => (this.feeling = div)} className="Feeling">
                 <p>How are you feeling?</p>
-                <div className="emoji happy">
+                <div onClick={e => this.toggleFeeling(e, "happy")} className={`emoji-${this.state.post.feelings.happy} happy`}>
                   <span class="ec ec-sunglasses"></span>
                 </div>
-                <div className="emoji normal">
+                <div onClick={e => this.toggleFeeling(e, "normal")} className={`emoji-${this.state.post.feelings.normal} normal`}>
                   <span class="ec ec-neutral-face"></span>
                 </div>
-                <div className="emoji angry">
+                <div onClick={e => this.toggleFeeling(e, "angry")} className={`emoji-${this.state.post.feelings.angry} angry`}>
                   <span class="ec ec-rage"></span>
                 </div>
-                <div className="emoji sad">
+                <div onClick={e => this.toggleFeeling(e, "sad")} className={`emoji-${this.state.post.feelings.sad} sad`}>
                   <span class="ec ec-disappointed"></span>
                 </div>
               </div>
