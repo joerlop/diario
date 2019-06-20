@@ -87,7 +87,7 @@ export const postsReducer = (state = initialState, action) => {
       return {
         ...state,
         savingYear: false,
-        savingYearsError: "null",
+        savingYearsError: null,
         posts: [...action.payload]
       };
     case SAVE_YEAR_FAILURE:
