@@ -195,7 +195,7 @@ class NewPost extends React.Component {
   toggleFeeling = (event, feeling) => {
     event.preventDefault();
 
-    const currentFeeling;
+    let currentFeeling = null;
     if (feeling == "happy") {
       currentFeeling = this.state.post.feelings.happy;
     } else if (feeling == "normal") {
