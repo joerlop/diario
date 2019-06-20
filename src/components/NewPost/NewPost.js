@@ -28,7 +28,7 @@ class NewPost extends React.Component {
   constructor(props) {
     super(props);
     const date = new Date();
-    const timestamp = date.getTime()
+    const timestamp = date.getTime();
     this.state = {
       post: {
         id: timestamp,
@@ -62,7 +62,6 @@ class NewPost extends React.Component {
     const year = date.getFullYear();
 
     this.props.getPosts(this.userSession).then(() => {
-      
       this.setState({
         post: {
           ...this.state.post,
@@ -107,7 +106,6 @@ class NewPost extends React.Component {
           });
         this.timeline.play();
       });
-
     });
 
     localStorage.removeItem("signingIn");
@@ -127,8 +125,8 @@ class NewPost extends React.Component {
       () => {
         //Check if there's a post with the same id -- if user is saving same
         //post for second time, for example
-        console.log("state post id", this.state.post.id)
-        console.log("posts array", posts)
+        console.log("state post id", this.state.post.id);
+        console.log("posts array", posts);
         let postIndex = posts.findIndex(post => post.id == this.state.post.id);
         /*let postIndex = -1;
         posts.map((post, index) => {
@@ -136,53 +134,53 @@ class NewPost extends React.Component {
             postIndex = index;
           }
         });*/
-        
+
         console.log(postIndex);
         if (postIndex === -1) {
           posts.push(this.state.post);
         } else {
           posts.splice(postIndex, 1, this.state.post);
         }
-        console.log("posts array before action", posts)
-        this.props.savePost(this.userSession, posts);
-
-        const postYears = this.props.postYears;
-        let yearExists = false;
-        let monthExists = false;
-        if (postYears.length === 0) {
-          const firstYear = {
-            year: this.state.post.year,
-            months: [this.state.post.month]
-          };
-          postYears.push(firstYear);
-        } else {
-          postYears.map(postYear => {
-            if (postYear.year === this.state.post.year) {
-              yearExists = true;
-              postYear.months.map(month => {
-                if (month === this.state.post.month) {
-                  monthExists = true;
-                }
-              });
-            }
-          });
-
-          if (yearExists) {
-            if (!monthExists) {
-              postYears.map(postYear => {
-                if (postYear.year === this.state.post.year) {
-                  postYear.months.push(this.state.post.month);
-                }
-              });
-            }
-          } else {
-            postYears.push({
+        console.log("posts array before action", posts);
+        this.props.savePost(this.userSession, posts).then(() => {
+          const postYears = this.props.postYears;
+          let yearExists = false;
+          let monthExists = false;
+          if (postYears.length === 0) {
+            const firstYear = {
               year: this.state.post.year,
               months: [this.state.post.month]
+            };
+            postYears.push(firstYear);
+          } else {
+            postYears.map(postYear => {
+              if (postYear.year === this.state.post.year) {
+                yearExists = true;
+                postYear.months.map(month => {
+                  if (month === this.state.post.month) {
+                    monthExists = true;
+                  }
+                });
+              }
             });
+
+            if (yearExists) {
+              if (!monthExists) {
+                postYears.map(postYear => {
+                  if (postYear.year === this.state.post.year) {
+                    postYear.months.push(this.state.post.month);
+                  }
+                });
+              }
+            } else {
+              postYears.push({
+                year: this.state.post.year,
+                months: [this.state.post.month]
+              });
+            }
           }
-        }
-        this.props.saveYear(this.userSession, postYears);
+          this.props.saveYear(this.userSession, postYears);
+        });
       }
     );
   };
@@ -295,7 +293,7 @@ class NewPost extends React.Component {
               </div>
               <div ref={div => (this.save = div)} className="Save">
                 <button onClick={e => this.savePost(e)}>
-                  {this.props.savingPost ? (
+                  {this.props.savingPost || this.props.savingYear ? (
                     <Loader
                       type="ThreeDots"
                       color="#000000"
@@ -327,6 +325,7 @@ class NewPost extends React.Component {
 const mapStateToProps = state => ({
   posts: state.postsReducer.posts,
   savingPost: state.postsReducer.savingPost,
+  savingYear: state.postsReducer.savingYear,
   postYears: state.postsReducer.postYears,
   gettingPostsError: state.postsReducer.gettingPostsError,
   gettingYearsError: state.postsReducer.gettingYearsError,

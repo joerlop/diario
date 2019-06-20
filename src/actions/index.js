@@ -5,7 +5,7 @@ export const SAVE_POST_SUCCESS = 'SAVE_POST_SUCCESS';
 export const SAVE_POST_FAILURE = 'SAVE_POST_FAILURE';
 export const savePost = (user, posts) => dispatch => {
   dispatch({ type: SAVE_POST_START });
-  user.putFile(POSTS_FILENAME, JSON.stringify(posts), { encrypt: true })
+  return user.putFile(POSTS_FILENAME, JSON.stringify(posts), { encrypt: true })
     .then(res => {
       dispatch({ type: SAVE_POST_SUCCESS, payload: posts });
     })
