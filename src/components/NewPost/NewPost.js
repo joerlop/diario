@@ -128,7 +128,7 @@ class NewPost extends React.Component {
         //Check if there's a post with the same id -- if user is saving same
         //post for second time, for example
         console.log("state post id", this.state.post.id)
-        let postIndex = posts.findIndex(post => post.id === this.state.post.id);
+        let postIndex = posts.findIndex(post => post.id == this.state.post.id);
         /*let postIndex = -1;
         posts.map((post, index) => {
           if (post.id === this.state.post.id) {
