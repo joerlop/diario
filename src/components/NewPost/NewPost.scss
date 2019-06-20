@@ -4,14 +4,15 @@ $base-font-size: 13px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 650px 1fr;
-  grid-template-rows: 50px 70px 65px 80px 1fr 50px;
+  grid-template-rows: 50px 70px 65px 80px 1fr 50px 1fr;
   grid-template-areas: 
     ".      .             ."
     ".      navigation    ."
     ".      feeling       ."
     ".      title         ."
     "back   text-editor   date"
-    ".      below-editor  .";
+    ".      below-editor  ."
+    ".      saveError     .";
 
     .Navigation {
       grid-area: navigation;
@@ -194,6 +195,12 @@ $base-font-size: 13px;
           outline: 0;
         }
       }
+    }
+
+    .saveError {
+      grid-area: saveError;
+      justify-self: flex-end;
+      align-self: center;
 
       .Error {
         color: red;
