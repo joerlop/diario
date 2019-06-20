@@ -190,12 +190,12 @@ class NewPost extends React.Component {
 
   reverseTimeline = event => {
     event.preventDefault();
-    this.timeline.reverse(1);
-    const timelineDuration = this.timeline.duration() * 1000;
-    console.log(timelineDuration);
+    const reverseTime = 1;
+    const reverseTimeML = reverseTime * 1000;
+    this.timeline.reverse(reverseTime);
     setTimeout(() => {
       this.props.history.push("/home");
-    }, timelineDuration);
+    }, reverseTimeML);
   };
 
   toggleFeeling = (event, feeling) => {
