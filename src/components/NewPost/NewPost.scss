@@ -130,18 +130,14 @@ $base-font-size: 13px;
     margin-top: 10px;
     width: 100%;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px;
-    grid-template-areas: 
-    "feeling      save";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .Feeling {
-      grid-area: feeling;
       display: flex;
-      justify-self: flex-start;
-      align-self: center;
       align-items: center;
+      justify-content: flex-start;
 
       p {
         margin-left: 5px;
@@ -172,9 +168,9 @@ $base-font-size: 13px;
     }
 
     .Save {
-      grid-area: save;
-      justify-self: flex-end;
-      align-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
       button {
         background: white;
