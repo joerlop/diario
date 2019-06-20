@@ -107,15 +107,10 @@ class NewPost extends React.Component {
       });
     });
 
-    /*if (!this.props.gettingPostsError && !this.props.gettingYearsError) {
-
-    }*/
-
     localStorage.removeItem("signingIn");
   }
 
   savePost = event => {
-    console.log("save");
     event.preventDefault();
     const data = localStorage.getItem("data");
     const posts = this.props.posts;
@@ -123,21 +118,19 @@ class NewPost extends React.Component {
       {
         post: {
           ...this.state.post,
-          date: `${this.state.post.day} ${this.state.post.month} ${
-            this.state.post.year
-          }`,
           data: data
         }
       },
       () => {
         //Check if there's a post with the same id -- if user is saving same
         //post for second time, for example
-        let postIndex = -1;
+        let postIndex = posts.findIndex(post => post.id === this.state.post.id);
+        /*let postIndex = -1;
         posts.map((post, index) => {
           if (post.id === this.state.post.id) {
             postIndex = index;
           }
-        });
+        });*/
 
         if (postIndex === -1) {
           posts.push(this.state.post);
