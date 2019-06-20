@@ -218,6 +218,8 @@ class NewPost extends React.Component {
   }
 
   render() {
+    const {happy, normal, angry, sad } = this.state.post.feelings
+
     return (
       <div className="NewPost-container">
         <div className="Navigation">
@@ -261,16 +263,16 @@ class NewPost extends React.Component {
             <div className="Below-Editor">
               <div ref={div => (this.feeling = div)} className="Feeling">
                 <p>How are you feeling?</p>
-                <div onClick={e => this.toggleFeeling(e, "happy")} className={`emoji-${this.state.post.feelings.happy} happy`}>
+                <div onClick={e => this.toggleFeeling(e, "happy")} className={`emoji-${happy}`}>
                   <span class="ec ec-sunglasses"></span>
                 </div>
-                <div onClick={e => this.toggleFeeling(e, "normal")} className={`emoji-${this.state.post.feelings.normal} normal`}>
+                <div onClick={e => this.toggleFeeling(e, "normal")} className={`emoji-${normal}`}>
                   <span class="ec ec-neutral-face"></span>
                 </div>
-                <div onClick={e => this.toggleFeeling(e, "angry")} className={`emoji-${this.state.post.feelings.angry} angry`}>
+                <div onClick={e => this.toggleFeeling(e, "angry")} className={`emoji-${angry}`}>
                   <span class="ec ec-rage"></span>
                 </div>
-                <div onClick={e => this.toggleFeeling(e, "sad")} className={`emoji-${this.state.post.feelings.sad} sad`}>
+                <div onClick={e => this.toggleFeeling(e, "sad")} className={`emoji-${sad}`}>
                   <span class="ec ec-disappointed"></span>
                 </div>
               </div>
