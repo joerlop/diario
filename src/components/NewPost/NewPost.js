@@ -27,9 +27,11 @@ const months = [
 class NewPost extends React.Component {
   constructor(props) {
     super(props);
+    const date = new Date();
+    const timestamp = date.getTime()
     this.state = {
       post: {
-        id: null,
+        id: timestamp,
         date: null,
         data: null,
         month: null,
@@ -63,7 +65,7 @@ class NewPost extends React.Component {
       
       this.setState({
         post: {
-          id: this.props.posts.length + 1,
+          ...this.state.post,
           date: `${day} ${months[month]} ${year}`,
           data: null,
           month: `${months[month]}`,
