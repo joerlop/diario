@@ -49,7 +49,7 @@ export const postsReducer = (state = initialState, action) => {
     case GET_POSTS_START:
       return {
         ...state,
-        gettingPostsError: "null",
+        gettingPostsError: null,
         gettingPosts: true
       };
     case GET_POSTS_SUCCESS:
@@ -64,7 +64,7 @@ export const postsReducer = (state = initialState, action) => {
         return {
           ...state,
           gettingPosts: false,
-          gettingPostsError: null,
+          gettingPostsError: "null",
           posts: [...action.payload]
         };
       }
