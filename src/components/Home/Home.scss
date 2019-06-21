@@ -245,6 +245,11 @@ $brown-bg-color: #544343;
                       }
                     }
                   }
+
+                  .Content {
+                    overflow: hidden;
+                    transition: height 0.3s ease-out;
+                  }
                 }
               }
             }
