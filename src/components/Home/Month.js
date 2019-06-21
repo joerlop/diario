@@ -25,6 +25,13 @@ class Month extends React.Component {
     );
   }
 
+  updateHeight = (postHeight) => {
+    this.setState({
+      ...this.state,
+      height: this.state.height + postHeight 
+    });
+  }
+
   render() {
     const { open, height } = this.state;
     const currentHeight = open ? height : 0;
@@ -41,7 +48,7 @@ class Month extends React.Component {
                 post.year === this.props.year &&
                 post.month === this.props.month
               ) {
-                return <Post updateHeightYear={this.props.updateHeightYear} post={post} />;
+                return <Post updateHeightMonth={this.updateHeight} updateHeightYear={this.props.updateHeightYear} post={post} />;
               }
             })}
           </div>
