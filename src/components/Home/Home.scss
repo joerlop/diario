@@ -208,11 +208,13 @@ $brown-bg-color: #544343;
                   flex-wrap: wrap;
 
                   .title-section {
+                    width: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     
                     .title {
+                      font-size: 12px;
                       margin-right: 20px;
                     }
 
@@ -230,6 +232,9 @@ $brown-bg-color: #544343;
                           align-items: center;
 
                           .emoji {
+                            padding: 5px;
+                            background: lighten(white, 10%);
+                            border-radius: 5px;
                             margin-right: 10px;
                           }
 
