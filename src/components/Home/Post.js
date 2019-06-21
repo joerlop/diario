@@ -32,7 +32,7 @@ class Post extends React.Component {
   render() {
     const { open, height } = this.state;
     const currentHeight = open ? height : 0;
-    const untitled = this.props.title ? false : true;
+    const untitled = this.props.post.title ? false : true;
 
     return (
       <div className="Post">
