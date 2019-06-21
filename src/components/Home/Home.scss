@@ -47,6 +47,7 @@ $brown-bg-color: #544343;
 
 .Home-container {
   width: 100%;
+  margin-bottom: 50px;
   display: grid;
   grid-template-columns: 1fr 650px 1fr;
   grid-template-rows: 50px 70px 50px 1fr;
@@ -272,7 +273,7 @@ $brown-bg-color: #544343;
                     .content-outer {
                       background: darken(white, 5%);
                       display: flex;
-                      justify-content: center;
+                      justify-content: flex-start;
                       align-items: center;
 
                       .Content-inner {
