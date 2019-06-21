@@ -218,6 +218,7 @@ $brown-bg-color: #544343;
                       margin-left: 1px;
                       font-size: 15px;
                       margin-right: 20px;
+                      padding: 10px 0;
                     }
 
                     .characteristics {
@@ -260,7 +261,6 @@ $brown-bg-color: #544343;
                     transition: height 0.3s ease-out;
       
                     .content-outer {
-                      padding: 10px;
                       background: darken(white, 5%);
                       border: 1px solid black;
                       display: flex;
@@ -268,8 +268,7 @@ $brown-bg-color: #544343;
                       align-items: center; 
 
                       .Content-inner {
-                        margin: 0;
-                        padding: 0;
+                        padding: 10px;
                       }
                     }
                   }
