@@ -210,7 +210,7 @@ $brown-bg-color: #544343;
                   .title-section {
                     width: 100%;
                     display: flex;
-                    align-items: center;
+                    align-items: flex-end;
                     justify-content: space-between;
                     
                     .title {
@@ -231,8 +231,7 @@ $brown-bg-color: #544343;
                           align-items: center;
 
                           .emoji {
-                            height: 30px;
-                            width: 30px;
+                            padding: 4px;
                             background: darken(white, 10%);
                             border-radius: 5px;
                             margin-right: 10px;
@@ -245,8 +244,7 @@ $brown-bg-color: #544343;
                       }
 
                       .day {
-                        height: 30px;
-                        width: 30px;
+                        padding: 5px;
                         background: darken(white, 10%);
                         border-radius: 5px;
                         padding: 5px;
