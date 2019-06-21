@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
-import './Login.scss'
-import { UserSession } from 'blockstack'
+import React, { Component } from "react";
+import "./Login.scss";
+import { UserSession } from "blockstack";
 import Loader from "react-loader-spinner";
 
 class Login extends Component {
   constructor() {
+    this.state = {
+      signingIn: false
+    };
     super();
     this.userSession = new UserSession();
   }
@@ -12,8 +15,15 @@ class Login extends Component {
   signIn(e) {
     e.preventDefault();
     this.userSession.redirectToSignIn();
-    localStorage.setItem("signingIn", true)
+    localStorage.setItem("signingIn", true);
   }
+
+  toggleSignIn = event => {
+    event.preventDefault();
+    this.setState({
+      signingIn: !this.state.signingIn
+    });
+  };
 
   render() {
     return (
@@ -26,9 +36,21 @@ class Login extends Component {
           <div className="form">
             <h2>diario</h2>
             <button
-              onClick={this.signIn.bind(this)}
+              onClick={event => {
+                this.signIn.bind(this);
+                this.toggleSignIn(event);
+              }}
             >
-              Sign in with Blockstack
+              {this.state.signingIn ? (
+                <Loader
+                  type="ThreeDots"
+                  color="#000000"
+                  height="10"
+                  width="20"
+                />
+              ) : (
+                "Sign in with Blockstack"
+              )}
             </button>
           </div>
         )}
@@ -37,4 +59,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default Login;

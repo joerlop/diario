@@ -5,11 +5,8 @@ import { UserSession } from "blockstack";
 import NewPost from "./components/NewPost/NewPost";
 import Login from "./components/Login/Login";
 import Marketing from "./components/Marketing/Marketing";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
-import { TransitionGroup, Transition } from "react-transition-group";
-import { play, exit } from "./timelines";
-import { NavLink } from "react-router-dom";
 
 class App extends Component {
   constructor() {
