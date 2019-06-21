@@ -3,12 +3,12 @@ import "./Login.scss";
 import { UserSession } from "blockstack";
 import Loader from "react-loader-spinner";
 
-class Login extends Component {
-  constructor() {
+class Login extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       signingIn: false
     };
-    super();
     this.userSession = new UserSession();
   }
 
