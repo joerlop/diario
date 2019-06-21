@@ -19,10 +19,10 @@ class Post extends React.Component {
       },
       () => {
         if (this.state.open) {
-          this.props.updateHeightMonth(this.state.height);
+          /*this.props.updateHeightMonth(this.state.height);*/
           this.props.updateHeightYear(this.state.height);
         } else {
-          this.props.updateHeightMonth(-prevHeight);
+          /*this.props.updateHeightMonth(-prevHeight);*/
           this.props.updateHeightYear(-prevHeight);
         } 
       }
