@@ -124,17 +124,9 @@ class NewPost extends React.Component {
         }
       },
       () => {
-        //Check if there's a post with the same id -- if user is saving same
-        //post for second time, for example
         let postIndex = posts.findIndex(post => post.id == this.state.post.id);
-        /*let postIndex = -1;
-        posts.map((post, index) => {
-          if (post.id === this.state.post.id) {
-            postIndex = index;
-          }
-        });*/
         if (postIndex === -1) {
-          posts.push(this.state.post);
+          posts.unshift(this.state.post);
         } else {
           posts.splice(postIndex, 1, this.state.post);
         }
