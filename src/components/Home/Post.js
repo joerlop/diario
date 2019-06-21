@@ -18,13 +18,9 @@ class Post extends React.Component {
         height: this.refs.inner.clientHeight
       },
       () => {
-        if (this.state.open) {
-          /*this.props.updateHeightMonth(this.state.height);*/
-          this.props.updateHeightYear(this.state.height);
-        } else {
-          /*this.props.updateHeightMonth(-prevHeight);*/
-          this.props.updateHeightYear(-prevHeight);
-        } 
+        this.state.open
+          ? (this.props.updateHeightYear(this.state.height)) 
+          : this.props.updateHeightYear(-prevHeight)
       }
     );
   }
