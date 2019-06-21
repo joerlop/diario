@@ -1,24 +1,45 @@
 .Login {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 650px 1fr;
+  grid-template-rows: 50px 70px 65px 1fr;
+  grid-template-areas:
+    ".      .              ."
+    ".      loader         ."
+    ".      .              ."
+    ".      login          .";
 
   .loading {
+    grid-area: loader;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .form {
+    grid-area: login;
+    justify-self: center;
+    align-self: center;
+    
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
 
-    h2{
-      margin-bottom: 20px;
+    h2 {
       font-size: 30px;
       font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 10px #ccc;
+      }
     }
   }
 }
