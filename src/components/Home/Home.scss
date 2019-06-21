@@ -258,12 +258,10 @@ $brown-bg-color: #544343;
                   .Content {
                     overflow: hidden;
                     transition: height 0.3s ease-out;
-                    display: flex;
-                    justify-content: flex-start;
-                    background: darken(white, 5%);
-                    display: flex;
-                    justify-content: flex-start;
-                    padding: 10px;
+      
+                    .Content-inner {
+                      background: darken(white, 5%);
+                    }
                   }
                 }
               }
