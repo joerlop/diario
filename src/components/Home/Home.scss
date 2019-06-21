@@ -263,6 +263,10 @@ $brown-bg-color: #544343;
                       width: 100%;
                       padding: 10px;
                       background: darken(white, 5%);
+                      border: 1px solid black;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center; 
 
                       .Content-inner {
                         margin: 0;
