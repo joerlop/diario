@@ -47,10 +47,9 @@ class Post extends React.Component {
           </div>
         </div>
         <div className="Content" style={{ height: currentHeight + "px" }}>
-          <div className="content-outer">
+          <div className="content-outer" ref="inner">
             <div
               className={`Content-inner`}
-              ref="inner"
               dangerouslySetInnerHTML={{ __html: this.props.post.data }}
             />
           </div>
