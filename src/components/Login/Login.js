@@ -36,7 +36,7 @@ class Login extends React.Component {
           <div className="form">
             <h2>diario</h2>
             <button
-              onClick={event => {
+              onClick={function(event) {
                 this.signIn.bind(this);
                 this.toggleSignIn(event);
               }}
