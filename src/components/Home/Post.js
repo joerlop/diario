@@ -32,6 +32,7 @@ class Post extends React.Component {
   render() {
     const { open, height } = this.state;
     const currentHeight = open ? height : 0;
+    const marginTop = open ? 10 : 0;
     const innerStyles = {
       backgroundColor: 'red',
     };
@@ -49,7 +50,7 @@ class Post extends React.Component {
             </div>
           </div>
         </div>
-        <div className="Content" style={{ height: currentHeight + "px" }}>
+        <div className="Content" style={{ height: currentHeight + "px", margin: marginTop + "px" }}>
           <div className="content-outer" ref="inner">
             <div
               className={`Content-inner`}
