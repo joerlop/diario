@@ -19,11 +19,11 @@ class Post extends React.Component {
       },
       () => {
         if (this.state.open) {
-          this.props.updateHeightMonth(this.state.height)
+          this.props.updateHeightMonth(this.state.height);
           this.props.updateHeightYear(this.state.height);
         } else {
-          this.props.updateHeightMonth(-prevHeight)
-          this.props.updateHeightYear(-prevHeight)
+          this.props.updateHeightMonth(-prevHeight);
+          this.props.updateHeightYear(-prevHeight);
         }
       }
     );
@@ -46,12 +46,16 @@ class Post extends React.Component {
             </div>
           </div>
         </div>
-        <div className="Content" style={{ height: currentHeight + "px" }}>
-          <div
-            className={`Content-inner`}
-            ref="inner"
-            dangerouslySetInnerHTML={{ __html: this.props.post.data }}
-          />
+        <div className="container">
+          <div className="Content" style={{ height: currentHeight + "px" }}>
+            <div className="content-outer">
+              <div
+                className={`Content-inner`}
+                ref="inner"
+                dangerouslySetInnerHTML={{ __html: this.props.post.data }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );
