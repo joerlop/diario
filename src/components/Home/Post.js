@@ -31,11 +31,8 @@ class Post extends React.Component {
 
   render() {
     const { open, height } = this.state;
-    const currentHeight = open ? height : 0;
     const marginTop = open ? 10 : 0;
-    const innerStyles = {
-      backgroundColor: 'red',
-    };
+    const currentHeight = open ? height : 0;
 
     return (
       <div className="Post">
