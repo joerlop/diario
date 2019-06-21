@@ -6,6 +6,9 @@ class NewEditor extends Component {
   render() {
     return (
       <CKEditor
+        config={{
+          removeButtons: 'imageUpload'
+        }}
         editor={ClassicEditor}
         placeholder="Hello!"
         onInit={editor => {}}
