@@ -203,6 +203,7 @@ $brown-bg-color: #544343;
                   display: flex;
                   flex-direction: column;
                   flex-wrap: wrap;
+                  padding-bottom: 10px;
 
                   .title-section {
                     width: 100%;
@@ -276,6 +277,7 @@ $brown-bg-color: #544343;
 
                       .Content-inner {
                         padding: 10px;
+                        width: 100%;
                       }
                     }
                   }
