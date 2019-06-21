@@ -234,6 +234,8 @@ $brown-bg-color: #544343;
                           align-items: center;
 
                           .emoji {
+                            width: 21px;
+                            height: 21px;
                             padding: 4px;
                             background: darken(white, 10%);
                             border-radius: 5px;
@@ -247,6 +249,8 @@ $brown-bg-color: #544343;
                       }
 
                       .day {
+                        width: 20px;
+                        height: 20px;
                         padding: 5px;
                         background: darken(white, 10%);
                         border-radius: 5px;
