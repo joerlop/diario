@@ -32,11 +32,12 @@ class Post extends React.Component {
   render() {
     const { open, height } = this.state;
     const currentHeight = open ? height : 0;
+    const untitled = this.props.title ? false : true;
 
     return (
       <div className="Post">
         <div className="title-section" onClick={e => this.handleToggle(e)}>
-          <div className="title">{this.props.post.title}</div>
+          <div className={`title untitled-${untitled}`}>{this.props.post.title || "Untitled"}</div>
           <div className="characteristics">
             <div className="feelings-container">
               <Feelings feelings={this.props.post.feelings} />
