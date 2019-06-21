@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import './Login.css'
+import './Login.scss'
 import { UserSession } from 'blockstack'
+import Loader from "react-loader-spinner";
 
 class Login extends Component {
   constructor() {
@@ -18,8 +19,9 @@ class Login extends Component {
     return (
       <div className="Login">
         {localStorage.getItem("signingIn") ? (
-          <div>
-            <h1>Hello!</h1>
+          <div className="loading">
+            <h2>diario</h2>
+            <Loader type="ThreeDots" color="#000000" height="15" width="30" />
           </div>
         ) : (
           <div className="form-signin">
