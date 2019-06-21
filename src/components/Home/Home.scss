@@ -214,7 +214,7 @@ $brown-bg-color: #544343;
                     justify-content: space-between;
                     
                     .title {
-                      font-size: 12px;
+                      font-size: 13px;
                       margin-right: 20px;
                     }
 
@@ -224,7 +224,6 @@ $brown-bg-color: #544343;
                       justify-content: flex-end;
 
                       .feelings-container {
-                        margin-right: 10px;
 
                         .feelings {
                           display: flex;
@@ -233,7 +232,7 @@ $brown-bg-color: #544343;
 
                           .emoji {
                             padding: 5px;
-                            background: lighten(white, 10%);
+                            background: darken(white, 10%);
                             border-radius: 5px;
                             margin-right: 10px;
                           }
