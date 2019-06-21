@@ -201,7 +201,6 @@ $brown-bg-color: #544343;
                 .Post {
                   width: 90%;
                   padding: 5px 0;
-                  border-bottom: 1px solid lightgray;
                   display: flex;
                   flex-direction: column;
                   align-items: center;
@@ -213,12 +212,13 @@ $brown-bg-color: #544343;
                     align-items: flex-end;
                     justify-content: space-between;
                     cursor: pointer;
+                    padding: 10px 0;
+                    border-bottom: 1px solid lightgray;
                     
                     .title {
                       margin-left: 1px;
                       font-size: 15px;
                       margin-right: 20px;
-                      padding: 10px 0;
                     }
 
                     .characteristics {
@@ -262,7 +262,6 @@ $brown-bg-color: #544343;
       
                     .content-outer {
                       background: darken(white, 5%);
-                      border: 1px solid black;
                       display: flex;
                       justify-content: center;
                       align-items: center; 
