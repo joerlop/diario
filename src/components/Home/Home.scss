@@ -256,9 +256,9 @@ $brown-bg-color: #544343;
                   }
 
                   .Content {
+                    width: 100%;
                     overflow: hidden;
                     transition: height 0.3s ease-out;
-                    width: 100%;
                     display: flex;
                     justify-content: flex-start;
                     background: darken(white, 5%);
