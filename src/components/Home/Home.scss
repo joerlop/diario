@@ -194,15 +194,57 @@ $brown-bg-color: #544343;
               .Post-Container {
                 padding-bottom: 10px;
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                flex-wrap: wrap;
+                justify-content: center;
 
                 .Post {
                   width: 90%;
                   padding: 5px 0;
                   border-bottom: 1px solid lightgray;
                   display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  flex-wrap: wrap;
+
+                  .title-section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    .title {
+                      margin-right: 20px;
+                    }
+
+                    .characteristics {
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-end;
+
+                      .feelings-container {
+                        margin-right: 10px;
+
+                        .feelings {
+                          display: flex;
+                          justify-content: flex-end;
+                          align-items: center;
+
+                          .emoji {
+                            margin-right: 10px;
+                          }
+
+                          .emoji-false {
+                            display: none;
+                          }
+                        }
+                      }
+
+                      .day {
+                        background: lightgray;
+                        border-radius: 5px;
+                        padding: 5px;
+                        font-size: 12px;
+                      }
+                    }
+                  }
                 }
               }
             }
