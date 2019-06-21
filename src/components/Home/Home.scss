@@ -326,6 +326,14 @@ $brown-bg-color: #544343;
                           margin-right: 0;
                           font-weight: bold;
                         }
+
+                        &:first-child {
+                          margin-top: 0;
+                        }
+
+                        &:last-child {
+                          margin-bottom: 0;
+                        }
                       }
                     }
                   }
