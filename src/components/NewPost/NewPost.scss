@@ -5,7 +5,7 @@ $base-font-size: 13px;
   display: grid;
   grid-template-columns: 1fr 650px 1fr;
   grid-template-rows: 50px 70px 65px 80px 1fr 50px 50px;
-  grid-template-areas: 
+  grid-template-areas:
     ".      .             ."
     ".      navigation    ."
     ".      feeling       ."
@@ -14,48 +14,46 @@ $base-font-size: 13px;
     ".      below-editor  ."
     ".      saveError     .";
 
-    .Navigation {
-      grid-area: navigation;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas:
-      "home      logo       newpost";
-  
-      h2 {
-        grid-area: logo;
-        justify-self: center;
-        align-self: center;
-        font-size: 30px;
-        font-weight: bold;
-        color: #1f1919;
+  .Navigation {
+    grid-area: navigation;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "home      logo       newpost";
+
+    h2 {
+      grid-area: logo;
+      justify-self: center;
+      align-self: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #1f1919;
+    }
+
+    .home {
+      grid-area: home;
+      justify-self: end;
+      align-self: center;
+      text-decoration: none;
+      color: black;
+      margin-right: 3px;
+
+      &:hover {
+        color: white;
       }
-  
-      .home {
-        grid-area: home;
-        justify-self: end;
-        align-self: center;
-        text-decoration: none;
-        color: black;
-        margin-right: 3px;
-  
-        &:hover {
-          color: white;
-        }
+    }
+
+    .newpost {
+      grid-area: newpost;
+      justify-self: start;
+      align-self: center;
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: white;
       }
-  
-      .newpost {
-        grid-area: newpost;
-        justify-self: start;
-        align-self: center;
-        text-decoration: none;
-        color: black;
-  
-        &:hover {
-          color: white;
-        }
-      }
-  
+    }
   }
 
   .Loading {
@@ -66,11 +64,11 @@ $base-font-size: 13px;
 
   .Error {
     grid-area: title;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     display: flex;
     justify-content: center;
     padding: 15px 0;
-  
+
     p {
       width: auto;
     }
@@ -87,12 +85,12 @@ $base-font-size: 13px;
 
     input {
       width: 100%;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       background: white;
       border: none;
       padding: 10px;
       border-radius: 5px;
-      font-size: $base-font-size;      
+      font-size: $base-font-size;
     }
   }
 
@@ -108,26 +106,46 @@ $base-font-size: 13px;
     //font-size del texto dentro del editor
     p {
       font-size: 14px;
-      line-height: 1.4;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 0;
+      margin-right: 0;
     }
 
-    ol, ul, li {
+    ol,
+    ul,
+    li {
       font-size: 14px;
       line-height: 1.4;
     }
 
     h2 {
-      font-size: 30px;
+      display: block;
+      font-size: 1.5em;
+      margin-top: 0.83em;
+      margin-bottom: 0.83em;
+      margin-left: 0;
+      margin-right: 0;
       font-weight: bold;
     }
 
     h3 {
-      font-size: 25px;
+      display: block;
+      font-size: 1.17em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 0;
+      margin-right: 0;
       font-weight: bold;
     }
 
     h4 {
-      font-size: 20px;
+      display: block;
+      font-size: 1em;
+      margin-top: 1.33em;
+      margin-bottom: 1.33em;
+      margin-left: 0;
+      margin-right: 0;
       font-weight: bold;
     }
   }
@@ -137,7 +155,7 @@ $base-font-size: 13px;
     align-self: end;
     justify-self: start;
     margin-left: 10px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     font-size: $base-font-size - 1px;
     color: white;
     writing-mode: vertical-rl;
@@ -153,8 +171,7 @@ $base-font-size: 13px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: 
-    "feeling      save";
+    grid-template-areas: "feeling      save";
 
     .Feeling {
       grid-area: feeling;
@@ -166,7 +183,7 @@ $base-font-size: 13px;
       p {
         margin-left: 5px;
         margin-right: 10px;
-        font-size: $base-font-size; 
+        font-size: $base-font-size;
       }
 
       .emoji-false {
@@ -202,14 +219,14 @@ $base-font-size: 13px;
         padding: 5px;
         width: 75px;
         border-radius: 5px;
-        color: #CCCCCC;
+        color: #cccccc;
         font-size: $base-font-size;
-     
+
         &:hover {
           color: black;
           cursor: pointer;
         }
-  
+
         &:focus {
           outline: 0;
         }
@@ -231,10 +248,10 @@ $base-font-size: 13px;
 
 .Editor {
   button {
-    font-family: 'Poppins', sans-serif; 
+    font-family: "Poppins", sans-serif;
   }
 
-  --ck-font-face: 'Poppins', sans-serif;
+  --ck-font-face: "Poppins", sans-serif;
 
   /* Overrides the border radius setting in the theme. */
   --ck-border-radius: 5px;
