@@ -254,7 +254,7 @@ $brown-bg-color: #544343;
                       }
                     }
                   }
-                  
+
                   .Content {
                     overflow: hidden;
                     transition: height 0.3s ease-out;
@@ -263,6 +263,11 @@ $brown-bg-color: #544343;
                       width: 100%;
                       padding: 10px;
                       background: darken(white, 5%);
+
+                      .Content-inner {
+                        margin: 0;
+                        padding: 0;
+                      }
                     }
                   }
                 }
