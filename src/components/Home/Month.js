@@ -41,7 +41,7 @@ class Month extends React.Component {
                 post.year === this.props.year &&
                 post.month === this.props.month
               ) {
-                return <Post post={post} />;
+                return <Post updateHeightYear={this.props.updateHeightYear} post={post} />;
               }
             })}
           </div>
