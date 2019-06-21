@@ -254,21 +254,15 @@ $brown-bg-color: #544343;
                       }
                     }
                   }
-
-                  .container {
-                    width: 100%;
-                    display: flex;
-                    justify-content: flex-start;
-
-                    .Content {
-                      overflow: hidden;
-                      transition: height 0.3s ease-out;
-        
-                      .content-outer {
-                        width: 100%;
-                        padding: 10px;
-                        background: darken(white, 5%);
-                      }
+                  
+                  .Content {
+                    overflow: hidden;
+                    transition: height 0.3s ease-out;
+      
+                    .content-outer {
+                      width: 100%;
+                      padding: 10px;
+                      background: darken(white, 5%);
                     }
                   }
                 }
