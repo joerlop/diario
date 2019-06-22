@@ -208,15 +208,20 @@ $brown-bg-color: #544343;
 
                   .title-section {
                     width: 100%;
-                    display: flex;
-                    align-items: flex-end;
-                    justify-content: space-between;
+                    display: grid;
+                    grid-template-columns: 1fr 0.2fr;
+                    grid-template-rows: 1fr;
+                    grid-template-areas:
+                      "post-title      characteristics";
+
                     cursor: pointer;
                     padding-bottom: 5px;
                     border-bottom: 1px solid lightgray;
                     margin-bottom: 5px;
 
                     .title {
+                      grid-area: post-title;
+                      justify-self: flex-start;
                       margin-left: 1px;
                       font-size: 15px;
                       margin-right: 20px;
@@ -227,6 +232,9 @@ $brown-bg-color: #544343;
                     }
 
                     .characteristics {
+                      grid-area: characteristics;
+                      justify-self: flex-end;
+                      align-self: center;
                       display: flex;
                       align-items: center;
                       justify-content: flex-end;
