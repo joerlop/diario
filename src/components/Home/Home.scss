@@ -208,11 +208,13 @@ $brown-bg-color: #544343;
 
                   .title-section {
                     max-width: 526.5px;
-                    display: grid;
+                    /*display: grid;
                     grid-template-columns: 1fr 0.5fr;
                     grid-template-rows: 1fr;
                     grid-template-areas:
-                      "post-title      characteristics";
+                      "post-title      characteristics";*/
+                    display: flex;
+                    justify-content: space-between;
 
                     cursor: pointer;
                     padding-bottom: 5px;
@@ -220,12 +222,13 @@ $brown-bg-color: #544343;
                     margin-bottom: 5px;
 
                     .title {
-                      grid-area: post-title;
+                      /*grid-area: post-title;*/
                       align-self: center;
                       text-align: start;
                       margin-left: 1px;
                       font-size: 15px;
                       margin-right: 20px;
+                      line-height: 1.3;
                     }
 
                     .untitled-true {
@@ -233,7 +236,7 @@ $brown-bg-color: #544343;
                     }
 
                     .characteristics {
-                      grid-area: characteristics;
+                      /*grid-area: characteristics;*/
                       justify-self: flex-end;
                       align-self: center;
                       display: flex;
