@@ -91,6 +91,10 @@ $base-font-size: 13px;
       padding: 10px;
       border-radius: 5px;
       font-size: $base-font-size;
+
+      &:focus {
+        outline: 0;
+      }
     }
   }
 
