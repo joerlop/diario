@@ -93,7 +93,11 @@ $base-font-size: 13px;
       font-size: $base-font-size;
 
       &:focus {
-        outline: 0;
+        outline: none;
+      }
+
+      textarea:focus {
+        outline: none;
       }
     }
   }
