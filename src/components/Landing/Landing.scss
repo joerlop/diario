@@ -3,7 +3,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 2.5fr 2.5fr 1fr;
-  grid-template-rows: 175px 1fr;
+  grid-template-rows: 150px 1fr;
   grid-template-areas:
     ".      navigation       navigation       ."
     ".      content          image            .";
@@ -20,7 +20,7 @@
 
     h1 {
       font-weight: bold;
-      font-size: 45px;
+      font-size: 50px;
     }
 
     .signing {
