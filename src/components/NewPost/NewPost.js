@@ -256,7 +256,7 @@ class NewPost extends React.Component {
         ) : (
           <>
             <div ref={div => (this.title = div)} className="post-title">
-              <input onChange={(e) => this.handleTitle(e)} value={this.state.post.title} type="text" placeholder="Title" />
+              <input maxLength="90" onChange={(e) => this.handleTitle(e)} value={this.state.post.title} type="text" placeholder="Title" />
             </div>
             <div ref={div => (this.editor = div)} className="Editor">
               <NewEditor />

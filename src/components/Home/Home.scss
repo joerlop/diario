@@ -244,6 +244,7 @@ $brown-bg-color: #544343;
                           display: flex;
                           justify-content: flex-end;
                           align-items: center;
+                          flex-wrap: wrap;
 
                           .emoji {
                             width: 19px;
