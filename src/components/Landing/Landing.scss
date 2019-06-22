@@ -17,5 +17,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    h1 {
+      font-weight: bold;
+      font-size: 45px;
+    }
+
+    .signing {
+      text-decoration: none;
+      color: black;
+    }
   }
 }

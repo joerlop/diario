@@ -16,11 +16,6 @@ class Marketing extends React.Component {
             <p>Sign Up/In</p>
           </Link>
         </nav>
-        <div className="title">
-          <h1>
-            Hello!
-          </h1>
-        </div>
       </div>
     );
   }
