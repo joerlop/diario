@@ -1,5 +1,6 @@
 import React from "react";
 import "./Marketing.scss";
+import { Link } from "react-router-dom";
 
 class Marketing extends React.Component {
   constructor(props) {
@@ -8,7 +9,13 @@ class Marketing extends React.Component {
 
   render() {
     return (
-      <div className="Marketing-container">
+      <div className="landing-container">
+        <nav className="landing-navigation">
+          <h1>diario</h1>
+          <Link className="signing" to={`/login`}>
+            <p>Sign Up/In</p>
+          </Link>
+        </nav>
         <div className="title">
           <h1>
             Hello!
