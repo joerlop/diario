@@ -59,16 +59,21 @@
       .attr {
         display: flex;
         align-items: center;
+        border-bottom: 15px;
 
         h3 {
           font-size: 30px;
           font-weight: bold;
+          margin-right: 20px;
         }
 
-        img {
-          height: 15px;
-          width: auto;
+        p {
+          font-size: 15px;
         }
+      }
+
+      &:last-child {
+        border-bottom: 0;
       }
     } //howitworks
 

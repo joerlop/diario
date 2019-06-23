@@ -25,15 +25,20 @@ class Marketing extends React.Component {
           <div className="howitworks">
             <div className="attr">
               <h3>Private</h3>
-              <img src={arrow} />
+              <p>
+                No one can see/use your data. <br/>
+                We have no access to what you write.
+              </p>
             </div>
             <div className="attr">
               <h3>Simple</h3>
-              <img src={arrow} />
+              <p>Start writing right away.</p>
             </div>
             <div className="attr">
               <h3>Fun</h3>
-              <img src={arrow} />
+              <p>
+                Use emojis to give more life to what you write.
+              </p>
             </div>
           </div>
           <button className="btn">Start writing!</button>
