@@ -45,6 +45,7 @@
 
       h2 {
         font-size: 40px;
+        width: 105px;
         font-weight: bold;
       }
     
@@ -55,11 +56,12 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
+      margin-right: 15px;
 
       .attr {
         display: flex;
         align-items: center;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
 
         h3 {
           font-size: 30px;
@@ -72,7 +74,7 @@
         }
       }
 
-      &:last-child {
+      .last-attr {
         margin-bottom: 0;
       }
     } //howitworks

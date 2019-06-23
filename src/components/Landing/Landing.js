@@ -34,7 +34,7 @@ class Marketing extends React.Component {
               <h3>Simple</h3>
               <p>Start writing right away.</p>
             </div>
-            <div className="attr">
+            <div className="attr last-attr">
               <h3>Fun</h3>
               <p>
                 Use emojis to give more life to what you write.
