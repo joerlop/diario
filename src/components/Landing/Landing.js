@@ -1,7 +1,8 @@
 import React from "react";
 import "./Landing.scss";
 import { Link } from "react-router-dom";
-import writingImage from "../../images/Writing.jpg"
+import writingImage from "../../images/Writing.jpg";
+import arrow from "../../images/arrow.svg";
 
 class Marketing extends React.Component {
   constructor(props) {
@@ -24,12 +25,15 @@ class Marketing extends React.Component {
           <div className="howitworks">
             <div className="attr">
               <h3>Private</h3>
+              <img src={arrow} />
             </div>
             <div className="attr">
               <h3>Simple</h3>
+              <img src={arrow} />
             </div>
             <div className="attr">
               <h3>Fun</h3>
+              <img src={arrow} />
             </div>
           </div>
           <button className="btn">Start writing!</button>
