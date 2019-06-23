@@ -6,7 +6,7 @@
   grid-template-rows: 150px 1fr;
   grid-template-areas:
     ".      navigation            navigation       ."
-    ".      left-content          image            .";
+    ".      left-content          right-image            .";
   
   .landing-navigation {
     grid-area: navigation;
@@ -78,6 +78,20 @@
         background: black;
         color: white;
       }
+    }
+  } //landing-content
+
+  .landing-image {
+    grid-area: right-image;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 25px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 75px;
     }
   }
 }

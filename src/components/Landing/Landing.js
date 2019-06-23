@@ -1,6 +1,7 @@
 import React from "react";
 import "./Landing.scss";
 import { Link } from "react-router-dom";
+import writingImage from "../../images/Writing.jpg"
 
 class Marketing extends React.Component {
   constructor(props) {
@@ -33,6 +34,9 @@ class Marketing extends React.Component {
           </div>
           <button className="btn">Let's go!</button>
         </div>
+        <div className="landing-image">
+          <img src={writingImage} />
+        </div>  
       </div>
     );
   }
