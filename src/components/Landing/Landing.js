@@ -32,7 +32,7 @@ class Marketing extends React.Component {
               <h3>Fun</h3>
             </div>
           </div>
-          <button className="btn">Let's go!</button>
+          <button className="btn">Start writing!</button>
         </div>
         <div className="landing-image">
           <img src={writingImage} />
