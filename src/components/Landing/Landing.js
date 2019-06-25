@@ -1,7 +1,7 @@
 import React from "react";
 import "./Landing.scss";
 import { Link } from "react-router-dom";
-import writingImage from "../../images/Writing.jpg";
+import writingImage from "../../images/Writing2.jpg";
 import arrow from "../../images/arrow.svg";
 
 class Marketing extends React.Component {
