@@ -1,54 +1,50 @@
 import React from "react";
 import "./Landing.scss";
-import { Link } from "react-router-dom";
-import writingImage from "../../images/Writing2.jpg";
-import arrow from "../../images/arrow.svg";
+import { Power1 } from "gsap/src/uncompressed/TweenMax";
+import TimelineMax from "gsap/src/uncompressed/TimelineMax";
 
-class Marketing extends React.Component {
+class Landing extends React.Component {
   constructor(props) {
     super(props);
+    this.timeline = new TimelineMax({ paused: true });
+    this.title = null;
+    this.btn = null;
+    this.subtitle = null;
+  }
+
+  componentDidMount() {
+    this.timeline
+      .from(this.logo, 0.4, {
+        autoAlpha: 0,
+        delay: 0.3,
+        ease: Power1.easeIn
+      })
+      .from(this.subtitle, 0.4, {
+        autoAlpha: 0,
+        y: 25,
+        ease: Power1.easeInOut
+      })
+      .from(this.btn, 0.3, {
+        autoAlpha: 0,
+        ease: Power1.easeIn
+      });
+
+    this.timeline.play();
   }
 
   render() {
     return (
       <div className="landing-container">
-        <nav className="landing-navigation">
-          <h1>diario</h1>
-          <Link className="signing" to={`/login`}>
-            <p>Sign Up/In</p>
-          </Link>
-        </nav>
         <div className="landing-content">
-          <div className="title">
-            <h2>A new kind of diary.</h2>
+          <h1 ref={div => (this.logo = div)}>diario</h1>
+          <h2 ref={div => (this.subtitle = div)}>A new kind of diary.</h2>
+          <div ref={div => (this.btn = div)}>
+            <button>Try it out!</button>
           </div>
-          <div className="howitworks">
-            <div className="attr">
-              <h3>Private</h3>
-              <p>
-                No one can see/use your data. <br/>
-                We have no access to what you write.
-              </p>
-            </div>
-            <div className="attr">
-              <h3>Simple</h3>
-              <p>Start writing right away.</p>
-            </div>
-            <div className="attr last-attr">
-              <h3>Fun</h3>
-              <p>
-                Use emojis to give more life to what you write.
-              </p>
-            </div>
-          </div>
-          <button className="btn">Start writing!</button>
         </div>
-        <div className="landing-image">
-          <img src={writingImage} />
-        </div>  
       </div>
     );
   }
 }
 
-export default Marketing;
+export default Landing;
