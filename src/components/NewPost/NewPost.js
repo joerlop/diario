@@ -264,7 +264,7 @@ class NewPost extends React.Component {
             </div>
             <div className="Below-Editor">
               <div ref={div => (this.feeling = div)} className="Feeling">
-                <p>How are you feeling?</p>
+                {/*<p>How are you feeling?</p>*/}
                 <div
                   onClick={e => this.toggleFeeling(e, "happy")}
                   className={`emoji-${happy}`}
