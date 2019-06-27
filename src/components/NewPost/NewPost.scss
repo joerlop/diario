@@ -199,6 +199,10 @@ $small-screen: 1200px;
         margin-left: 5px;
         margin-right: 10px;
         font-size: $base-font-size;
+
+        @media (max-width: $mid-screen) {
+          display: none;
+        }
       }
 
       .emoji-false {
