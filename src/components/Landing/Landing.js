@@ -16,7 +16,10 @@ class Landing extends React.Component {
   }
 
   componentDidMount() {
-    this.timeline
+    const session = this.userSession;
+
+    if (!session.isSignInPending()) {
+      this.timeline
       .from(this.logo, 0.4, {
         autoAlpha: 0,
         delay: 0.3,
@@ -33,6 +36,7 @@ class Landing extends React.Component {
       });
 
     this.timeline.play();
+    }
   }
 
   signIn(e) {
