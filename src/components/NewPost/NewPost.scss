@@ -27,7 +27,7 @@ $base-font-size: 13px;
       align-self: center;
       font-size: 30px;
       font-weight: bold;
-      color: #1f1919;
+      color: black;
     }
 
     .home {
@@ -269,7 +269,7 @@ $base-font-size: 13px;
 
   /* Helper variables to avoid duplication in the colors. */
   --ck-custom-background: #544343;
-  --ck-custom-foreground: darken(#544343, 10%) /*hsl(255, 3%, 18%)*/;
+  --ck-custom-foreground: #433535 /*hsl(255, 3%, 18%)*/;
   --ck-custom-border: #725a5a;
   --ck-custom-white: hsl(0, 0%, 100%);
 
