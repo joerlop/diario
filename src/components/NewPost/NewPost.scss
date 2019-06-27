@@ -269,7 +269,7 @@ $base-font-size: 13px;
 
   /* Helper variables to avoid duplication in the colors. */
   --ck-custom-background: #544343;
-  --ck-custom-foreground: #322828 /*hsl(255, 3%, 18%)*/;
+  --ck-custom-foreground: #3a2e2e /*color botón oprimido*/;
   --ck-custom-border: #725a5a;
   --ck-custom-white: hsl(0, 0%, 100%);
 
@@ -287,13 +287,13 @@ $base-font-size: 13px;
   --ck-color-button-default-background: var(--ck-custom-background);
   --ck-color-button-default-hover-background: #382d2d;
   --ck-color-button-default-active-background: darken(#382d2d, 10%);
-  --ck-color-button-default-active-shadow: red;
+  --ck-color-button-default-active-shadow: #433535;
   --ck-color-button-default-disabled-background: var(--ck-custom-background);
 
   --ck-color-button-on-background: var(--ck-custom-foreground);
   --ck-color-button-on-hover-background: hsl(255, 4%, 16%);
-  --ck-color-button-on-active-background: hsl(255, 4%, 14%);
-  --ck-color-button-on-active-shadow: hsl(240, 3%, 19%);
+  --ck-color-button-on-active-background: red;
+  --ck-color-button-on-active-shadow: #433535;
   --ck-color-button-on-disabled-background: var(--ck-custom-foreground);
 
   --ck-color-button-action-background: hsl(168, 76%, 42%);
