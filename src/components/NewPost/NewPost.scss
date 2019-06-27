@@ -187,6 +187,7 @@ $base-font-size: 13px;
       justify-self: flex-start;
       align-self: center;
       align-items: center;
+      z-index: -1;
 
       p {
         margin-left: 5px;
