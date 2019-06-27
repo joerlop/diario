@@ -108,8 +108,6 @@ class NewPost extends React.Component {
         this.timeline.play();
       });
     });
-
-    localStorage.removeItem("signingIn");
   }
 
   savePost = event => {

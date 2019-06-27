@@ -42,13 +42,12 @@ class Landing extends React.Component {
   signIn(e) {
     e.preventDefault();
     this.userSession.redirectToSignIn();
-    localStorage.setItem("signingIn", true);
   }
 
   render() {
     return (
       <div className="landing-container">
-        {/*localStorage.getItem("signingIn")*/ this.userSession.isSignInPending() ? (
+        {this.userSession.isSignInPending() ? (
           <div className="loading">
             <Loader type="ThreeDots" color="#000000" height="15" width="30" />
           </div>
