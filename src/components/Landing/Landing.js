@@ -2,6 +2,8 @@ import React from "react";
 import "./Landing.scss";
 import { Power1 } from "gsap/src/uncompressed/TweenMax";
 import TimelineMax from "gsap/src/uncompressed/TimelineMax";
+import { UserSession } from 'blockstack'
+import Loader from "react-loader-spinner";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -10,6 +12,7 @@ class Landing extends React.Component {
     this.title = null;
     this.btn = null;
     this.subtitle = null;
+    this.userSession = new UserSession();
   }
 
   componentDidMount() {
@@ -32,16 +35,28 @@ class Landing extends React.Component {
     this.timeline.play();
   }
 
+  signIn(e) {
+    e.preventDefault();
+    this.userSession.redirectToSignIn();
+    localStorage.setItem("signingIn", true);
+  }
+
   render() {
     return (
       <div className="landing-container">
-        <div className="landing-content">
-          <h1 ref={div => (this.logo = div)}>diario</h1>
-          <h2 ref={div => (this.subtitle = div)}>A new kind of diary.</h2>
-          <div ref={div => (this.btn = div)}>
-            <button>Try it out!</button>
+        {localStorage.getItem("signingIn") ? (
+          <div className="loading">
+            <Loader type="ThreeDots" color="#000000" height="15" width="30" />
           </div>
-        </div>
+        ) : (
+          <div className="landing-content">
+            <h1 ref={div => (this.logo = div)}>diario</h1>
+            <h2 ref={div => (this.subtitle = div)}>A new kind of diary.</h2>
+            <div ref={div => (this.btn = div)}>
+              <button onClick={this.signIn.bind(this)}>Start writing!</button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
