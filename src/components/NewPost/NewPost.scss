@@ -323,7 +323,7 @@ $base-font-size: 13px;
   /* -- Overrides the default .ck-list class colors. ------------------------------------------ */
 
   --ck-color-list-background: var(--ck-custom-background);
-  --ck-color-list-button-hover-background: var(--ck-color-base-foreground);
+  --ck-color-list-button-hover-background: #3a2e2e;
   --ck-color-list-button-on-background: var(--ck-color-base-active);
   --ck-color-list-button-on-background-focus: var(--ck-color-base-active-focus);
   --ck-color-list-button-on-text: var(--ck-color-base-background);
