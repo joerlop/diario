@@ -39,7 +39,7 @@ class App extends Component {
           render={(routeProps) =>
             this.userSession.isUserSignedIn()
               ? <NewPost {...routeProps} userSession={this.userSession} />
-              : <Redirect to={"/login"} />
+              : <Landing />
           }
         />
         <Route
@@ -48,16 +48,16 @@ class App extends Component {
           render={(routeProps) =>
             this.userSession.isUserSignedIn()
               ? <Home {...routeProps} userSession={this.userSession} />
-              : <Redirect to={"/login"} />
+              : <Landing />
           }
         />
-        <Route
+        {/*<Route
           exact
           path="/login"
           render={routeProps => (
             <Login {...routeProps} userSession={this.userSession} />
           )}
-        />
+          />*/}
         <Route
           exact
           path="/"
