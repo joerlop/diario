@@ -286,15 +286,15 @@ $base-font-size: 13px;
   /* -- Overrides the default .ck-button class colors. ---------------------------------------- */
 
   --ck-color-button-default-background: var(--ck-custom-background);
-  --ck-color-button-default-hover-background: #433535;
-  --ck-color-button-default-active-background: #3a2e2e;
-  --ck-color-button-default-active-shadow: #433535;
+  --ck-color-button-default-hover-background: #473838 /*15*/;
+  --ck-color-button-default-active-background: #3e3232 /*25*/;
+  --ck-color-button-default-active-shadow: #473838 /*15*/;
   --ck-color-button-default-disabled-background: var(--ck-custom-background);
 
   --ck-color-button-on-background: var(--ck-custom-foreground);
-  --ck-color-button-on-hover-background: #322828;
+  --ck-color-button-on-hover-background: #322828 /*40*/;
   --ck-color-button-on-active-background: #382d2d;
-  --ck-color-button-on-active-shadow: #322828;
+  --ck-color-button-on-active-shadow: #322828 /*40*/;
   --ck-color-button-on-disabled-background: var(--ck-custom-foreground);
 
   --ck-color-button-action-background: hsl(168, 76%, 42%);
