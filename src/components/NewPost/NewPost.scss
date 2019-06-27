@@ -1,4 +1,6 @@
 $base-font-size: 13px;
+$mid-screen: 800px;
+$small-screen: 1200px;
 
 .NewPost-container {
   width: 100%;
@@ -13,6 +15,10 @@ $base-font-size: 13px;
     "back   text-editor   date"
     ".      below-editor  ."
     ".      saveError     .";
+
+    @media (max-width: $mid-screen) {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
 
   .Navigation {
     grid-area: navigation;
