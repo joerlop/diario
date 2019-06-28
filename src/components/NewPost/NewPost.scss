@@ -47,6 +47,10 @@ $small-screen: 1200px;
       &:hover {
         color: white;
       }
+
+      @media (max-width: 700px) {
+        justify-self: center;
+      }
     }
 
     .newpost {
@@ -58,6 +62,10 @@ $small-screen: 1200px;
 
       &:hover {
         color: white;
+      }
+
+      @media (max-width: 700px) {
+        justify-self: center;
       }
     }
   }
