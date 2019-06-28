@@ -24,6 +24,10 @@ $small-screen: 1200px;
       grid-template-columns: 1fr 7fr 1fr;
     }
 
+    @media (max-width: 425px) {
+      grid-template-columns: 1fr 8fr 1fr;
+    }
+
   .Navigation {
     grid-area: navigation;
     display: grid;
