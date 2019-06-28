@@ -20,6 +20,10 @@ $small-screen: 1200px;
       grid-template-columns: 1fr 5fr 1fr;
     }
 
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr 6fr 1fr;
+    }
+
   .Navigation {
     grid-area: navigation;
     display: grid;
