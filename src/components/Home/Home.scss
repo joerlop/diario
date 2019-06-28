@@ -102,6 +102,10 @@ $mid-screen: 800px;
       &:hover {
         color: white;
       }
+
+      @media (max-width: 700px) {
+        justify-self: center;
+      }
     }
 
     .newpost {
@@ -113,6 +117,10 @@ $mid-screen: 800px;
 
       &:hover {
         color: white;
+      }
+
+      @media (max-width: 700px) {
+        justify-self: center;
       }
     }
   }
