@@ -116,6 +116,7 @@ $mid-screen: 800px;
       padding: 10px;
       border-radius: 5px;
       font-size: $base-font-size;
+      resize: vertical;
 
       &:focus {
         outline: none;
