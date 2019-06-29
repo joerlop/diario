@@ -60,20 +60,20 @@ $mid-screen: 800px;
     ".      .             .";
 
     @media (max-width: $mid-screen) {
-      grid-template-columns: 1fr 5fr 1fr;
-    }
-
-    @media (max-width: 500px) {
       grid-template-columns: 1fr 7fr 1fr;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr 12fr 1fr;
+    }
+
+    /*@media (max-width: 425px) {
       grid-template-columns: 1fr 8fr 1fr;
     }
 
     @media (max-width: 400px) {
       grid-template-columns: 1fr 12fr 1fr;
-    }
+    }*/
 
   .Navigation {
     grid-area: navigation;
