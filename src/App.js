@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import "./App.scss";
 import { UserSession } from "blockstack";
 import NewPost from "./components/NewPost/NewPost";
-import Login from "./components/Login/Login";
 import Landing from "./components/Landing/Landing";
 import { Route, Redirect } from "react-router-dom";
 import Home from "./components/Home/Home";
