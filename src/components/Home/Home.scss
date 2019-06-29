@@ -250,6 +250,10 @@ $mid-screen: 800px;
                       max-width: 375px;
                     }
 
+                    @media (max-width: 400px) {
+                      max-width: 300px;
+                    }
+
                     .title {
                       /*grid-area: post-title;*/
                       align-self: center;
