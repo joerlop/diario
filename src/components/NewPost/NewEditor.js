@@ -3,11 +3,6 @@ import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 class NewEditor extends Component {
-
-  componentDidMount() {
-    ClassicEditor.builtinPlugins.map( plugin => console.log(plugin.pluginName) );
-  }
-
   render() {
     return (
       <CKEditor

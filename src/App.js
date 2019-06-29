@@ -18,7 +18,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props);
     const session = this.userSession;
     if (!session.isUserSignedIn() && session.isSignInPending()) {
       session.handlePendingSignIn().then(userData => {
@@ -51,13 +50,6 @@ class App extends Component {
               : <Landing />
           }
         />
-        {/*<Route
-          exact
-          path="/login"
-          render={routeProps => (
-            <Login {...routeProps} userSession={this.userSession} />
-          )}
-          />*/}
         <Route
           exact
           path="/"

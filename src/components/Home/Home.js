@@ -35,7 +35,6 @@ class Home extends React.Component {
     event.preventDefault();
     this.timeline.reverse();
     const timelineDuration = this.timeline.duration() * 1000;
-    console.log(timelineDuration);
     setTimeout(() => {
       this.props.history.push("/newpost");
     }, timelineDuration);

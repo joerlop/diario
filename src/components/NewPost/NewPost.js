@@ -178,7 +178,6 @@ class NewPost extends React.Component {
     event.preventDefault();
     this.timeline.reverse().timeScale(2);
     const timelineDuration = (this.timeline.duration() * 1000) / 2;
-    console.log(timelineDuration);
     setTimeout(() => {
       this.props.history.push("/home");
     }, timelineDuration);
@@ -264,7 +263,6 @@ class NewPost extends React.Component {
             </div>
             <div className="Below-Editor">
               <div ref={div => (this.feeling = div)} className="Feeling">
-                {/*<p>How are you feeling?</p>*/}
                 <div
                   onClick={e => this.toggleFeeling(e, "happy")}
                   className={`emoji-${happy}`}
